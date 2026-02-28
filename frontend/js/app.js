@@ -66,8 +66,16 @@
 
             const li = document.createElement('li');
             li.className = 'race-item';
-            li.textContent = `${raceItem.race_info.track} ${raceItem.race_info.distance} - ${raceItem.race_info.name}`;
             li.dataset.index = index;
+
+            // 開催済みレースのバッジ
+            const statusBadge = raceItem.race_info.status === 'finished'
+                ? '<span style="font-size: 0.6rem; background: var(--text-muted); color: white; padding: 2px 6px; border-radius: 4px; margin-left: 8px; vertical-align: middle;">決着済み</span>'
+                : '';
+
+            li.innerHTML = `
+                <div class="race-list-name">${raceItem.race_info.track} ${raceItem.race_info.distance} - ${raceItem.race_info.name} ${statusBadge}</div>
+            `;
 
             li.addEventListener('click', () => {
                 // Remove active class from all
@@ -95,8 +103,62 @@
         allocationResultsEl.innerHTML = `<p style="color:var(--text-muted); font-size:0.875rem">予算を入力し、戦略を選択して計算ボタンを押してください。</p>`;
 
         renderRaceInfo(currentRaceData.race_info);
+        renderActualResults(currentRaceData.race_info);
         renderTop3Bets(currentRaceData.top3_bets);
         renderHorses(currentRaceData.horses);
+    }
+
+    function renderActualResults(info) {
+        const container = document.getElementById('actual-results-container');
+        if (!container) return;
+
+        if (info.status === 'finished' && info.results) {
+            let top3Html = '';
+            info.results.top3.forEach(t => {
+                top3Html += `
+                    <div style="display:flex; align-items:center; gap: 10px; padding: 8px 12px; background: var(--bg-color); border-radius: 6px;">
+                        <span style="font-weight: bold; font-size: 1.2rem; color: var(--primary); min-width: 30px;">${t.rank}着</span>
+                        <span style="font-weight: 600; min-width: 25px;">${t.number}番</span>
+                        <span style="flex-grow: 1;">${t.name}</span>
+                        <span style="color: var(--text-muted); font-size: 0.85rem;">${t.popularity}人気</span>
+                    </div>
+                `;
+            });
+
+            let payoutHtml = '';
+            if (info.results.payouts) {
+                payoutHtml = `<div style="display:flex; flex-wrap: wrap; gap: 8px; margin-top: 12px;">`;
+                for (const [kind, data] of Object.entries(info.results.payouts)) {
+                    // 基本的な券種のみ表示
+                    if (['単勝', '複勝', '馬連', 'ワイド', '3連複', '3連単'].includes(kind)) {
+                        payoutHtml += `
+                            <div style="background:var(--bg-color); padding: 6px 10px; border-radius: 4px; font-size: 0.85rem; border-left: 3px solid var(--accent); display:flex; flex-direction:column; gap:2px;">
+                                <span style="color:var(--text-muted); font-size:0.75rem;">${kind}</span>
+                                <span><strong style="color:var(--text-color);">${data.numbers}</strong> <span style="margin-left:8px; color:var(--primary); font-weight:bold;">${data.payout}</span></span>
+                            </div>
+                        `;
+                    }
+                }
+                payoutHtml += `</div>`;
+            }
+
+            container.innerHTML = `
+                <section class="saas-card mb-xl" style="border: 1px solid var(--primary); background: rgba(30, 91, 230, 0.03);">
+                    <div class="card-header" style="border-bottom: 1px solid var(--border-color); margin-bottom: 12px; padding-bottom: 8px;">
+                        <h2 style="color: var(--primary); display: flex; align-items: center; gap: 8px;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 10 0 1-5.93-9.14"></path><path d="M22 4L12 14.01l-3-3"></path></svg>
+                            実際のレース結果 (確定)
+                        </h2>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px;">
+                        ${top3Html}
+                    </div>
+                    ${payoutHtml}
+                </section>
+            `;
+        } else {
+            container.innerHTML = '';
+        }
     }
 
     function renderRaceInfo(info) {

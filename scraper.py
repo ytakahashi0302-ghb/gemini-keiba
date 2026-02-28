@@ -58,6 +58,8 @@ def scrape_race_data(race_url):
         soup = BeautifulSoup(r.content, 'html.parser')
         
         # レース情報
+        race_info = {"id": race_url.split('race_id=')[-1]}
+        
         race_name_el = soup.select_one('.RaceName')
         race_name = race_name_el.text.strip() if race_name_el else "レース名不明"
         
@@ -75,15 +77,85 @@ def scrape_race_data(race_url):
         condition_match = re.search(r'馬場:(\S+)', race_details)
         condition = condition_match.group(1) if condition_match else "-"
         
-        race_info = {
-            "id": race_url.split('race_id=')[-1],
+        # 結果ページを試行して取得
+        result_url = race_url.replace('shutuba.html', 'result.html')
+        race_status = "upcoming"
+        race_results = None
+        
+        try:
+            res_r = requests.get(result_url, headers=HEADERS, timeout=10)
+            res_soup = BeautifulSoup(res_r.content, 'html.parser')
+            result_rows = res_soup.select('#All_Result_Table tr')
+            
+            if len(result_rows) > 1:
+                race_status = "finished"
+                top3 = []
+                for row in result_rows[1:4]:
+                    tds = row.find_all('td')
+                    if len(tds) > 10:
+                        top3.append({
+                            "rank": int(tds[0].text.strip()) if tds[0].text.strip().isdigit() else tds[0].text.strip(),
+                            "number": int(tds[2].text.strip()),
+                            "name": tds[3].text.strip(),
+                            "popularity": int(tds[9].text.strip()) if tds[9].text.strip().isdigit() else tds[9].text.strip()
+                        })
+                
+                payouts = {}
+                for table in res_soup.select('.Payout_Detail_Table'):
+                    for tr in table.select('tr'):
+                        th = tr.select_one('th')
+                        if not th: continue
+                        kind = th.text.strip()
+                        td_res = tr.select_one('td.Result')
+                        td_pay = tr.select_one('td.Payout')
+                        
+                        if td_res and td_pay:
+                            # 組み合わせ(馬連やワイド)の数字をパース
+                            nums = []
+                            # <ul>ごとにグループ化されている場合 (ワイドなど)
+                            ul_elements = td_res.find_all('ul')
+                            if ul_elements:
+                                for ul in ul_elements:
+                                    # li をハイフンでつなぐ
+                                    n = "-".join([li.text.strip() for li in ul.find_all('li') if li.text.strip()])
+                                    if n: nums.append(n)
+                            else:
+                                # div区切りの場合や単一行の場合をフォールバックとして処理
+                                for span_block in str(td_res).split('<br/>'):
+                                    raw_n = BeautifulSoup(span_block, 'html.parser').text.strip()
+                                    n = "-".join(raw_n.split())
+                                    if n: nums.append(n)
+                                    
+                            # 単独のテキストしかない場合 (単勝など)
+                            if not nums:
+                                nums = ["-".join(td_res.text.strip().replace('\n', ' ').split())]
+                                
+                            # 配当金(円区切り)
+                            pays = [p + "円" for p in td_pay.text.strip().split('円') if p.strip()]
+                            
+                            payouts[kind] = {
+                                "numbers": ", ".join(nums),
+                                "payout": ", ".join(pays)
+                            }
+                            
+                race_results = {
+                    "top3": top3,
+                    "payouts": payouts
+                }
+        except Exception as e:
+            print(f"結果取得エラー: {e}")
+
+        # 不要な再代入を避け、取得した情報を個別にアップデートする
+        race_info.update({
             "name": race_name,
-            "date": datetime.now().strftime('%Y-%m-%d'), # 表示上の日付
-            "track": "JRA", # 詳細から取るのは煩雑なので固定
+            "date": datetime.now().strftime('%Y-%m-%d'), 
+            "track": "JRA",
             "distance": distance,
             "weather": weather,
-            "condition": condition
-        }
+            "condition": condition,
+            "status": race_status,
+            "results": race_results
+        })
         
         # 出走馬情報
         raw_horses = []
@@ -219,6 +291,7 @@ def scrape_race_data(race_url):
                 past_tds = p_row.select('td.Past')
                 placements = []
                 past_times = []
+                highest_class_score = 0.0 # A_i用
                 
                 for past in past_tds:
                     # 着順の取得 (R_i 用)
@@ -242,6 +315,17 @@ def scrape_race_data(race_url):
                                 "time_sec": total_seconds
                             })
                             
+                    # 過去のクラス取得 (A_i 用)
+                    data02 = past.select_one('.Data02')
+                    if data02:
+                        race_name = data02.text
+                        if "GI" in race_name and "GIII" not in race_name and "GII" not in race_name:
+                            highest_class_score = max(highest_class_score, 0.8)
+                        elif "GII" in race_name or "GIII" in race_name:
+                            highest_class_score = max(highest_class_score, 0.5)
+                        elif "OP" in race_name or "L" in race_name:
+                            highest_class_score = max(highest_class_score, 0.3)
+                            
                 # 直近3走の着順を保存
                 if placements:
                     target_horse["recent_placements"] = placements[:3]
@@ -249,6 +333,9 @@ def scrape_race_data(race_url):
                 # 持ち時計情報の保存
                 if past_times:
                     target_horse["past_times"] = past_times
+                    
+                # 基礎能力値(A_i)の保存
+                target_horse["a_i"] = highest_class_score
 
                 # 最新の上がり3Fを取得
                 if past_tds:
@@ -379,6 +466,11 @@ def calculate_expected_values(raw_horses, race_info):
             if h.get("frame", 5) <= 4: b_draw = 0.5
             elif h.get("frame", 5) >= 7: b_draw = -0.3
             
+        # 【Ver 2.2】枠順バイアスの地力（A_i）による相殺
+        a_i = h.get("a_i", 0.0)
+        if b_draw < 0:
+            b_draw = b_draw * (1.0 - a_i)
+            
         delta = 1.0
         c_i = (alpha * cp["S_straight"]) + (beta * cp["H_slope"]) + (gamma * cp["R_corner"]) + (delta * b_draw)
         
@@ -419,6 +511,15 @@ def calculate_expected_values(raw_horses, race_info):
         
         # スコアを勝率ベース(%)に変換 (簡易的なSoftmax的スケール)
         win_prob = s_i / 100.0 * 0.3 # MAX30%程度のキャップ
+        
+        # 【Ver 2.2】大穴過大評価の抑制ロジック
+        # 実人気が低い(オッズが高い)馬の推定勝率にペナルティを課し、過大なEV値の算出を防ぐ
+        pop = h.get("popularity", 1)
+        if pop > 5:
+            # 人気順位が下がるほど段階的に勝率を割り引く（最大で1/3まで減衰）
+            discount_factor = max(0.33, 1.0 - ((pop - 5) * 0.05))
+            win_prob *= discount_factor
+
         if win_prob < 0.01: win_prob = 0.01
         
         expected_return = win_prob * h["odds_base"]

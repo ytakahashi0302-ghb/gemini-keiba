@@ -571,82 +571,92 @@ def calculate_expected_values(raw_horses, race_info):
 
 def generate_portfolios(horses_data):
     """
-    EV Ver 3.0 ポートフォリオ生成ロジック
-    「絶対軸」をベースとし、戦略A（堅実バランス）、戦略B（ハイリスク・歪み狙い）の買い目を自動生成する。
+    EV Ver 4.0 ポートフォリオ生成ロジック (的中率・勝率重視型)
+    全馬の「推定勝率 (win_probability)」をベースに、トリガミを回避しつつ最も当たる確率が高い買い目を生成する。
     """
     strategy_a = []
     strategy_b = []
     
-    # 馬を分類別にグループ化
-    axis_horses = [h for h in horses_data if h["classification"] == "絶対軸"]
-    dark_horses = [h for h in horses_data if h["classification"] == "高EV伏兵"]
-    
-    # 絶対軸が不在の場合のフォールバック：勝率トップの馬を仮の軸とする
+    # 勝率順でソートしたリストを作成
     sorted_by_prob = sorted(horses_data, key=lambda x: x["win_probability"], reverse=True)
-    if not axis_horses and len(sorted_by_prob) > 0:
-        axis_horses = [sorted_by_prob[0]]
-        
-    if not axis_horses:
+    if not sorted_by_prob:
         return {"strategy_a": [], "strategy_b": []}
         
-    # === 戦略A (堅実・バランス型) ===
-    # 絶対軸 からの 単勝、ワイド、馬連。相手は上位人気の堅実馬や高EV伏兵
-    targets_a = sorted_by_prob[:7] # 勝率上位7頭を相手に流す
-    for ax in axis_horses:
-        if {"type": "単勝", "numbers": [ax["number"]], "odds": ax["odds"], "expected_return": ax["expected_return"]} not in strategy_a:
-            strategy_a.append({"type": "単勝", "numbers": [ax["number"]], "odds": ax["odds"], "expected_return": ax["expected_return"]})
-            
-        for tgt in targets_a:
-            if ax["number"] == tgt["number"]: continue
-            
-            # 擬似オッズとEV計算（実オッズがないための簡略化）
-            combo_odds_wide = round(ax["odds"] * tgt["odds"] * 0.15, 1)
-            combo_ev_wide = round(ax["expected_return"] * tgt["expected_return"] * 1.1, 2)
-            nums_sorted = sorted([ax["number"], tgt["number"]])
-            
-            strategy_a.append({"type":"ワイド", "numbers": nums_sorted, "odds": max(1.1, combo_odds_wide), "expected_return": combo_ev_wide})
-            
-            combo_odds_umaren = round(ax["odds"] * tgt["odds"] * 0.4, 1)
-            combo_ev_umaren = round(ax["expected_return"] * tgt["expected_return"] * 0.9, 2)
-            strategy_a.append({"type":"馬連", "numbers": nums_sorted, "odds": max(1.5, combo_odds_umaren), "expected_return": combo_ev_umaren})
-            
-    # 戦略Aの重複排除とEVソート
-    unique_a = {str(b["numbers"]) + b["type"]: b for b in strategy_a}
-    strategy_a = sorted(unique_a.values(), key=lambda x: x["expected_return"], reverse=True)
-
-    # === 戦略B (ハイリスク・歪狙い型) ===
-    # 絶対軸 を頭に固定し、高EV伏兵 や 中穴 に流す 馬単、3連複、3連単
-    # 高EV伏兵がいなければ、単勝オッズ10倍〜50倍の中穴をターゲットにする
-    targets_b = dark_horses if dark_horses else [h for h in horses_data if 10.0 <= h["odds"] <= 50.0]
-    if not targets_b: targets_b = sorted_by_prob[3:8] # それでもいなければ適当なヒモ
+    # 勝率トップを絶対軸（本命）に設定
+    axis_horse = sorted_by_prob[0]
     
-    for ax in axis_horses:
-        for tgt in targets_b:
-            if ax["number"] == tgt["number"]: continue
-            
-            # 伏兵の単勝
-            if {"type": "単勝", "numbers": [tgt["number"]], "odds": tgt["odds"], "expected_return": tgt["expected_return"]} not in strategy_b:
-                strategy_b.append({"type": "単勝", "numbers": [tgt["number"]], "odds": tgt["odds"], "expected_return": tgt["expected_return"]})
-                
-            # 馬単 (絶対軸 -> 伏兵)
-            umatan_odds = round(ax["odds"] * tgt["odds"] * 0.6, 1)
-            umatan_ev = round(ax["expected_return"] * tgt["expected_return"], 2)
-            strategy_b.append({"type":"馬単", "numbers": [ax["number"], tgt["number"]], "odds": max(2.0, umatan_odds), "expected_return": umatan_ev})
-            
-            # 3連複・3連単 (絶対軸 - 伏兵 - 伏兵)
-            for tgt2 in targets_b:
-                if tgt2["number"] <= tgt["number"] or tgt2["number"] == ax["number"]: continue
-                
-                base_odds_3 = float(ax["odds"] * tgt["odds"] * tgt2["odds"] * 0.08)
-                base_ev_3 = round(ax["expected_return"] * tgt["expected_return"] * tgt2["expected_return"], 2)
-                
-                nums_3puku = sorted([ax["number"], tgt["number"], tgt2["number"]])
-                strategy_b.append({"type":"3連複", "numbers": nums_3puku, "odds": round(max(5.0, base_odds_3), 1), "expected_return": round(base_ev_3*1.1, 2)})
-                strategy_b.append({"type":"3連単", "numbers": [ax["number"], tgt["number"], tgt2["number"]], "odds": round(max(15.0, base_odds_3 * 6), 1), "expected_return": round(base_ev_3*0.8, 2)})
+    # === 戦略A (超堅実・鉄板回収型) ===
+    # 本命馬の単勝、および勝率2位〜4位へのワイド（少点数）
+    
+    # 1. 本命の単勝 (トリガミ判定: オッズが1.0倍超であること)
+    if axis_horse["odds"] > 1.0:
+        strategy_a.append({
+            "type": "単勝", 
+            "numbers": [axis_horse["number"]], 
+            "odds": axis_horse["odds"], 
+            "hit_probability": axis_horse["win_probability"]
+        })
+        
+    # 2. 本命から対抗(勝率2位〜4位)へのワイド
+    targets_a = sorted_by_prob[1:4]
+    for tgt in targets_a:
+        # 当たる確率の簡便な掛け合わせモデル (軸馬勝率 × 相手勝率 × 定数)
+        combo_hit_prob = round(axis_horse["win_probability"] * tgt["win_probability"] * 3.0, 3) 
+        combo_odds_wide = round(axis_horse["odds"] * tgt["odds"] * 0.15, 1)
+        
+        # オッズが1.2倍以上（トリガミ回避ライン）を満たす堅い買い目のみ追加
+        if combo_odds_wide >= 1.2:
+            nums_sorted = sorted([axis_horse["number"], tgt["number"]])
+            strategy_a.append({
+                "type": "ワイド", 
+                "numbers": nums_sorted, 
+                "odds": combo_odds_wide, 
+                "hit_probability": min(0.99, combo_hit_prob)
+            })
 
-    # 戦略Bの重複排除とEVソート
+    # 戦略Aを合成的中確率(hit_probability)降順でソート
+    unique_a = {str(b["numbers"]) + b["type"]: b for b in strategy_a}
+    strategy_a = sorted(unique_a.values(), key=lambda x: x["hit_probability"], reverse=True)
+
+    # === 戦略B (本命流し・少点数プラス確定型) ===
+    # 本命馬を軸に、勝率2位〜6位への馬連・3連複
+    targets_b = sorted_by_prob[1:6]
+    
+    for tgt in targets_b:
+        # 馬連
+        combo_hit_prob_umaren = round(axis_horse["win_probability"] * tgt["win_probability"] * 1.5, 3)
+        combo_odds_umaren = round(axis_horse["odds"] * tgt["odds"] * 0.4, 1)
+        
+        # 点数を絞るためオッズ2.5倍以上を最低ラインとする
+        if combo_odds_umaren >= 2.5:
+            nums_sorted = sorted([axis_horse["number"], tgt["number"]])
+            strategy_b.append({
+                "type": "馬連", 
+                "numbers": nums_sorted, 
+                "odds": combo_odds_umaren, 
+                "hit_probability": min(0.99, combo_hit_prob_umaren)
+            })
+            
+        # 3連複 (軸 - 相手 - 相手)
+        for tgt2 in targets_b:
+            if tgt2["number"] <= tgt["number"]: continue
+            
+            base_hit_prob_3 = round(axis_horse["win_probability"] * tgt["win_probability"] * tgt2["win_probability"] * 5.0, 3)
+            base_odds_3 = float(axis_horse["odds"] * tgt["odds"] * tgt2["odds"] * 0.08)
+            
+            # オッズ5.0倍以上を条件とする
+            if base_odds_3 >= 5.0:
+                nums_3puku = sorted([axis_horse["number"], tgt["number"], tgt2["number"]])
+                strategy_b.append({
+                    "type": "3連複", 
+                    "numbers": nums_3puku, 
+                    "odds": round(base_odds_3, 1), 
+                    "hit_probability": min(0.99, base_hit_prob_3)
+                })
+
+    # 戦略Bを合成的中確率(hit_probability)降順でソート
     unique_b = {str(b["numbers"]) + b["type"]: b for b in strategy_b}
-    strategy_b = sorted(unique_b.values(), key=lambda x: x["expected_return"], reverse=True)
+    strategy_b = sorted(unique_b.values(), key=lambda x: x["hit_probability"], reverse=True)
     
     return {"strategy_a": strategy_a, "strategy_b": strategy_b}
 

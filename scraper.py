@@ -215,16 +215,53 @@ def scrape_race_data(race_url):
                 target_horse = next((h for h in raw_horses if h["number"] == horse_num), None)
                 if not target_horse: continue
                 
-                # 最初に見つかる Past セル内を探す
+                # --- 過去走データ (上がり3F, 着順, 持ち時計) の抽出 ---
                 past_tds = p_row.select('td.Past')
+                placements = []
+                past_times = []
+                
+                for past in past_tds:
+                    # 着順の取得 (R_i 用)
+                    num_span = past.select_one('.Data01 .Num')
+                    if num_span and num_span.text.strip().isdigit():
+                        placements.append(int(num_span.text.strip()))
+                    
+                    # 走破タイムと距離の取得 (T_i 用)
+                    data05 = past.select_one('.Data05')
+                    if data05:
+                        text05 = data05.text
+                        time_match = re.search(r'(\d{1,2}):(\d{2}\.\d)', text05)
+                        dist_match = re.search(r'([芝ダ])(\d+)m?', text05)
+                        if time_match and dist_match:
+                            mins = int(time_match.group(1))
+                            secs = float(time_match.group(2))
+                            total_seconds = (mins * 60) + secs
+                            past_distance = int(dist_match.group(2))
+                            past_times.append({
+                                "distance": past_distance,
+                                "time_sec": total_seconds
+                            })
+                            
+                # 直近3走の着順を保存
+                if placements:
+                    target_horse["recent_placements"] = placements[:3]
+                
+                # 持ち時計情報の保存
+                if past_times:
+                    target_horse["past_times"] = past_times
+
+                # 最新の上がり3Fを取得
                 if past_tds:
                     latest_past = past_tds[0]
-                    # Data06 例: "5-8-5 (33.7) 492(+22)" から "(33.7)" を抜く
                     data06 = latest_past.select_one('.Data06')
                     if data06:
                         f3_match = re.search(r'\((\d{2}\.\d)\)', data06.text)
                         if f3_match:
                             target_horse["last_3f"] = float(f3_match.group(1))
+                            
+            # 全馬の過去データ取得に成功したフラグをrace_infoに持たせる
+            race_info["has_past_data"] = sum(1 for h in raw_horses if "recent_placements" in h) > 0
+            
         except Exception as e:
             print(f"過去走データ取得エラー: {e}")
 
@@ -271,12 +308,27 @@ def calculate_expected_values(raw_horses, race_info):
     # 基礎変数抽出と統計用リスト
     implied_probs = []
     f3_values = []
+    t_values = []
+    current_distance_match = re.search(r'\d+', race_info.get("distance", "2000"))
+    current_distance = int(current_distance_match.group()) if current_distance_match else 2000
     
     for h in raw_horses:
         implied_probs.append(1.0 / h["odds_base"] if h["odds_base"] > 0 else 0)
         # 上がり3Fの抽出
         if isinstance(h.get("last_3f"), float):
             f3_values.append(h["last_3f"])
+            
+        # 持ち時計（T_i）の抽出
+        if h.get("past_times"):
+            best_t = float('inf')
+            for pt in h["past_times"]:
+                if pt["distance"] > 0:
+                    est_time = pt["time_sec"] * (current_distance / pt["distance"])
+                    if est_time < best_t:
+                        best_t = est_time
+            if best_t != float('inf'):
+                h["best_time_est"] = best_t
+                t_values.append(best_t)
         
     sum_probs = sum(implied_probs) if sum(implied_probs) > 0 else 1.0
     normalized_probs = [p / sum_probs for p in implied_probs]
@@ -286,6 +338,11 @@ def calculate_expected_values(raw_horses, race_info):
     f3_std = math.sqrt(sum((x - f3_mean)**2 for x in f3_values) / len(f3_values)) if len(f3_values) > 1 else 1.0
     if f3_std == 0: f3_std = 1.0
     
+    # Ti の平均値と標準偏差を計算
+    t_mean = sum(t_values) / len(t_values) if t_values else current_distance * 0.06
+    t_std = math.sqrt(sum((x - t_mean)**2 for x in t_values) / len(t_values)) if len(t_values) > 1 else 1.0
+    if t_std == 0: t_std = 1.0
+    
     # 係数ウェイト
     w1, w2, w3, w4, w5, w6 = 0.25, 0.20, 0.15, 0.15, 0.10, 0.10
 
@@ -293,7 +350,16 @@ def calculate_expected_values(raw_horses, race_info):
         # 1. T_i (走破タイム/能力スコアの代替)
         # 本来は走破タイムの実績値を入れるが、無ければ市場予測(オッズ)を正規化して代用
         base_win_prob = normalized_probs[i]
-        t_score = base_win_prob * 100 # 0〜100にスケール
+        
+        # 1. T_i (走破タイム/能力スコア)
+        if "best_time_est" in h:
+            # タイムは短い(小さい)ほど優秀なのでマイナス
+            t_zscore = (t_mean - h["best_time_est"]) / t_std
+            t_score = 50 + (t_zscore * 15)
+            if t_score > 100: t_score = 100
+            if t_score < 0: t_score = 0
+        else:
+            t_score = base_win_prob * 100 # 代替
         
         # 2. F_i (上り3ハロン)
         if isinstance(h.get("last_3f"), float):
@@ -321,7 +387,14 @@ def calculate_expected_values(raw_horses, race_info):
             c_i += 0.2 * cp["H_slope"]
             
         # 4. R_i (直近3走着順) & 5. J_i (騎手) & 6. W_i (コンディション)
-        r_score = base_win_prob * 50 # 強い馬ほど着順が良い前提
+        if h.get("recent_placements"):
+            r_i = sum(h["recent_placements"]) / len(h["recent_placements"])
+            # r_iが1(全勝)なら100点、10(平均10着)なら10点
+            r_score = (1.0 / r_i) * 100 
+            if r_score > 100: r_score = 100
+        else:
+            r_score = base_win_prob * 50 # 強い馬ほど着順が良い前提の代替
+            
         j_score = 1.0 if "ルメール" in h["jockey"] or "川田" in h["jockey"] else 0.5
         
         w_score = 1.0

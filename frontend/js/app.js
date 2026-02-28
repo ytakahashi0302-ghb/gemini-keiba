@@ -101,11 +101,16 @@
 
     function renderRaceInfo(info) {
         raceDetailsEl.classList.remove('loading');
+
+        const dataBadge = info.has_past_data
+            ? `<span style="background:var(--primary); color:white; padding: 2px 6px; border-radius: 4px; font-size: 0.7rem; margin-left: 8px; vertical-align: middle;">詳細データ取得済</span>`
+            : `<span style="background:var(--warning); color:#333; padding: 2px 6px; border-radius: 4px; font-size: 0.7rem; margin-left: 8px; vertical-align: middle;">簡易データ</span>`;
+
         raceDetailsEl.innerHTML = `
             <div class="race-meta">
                 <div class="meta-item">
                     <span class="meta-label">レース名</span>
-                    <span class="meta-value accent">${info.name}</span>
+                    <span class="meta-value accent" style="display:flex; align-items:center;">${info.name} ${dataBadge}</span>
                 </div>
                 <div class="meta-item">
                     <span class="meta-label">開催日</span>

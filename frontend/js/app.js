@@ -48,7 +48,22 @@
 
     function setupRaceSelector() {
         raceListEl.innerHTML = '';
+
+        // 日付順にソートしておく
+        allRacesData.sort((a, b) => a.race_info.date.localeCompare(b.race_info.date));
+
+        let currentDateGroup = null;
+
         allRacesData.forEach((raceItem, index) => {
+            // 日付が変わったらヘッダーを挿入
+            if (raceItem.race_info.date !== currentDateGroup) {
+                currentDateGroup = raceItem.race_info.date;
+                const headerLi = document.createElement('li');
+                headerLi.className = 'race-date-header';
+                headerLi.textContent = currentDateGroup;
+                raceListEl.appendChild(headerLi);
+            }
+
             const li = document.createElement('li');
             li.className = 'race-item';
             li.textContent = `${raceItem.race_info.track} ${raceItem.race_info.distance} - ${raceItem.race_info.name}`;

@@ -188,6 +188,41 @@ def scrape_race_data(race_url):
             except Exception as e:
                 print(f"予想オッズ取得エラー: {e}")
 
+        # 予想オッズ等の取得後、過去の成績（上がり3F等）を取得するため shutuba_past もフェッチする
+        try:
+            past_url = race_url.replace('shutuba.html', 'shutuba_past.html')
+            rp = requests.get(past_url, headers=HEADERS, timeout=10)
+            rp.encoding = 'euc-jp'
+            sp = BeautifulSoup(rp.text, 'html.parser')
+            
+            p_rows = sp.select('.Shutuba_Table tr.HorseList')
+            
+            # 各馬ごとに最新の上がり3Fを抽出
+            for p_row in p_rows:
+                tds = p_row.find_all('td')
+                if not tds or len(tds) < 4: continue
+                
+                # 馬番で突合
+                num_text = tds[1].text.strip()
+                if not num_text.isdigit(): continue
+                horse_num = int(num_text)
+                
+                target_horse = next((h for h in raw_horses if h["number"] == horse_num), None)
+                if not target_horse: continue
+                
+                # 最初に見つかる Past セル内を探す
+                past_tds = p_row.select('td.Past')
+                if past_tds:
+                    latest_past = past_tds[0]
+                    # Data06 例: "5-8-5 (33.7) 492(+22)" から "(33.7)" を抜く
+                    data06 = latest_past.select_one('.Data06')
+                    if data06:
+                        f3_match = re.search(r'\((\d{2}\.\d)\)', data06.text)
+                        if f3_match:
+                            target_horse["last_3f"] = float(f3_match.group(1))
+        except Exception as e:
+            print(f"過去走データ取得エラー: {e}")
+
         return race_info, raw_horses
     except Exception as e:
         print(f"レースデータ取得エラー ({race_url}): {e}")

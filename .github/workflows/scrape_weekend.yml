@@ -2,8 +2,10 @@ name: Weekend Race Data Update
 
 on:
   schedule:
-    # 毎週土曜・日曜の朝8時(JST) = UTC 23:00 (前日)
+    # 毎週土曜・日曜の朝8時(JST) = UTC 23:00 (前日金曜・土曜) のベースデータ取得
     - cron: '0 23 * * 5,6'
+    # 土曜・日曜の14:00〜16:30 JST (UTC 05:00〜07:30) に30分間隔で実行。レース直前の馬体重と最新オッズを取得
+    - cron: '0,30 5-7 * * 6,0'
   workflow_dispatch: # 手動実行も可能にする
 
 jobs:

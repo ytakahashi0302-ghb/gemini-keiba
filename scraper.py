@@ -517,14 +517,14 @@ def calculate_expected_values(raw_horses, race_info):
     
     s_zscores = [(s - s_mean) / s_std for s in horse_scores]
     
-    tau = 0.6 # 温度パラメータ (Ver 3.1 修正: オッズに依存せず能力差が勝率に直結するようメリハリを強める)
+    tau = 1.5 # 温度パラメータ (Ver 3.1 修正: オッズに依存せず能力差が勝率に直結するようメリハリを強める)
     exp_scores = [math.exp(z / tau) for z in s_zscores]
     sum_exp = sum(exp_scores) if sum(exp_scores) > 0 else 1.0
     
     for i, h in enumerate(raw_horses):
         s_i = horse_scores[i]
         win_prob = exp_scores[i] / sum_exp
-        if win_prob < 0.005: win_prob = 0.005 # 最低保証勝率0.5%
+        if win_prob < 0.001: win_prob = 0.001 # 最低保証勝率0.5%
         
         expected_return = win_prob * h["odds_base"]
 

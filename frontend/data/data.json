@@ -19,8 +19,8 @@
         "jockey": "幸",
         "odds": 3.8,
         "popularity": 1,
-        "win_probability": 0.005,
-        "expected_return": 0.02,
+        "win_probability": 0.024,
+        "expected_return": 0.09,
         "score_si": 0.32,
         "classification": "危険な人気馬",
         "weight": "-",
@@ -33,10 +33,10 @@
         "number": 2,
         "name": "オニャンコポン",
         "jockey": "菅原明",
-        "odds": 39.4,
+        "odds": 38.5,
         "popularity": 8,
-        "win_probability": 0.036,
-        "expected_return": 1.42,
+        "win_probability": 0.069,
+        "expected_return": 2.64,
         "score_si": 0.91,
         "classification": "高EV伏兵",
         "weight": "-",
@@ -49,10 +49,10 @@
         "number": 3,
         "name": "マジックサンズ",
         "jockey": "横山和",
-        "odds": 13.8,
+        "odds": 14.0,
         "popularity": 6,
-        "win_probability": 0.318,
-        "expected_return": 4.39,
+        "win_probability": 0.164,
+        "expected_return": 2.29,
         "score_si": 1.39,
         "classification": "絶対軸",
         "weight": "-",
@@ -65,10 +65,10 @@
         "number": 4,
         "name": "スパークリシャール",
         "jockey": "柴田善",
-        "odds": 170.0,
+        "odds": 169.0,
         "popularity": 14,
-        "win_probability": 0.013,
-        "expected_return": 2.17,
+        "win_probability": 0.045,
+        "expected_return": 7.64,
         "score_si": 0.68,
         "classification": "高EV伏兵",
         "weight": "-",
@@ -81,10 +81,10 @@
         "number": 5,
         "name": "レーベンスティール",
         "jockey": "戸崎圭",
-        "odds": 4.4,
+        "odds": 4.5,
         "popularity": 3,
-        "win_probability": 0.078,
-        "expected_return": 0.35,
+        "win_probability": 0.093,
+        "expected_return": 0.42,
         "score_si": 1.08,
         "classification": "危険な人気馬",
         "weight": "-",
@@ -97,12 +97,12 @@
         "number": 6,
         "name": "チェルヴィニア",
         "jockey": "ルメール",
-        "odds": 6.4,
+        "odds": 6.5,
         "popularity": 4,
-        "win_probability": 0.168,
-        "expected_return": 1.07,
+        "win_probability": 0.127,
+        "expected_return": 0.82,
         "score_si": 1.25,
-        "classification": "絶対軸",
+        "classification": "一般馬",
         "weight": "-",
         "weight_change": "-",
         "last_3f": 33.3,
@@ -113,12 +113,12 @@
         "number": 7,
         "name": "マイネルモーント",
         "jockey": "石川",
-        "odds": 58.2,
+        "odds": 59.5,
         "popularity": 10,
-        "win_probability": 0.005,
-        "expected_return": 0.29,
+        "win_probability": 0.021,
+        "expected_return": 1.23,
         "score_si": 0.24,
-        "classification": "一般馬",
+        "classification": "高EV伏兵",
         "weight": "-",
         "weight_change": "-",
         "last_3f": 35.2,
@@ -129,12 +129,12 @@
         "number": 8,
         "name": "ショウナンマグマ",
         "jockey": "吉田豊",
-        "odds": 45.2,
+        "odds": 43.8,
         "popularity": 9,
-        "win_probability": 0.005,
-        "expected_return": 0.23,
+        "win_probability": 0.031,
+        "expected_return": 1.36,
         "score_si": 0.47,
-        "classification": "一般馬",
+        "classification": "高EV伏兵",
         "weight": "-",
         "weight_change": "-",
         "last_3f": 35.3,
@@ -147,8 +147,8 @@
         "jockey": "津村",
         "odds": 7.1,
         "popularity": 5,
-        "win_probability": 0.066,
-        "expected_return": 0.47,
+        "win_probability": 0.087,
+        "expected_return": 0.62,
         "score_si": 1.04,
         "classification": "一般馬",
         "weight": "-",
@@ -161,10 +161,10 @@
         "number": 10,
         "name": "エコロヴァルツ",
         "jockey": "横山武",
-        "odds": 4.3,
+        "odds": 4.2,
         "popularity": 2,
-        "win_probability": 0.066,
-        "expected_return": 0.28,
+        "win_probability": 0.087,
+        "expected_return": 0.37,
         "score_si": 1.04,
         "classification": "危険な人気馬",
         "weight": "-",
@@ -177,12 +177,12 @@
         "number": 11,
         "name": "サイルーン",
         "jockey": "佐々木",
-        "odds": 102.7,
+        "odds": 100.8,
         "popularity": 12,
-        "win_probability": 0.005,
-        "expected_return": 0.51,
+        "win_probability": 0.031,
+        "expected_return": 3.12,
         "score_si": 0.47,
-        "classification": "一般馬",
+        "classification": "高EV伏兵",
         "weight": "-",
         "weight_change": "-",
         "last_3f": 35.1,
@@ -193,10 +193,10 @@
         "number": 12,
         "name": "サンストックトン",
         "jockey": "松岡",
-        "odds": 121.7,
+        "odds": 122.1,
         "popularity": 13,
-        "win_probability": 0.017,
-        "expected_return": 2.07,
+        "win_probability": 0.051,
+        "expected_return": 6.19,
         "score_si": 0.74,
         "classification": "高EV伏兵",
         "weight": "-",
@@ -209,12 +209,12 @@
         "number": 13,
         "name": "ニシノエージェント",
         "jockey": "三浦",
-        "odds": 58.7,
+        "odds": 60.5,
         "popularity": 11,
-        "win_probability": 0.005,
-        "expected_return": 0.29,
+        "win_probability": 0.03,
+        "expected_return": 1.79,
         "score_si": 0.44,
-        "classification": "一般馬",
+        "classification": "高EV伏兵",
         "weight": "-",
         "weight_change": "-",
         "last_3f": 34.3,
@@ -225,10 +225,10 @@
         "number": 14,
         "name": "シャンパンカラー",
         "jockey": "岩田康",
-        "odds": 15.2,
+        "odds": 15.6,
         "popularity": 7,
-        "win_probability": 0.23,
-        "expected_return": 3.5,
+        "win_probability": 0.148,
+        "expected_return": 2.31,
         "score_si": 1.31,
         "classification": "絶対軸",
         "weight": "-",
@@ -243,20 +243,11 @@
         {
           "type": "ワイド",
           "numbers": [
-            3,
+            2,
             14
           ],
-          "odds": 31.5,
-          "expected_return": 16.9
-        },
-        {
-          "type": "馬連",
-          "numbers": [
-            3,
-            14
-          ],
-          "odds": 83.9,
-          "expected_return": 13.83
+          "odds": 90.1,
+          "expected_return": 6.71
         },
         {
           "type": "ワイド",
@@ -264,8 +255,26 @@
             2,
             3
           ],
-          "odds": 81.6,
-          "expected_return": 6.86
+          "odds": 80.8,
+          "expected_return": 6.65
+        },
+        {
+          "type": "ワイド",
+          "numbers": [
+            3,
+            14
+          ],
+          "odds": 32.8,
+          "expected_return": 5.82
+        },
+        {
+          "type": "馬連",
+          "numbers": [
+            2,
+            14
+          ],
+          "odds": 240.2,
+          "expected_return": 5.49
         },
         {
           "type": "馬連",
@@ -273,69 +282,51 @@
             2,
             3
           ],
-          "odds": 217.5,
-          "expected_return": 5.61
-        },
-        {
-          "type": "ワイド",
-          "numbers": [
-            2,
-            14
-          ],
-          "odds": 89.8,
-          "expected_return": 5.47
-        },
-        {
-          "type": "ワイド",
-          "numbers": [
-            3,
-            6
-          ],
-          "odds": 13.2,
-          "expected_return": 5.17
+          "odds": 215.6,
+          "expected_return": 5.44
         },
         {
           "type": "馬連",
           "numbers": [
-            2,
+            3,
             14
           ],
-          "odds": 239.6,
-          "expected_return": 4.47
+          "odds": 87.4,
+          "expected_return": 4.76
+        },
+        {
+          "type": "単勝",
+          "numbers": [
+            14
+          ],
+          "odds": 15.6,
+          "expected_return": 2.31
         },
         {
           "type": "単勝",
           "numbers": [
             3
           ],
-          "odds": 13.8,
-          "expected_return": 4.39
-        },
-        {
-          "type": "馬連",
-          "numbers": [
-            3,
-            6
-          ],
-          "odds": 35.3,
-          "expected_return": 4.23
+          "odds": 14.0,
+          "expected_return": 2.29
         },
         {
           "type": "ワイド",
           "numbers": [
             6,
-            14
-          ],
-          "odds": 14.6,
-          "expected_return": 4.12
-        },
-        {
-          "type": "単勝",
-          "numbers": [
             14
           ],
           "odds": 15.2,
-          "expected_return": 3.5
+          "expected_return": 2.08
+        },
+        {
+          "type": "ワイド",
+          "numbers": [
+            3,
+            6
+          ],
+          "odds": 13.7,
+          "expected_return": 2.07
         },
         {
           "type": "馬連",
@@ -343,53 +334,35 @@
             6,
             14
           ],
-          "odds": 38.9,
-          "expected_return": 3.37
-        },
-        {
-          "type": "ワイド",
-          "numbers": [
-            3,
-            9
-          ],
-          "odds": 14.7,
-          "expected_return": 2.27
+          "odds": 40.6,
+          "expected_return": 1.7
         },
         {
           "type": "馬連",
           "numbers": [
             3,
-            9
+            6
           ],
-          "odds": 39.2,
-          "expected_return": 1.86
-        },
-        {
-          "type": "ワイド",
-          "numbers": [
-            9,
-            14
-          ],
-          "odds": 16.2,
-          "expected_return": 1.81
-        },
-        {
-          "type": "ワイド",
-          "numbers": [
-            3,
-            5
-          ],
-          "odds": 9.1,
+          "odds": 36.4,
           "expected_return": 1.69
         },
         {
           "type": "ワイド",
           "numbers": [
-            2,
-            6
+            9,
+            14
           ],
-          "odds": 37.8,
-          "expected_return": 1.67
+          "odds": 16.6,
+          "expected_return": 1.58
+        },
+        {
+          "type": "ワイド",
+          "numbers": [
+            3,
+            9
+          ],
+          "odds": 14.9,
+          "expected_return": 1.56
         },
         {
           "type": "馬連",
@@ -397,62 +370,35 @@
             9,
             14
           ],
-          "odds": 43.2,
-          "expected_return": 1.48
+          "odds": 44.3,
+          "expected_return": 1.29
         },
         {
           "type": "馬連",
+          "numbers": [
+            3,
+            9
+          ],
+          "odds": 39.8,
+          "expected_return": 1.28
+        },
+        {
+          "type": "ワイド",
+          "numbers": [
+            5,
+            14
+          ],
+          "odds": 10.5,
+          "expected_return": 1.07
+        },
+        {
+          "type": "ワイド",
           "numbers": [
             3,
             5
           ],
-          "odds": 24.3,
-          "expected_return": 1.38
-        },
-        {
-          "type": "馬連",
-          "numbers": [
-            2,
-            6
-          ],
-          "odds": 100.9,
-          "expected_return": 1.37
-        },
-        {
-          "type": "ワイド",
-          "numbers": [
-            3,
-            10
-          ],
-          "odds": 8.9,
-          "expected_return": 1.35
-        },
-        {
-          "type": "ワイド",
-          "numbers": [
-            5,
-            14
-          ],
-          "odds": 10.0,
-          "expected_return": 1.35
-        },
-        {
-          "type": "馬連",
-          "numbers": [
-            3,
-            10
-          ],
-          "odds": 23.7,
-          "expected_return": 1.11
-        },
-        {
-          "type": "馬連",
-          "numbers": [
-            5,
-            14
-          ],
-          "odds": 26.8,
-          "expected_return": 1.1
+          "odds": 9.4,
+          "expected_return": 1.06
         },
         {
           "type": "ワイド",
@@ -461,15 +407,34 @@
             14
           ],
           "odds": 9.8,
-          "expected_return": 1.08
+          "expected_return": 0.94
         },
         {
-          "type": "単勝",
+          "type": "ワイド",
           "numbers": [
-            6
+            3,
+            10
           ],
-          "odds": 6.4,
-          "expected_return": 1.07
+          "odds": 8.8,
+          "expected_return": 0.93
+        },
+        {
+          "type": "馬連",
+          "numbers": [
+            3,
+            5
+          ],
+          "odds": 25.2,
+          "expected_return": 0.87
+        },
+        {
+          "type": "馬連",
+          "numbers": [
+            5,
+            14
+          ],
+          "odds": 28.1,
+          "expected_return": 0.87
         },
         {
           "type": "馬連",
@@ -477,84 +442,49 @@
             10,
             14
           ],
-          "odds": 26.1,
-          "expected_return": 0.88
-        },
-        {
-          "type": "ワイド",
-          "numbers": [
-            6,
-            9
-          ],
-          "odds": 6.8,
-          "expected_return": 0.55
+          "odds": 26.2,
+          "expected_return": 0.77
         },
         {
           "type": "馬連",
           "numbers": [
-            6,
-            9
-          ],
-          "odds": 18.2,
-          "expected_return": 0.45
-        },
-        {
-          "type": "ワイド",
-          "numbers": [
-            5,
-            6
-          ],
-          "odds": 4.2,
-          "expected_return": 0.41
-        },
-        {
-          "type": "馬連",
-          "numbers": [
-            5,
-            6
-          ],
-          "odds": 11.3,
-          "expected_return": 0.34
-        },
-        {
-          "type": "ワイド",
-          "numbers": [
-            6,
+            3,
             10
           ],
-          "odds": 4.1,
-          "expected_return": 0.33
-        },
-        {
-          "type": "馬連",
-          "numbers": [
-            6,
-            10
-          ],
-          "odds": 11.0,
-          "expected_return": 0.27
+          "odds": 23.5,
+          "expected_return": 0.76
         }
       ],
       "strategy_b": [
         {
           "type": "3連複",
           "numbers": [
-            3,
-            4,
-            12
-          ],
-          "odds": 22840.7,
-          "expected_return": 21.69
-        },
-        {
-          "type": "3連複",
-          "numbers": [
             4,
             12,
             14
           ],
-          "odds": 25157.8,
-          "expected_return": 17.29
+          "odds": 25752.4,
+          "expected_return": 120.16
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            3,
+            4,
+            12
+          ],
+          "odds": 23111.1,
+          "expected_return": 119.13
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            14,
+            4,
+            12
+          ],
+          "odds": 154514.1,
+          "expected_return": 87.39
         },
         {
           "type": "3連単",
@@ -563,8 +493,38 @@
             4,
             12
           ],
-          "odds": 137043.9,
-          "expected_return": 15.78
+          "odds": 138666.5,
+          "expected_return": 86.64
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            4,
+            11,
+            14
+          ],
+          "odds": 21259.9,
+          "expected_return": 60.57
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            3,
+            4,
+            11
+          ],
+          "odds": 19079.4,
+          "expected_return": 60.05
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            2,
+            4,
+            14
+          ],
+          "odds": 8120.1,
+          "expected_return": 51.25
         },
         {
           "type": "3連複",
@@ -573,8 +533,58 @@
             3,
             4
           ],
-          "odds": 7394.6,
-          "expected_return": 14.88
+          "odds": 7287.3,
+          "expected_return": 50.81
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            11,
+            12,
+            14
+          ],
+          "odds": 15360.0,
+          "expected_return": 49.07
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            3,
+            11,
+            12
+          ],
+          "odds": 13784.6,
+          "expected_return": 48.65
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            14,
+            4,
+            11
+          ],
+          "odds": 127559.6,
+          "expected_return": 44.05
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            3,
+            4,
+            11
+          ],
+          "odds": 114476.5,
+          "expected_return": 43.67
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            2,
+            12,
+            14
+          ],
+          "odds": 5866.7,
+          "expected_return": 41.53
         },
         {
           "type": "3連複",
@@ -583,114 +593,667 @@
             3,
             12
           ],
-          "odds": 5293.7,
+          "odds": 5265.0,
+          "expected_return": 41.16
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            14,
+            2,
+            4
+          ],
+          "odds": 48720.7,
+          "expected_return": 37.27
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            3,
+            2,
+            4
+          ],
+          "odds": 43723.7,
+          "expected_return": 36.95
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            14,
+            11,
+            12
+          ],
+          "odds": 92159.9,
+          "expected_return": 35.69
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            3,
+            11,
+            12
+          ],
+          "odds": 82707.6,
+          "expected_return": 35.38
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            4,
+            13,
+            14
+          ],
+          "odds": 12760.2,
+          "expected_return": 34.75
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            3,
+            4,
+            13
+          ],
+          "odds": 11451.4,
+          "expected_return": 34.45
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            14,
+            2,
+            12
+          ],
+          "odds": 35200.0,
+          "expected_return": 30.2
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            3,
+            2,
+            12
+          ],
+          "odds": 31589.7,
+          "expected_return": 29.94
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            12,
+            13,
+            14
+          ],
+          "odds": 9219.0,
+          "expected_return": 28.16
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            3,
+            12,
+            13
+          ],
+          "odds": 8273.5,
+          "expected_return": 27.91
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            4,
+            8,
+            14
+          ],
+          "odds": 9237.9,
+          "expected_return": 26.4
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            3,
+            4,
+            8
+          ],
+          "odds": 8290.5,
+          "expected_return": 26.17
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            14,
+            4,
+            13
+          ],
+          "odds": 76561.1,
+          "expected_return": 25.27
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            3,
+            4,
+            13
+          ],
+          "odds": 68708.6,
+          "expected_return": 25.06
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            4,
+            7,
+            14
+          ],
+          "odds": 12549.3,
+          "expected_return": 23.88
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            3,
+            4,
+            7
+          ],
+          "odds": 11262.2,
+          "expected_return": 23.67
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            8,
+            12,
+            14
+          ],
+          "odds": 6674.3,
+          "expected_return": 21.39
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            3,
+            8,
+            12
+          ],
+          "odds": 5989.7,
+          "expected_return": 21.21
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            2,
+            11,
+            14
+          ],
+          "odds": 4843.2,
+          "expected_return": 20.93
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            2,
+            3,
+            11
+          ],
+          "odds": 4346.5,
+          "expected_return": 20.75
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            14,
+            12,
+            13
+          ],
+          "odds": 55314.2,
+          "expected_return": 20.48
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            3,
+            12,
+            13
+          ],
+          "odds": 49641.0,
+          "expected_return": 20.3
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            7,
+            12,
+            14
+          ],
+          "odds": 9066.7,
+          "expected_return": 19.35
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            14,
+            4,
+            8
+          ],
+          "odds": 55427.7,
+          "expected_return": 19.2
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            3,
+            7,
+            12
+          ],
+          "odds": 8136.7,
+          "expected_return": 19.18
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            3,
+            4,
+            8
+          ],
+          "odds": 49742.8,
+          "expected_return": 19.03
+        },
+        {
+          "type": "馬単",
+          "numbers": [
+            14,
+            4
+          ],
+          "odds": 1581.8,
+          "expected_return": 17.65
+        },
+        {
+          "type": "馬単",
+          "numbers": [
+            3,
+            4
+          ],
+          "odds": 1419.6,
+          "expected_return": 17.5
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            14,
+            4,
+            7
+          ],
+          "odds": 75295.6,
+          "expected_return": 17.37
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            3,
+            4,
+            7
+          ],
+          "odds": 67573.0,
+          "expected_return": 17.22
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            14,
+            8,
+            12
+          ],
+          "odds": 40045.7,
+          "expected_return": 15.56
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            3,
+            8,
+            12
+          ],
+          "odds": 35938.4,
+          "expected_return": 15.42
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            14,
+            2,
+            11
+          ],
+          "odds": 29059.4,
+          "expected_return": 15.22
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            3,
+            2,
+            11
+          ],
+          "odds": 26079.0,
+          "expected_return": 15.09
+        },
+        {
+          "type": "馬単",
+          "numbers": [
+            14,
+            12
+          ],
+          "odds": 1142.9,
+          "expected_return": 14.3
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            11,
+            13,
+            14
+          ],
+          "odds": 7610.8,
           "expected_return": 14.19
         },
         {
+          "type": "馬単",
+          "numbers": [
+            3,
+            12
+          ],
+          "odds": 1025.6,
+          "expected_return": 14.18
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            3,
+            11,
+            13
+          ],
+          "odds": 6830.2,
+          "expected_return": 14.07
+        },
+        {
           "type": "3連単",
           "numbers": [
             14,
-            4,
+            7,
             12
           ],
-          "odds": 150946.9,
-          "expected_return": 12.58
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            2,
-            4,
-            14
-          ],
-          "odds": 8144.8,
-          "expected_return": 11.86
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            2,
-            12,
-            14
-          ],
-          "odds": 5830.7,
-          "expected_return": 11.32
+          "odds": 54399.9,
+          "expected_return": 14.07
         },
         {
           "type": "3連単",
           "numbers": [
             3,
-            2,
-            4
+            7,
+            12
           ],
-          "odds": 44367.6,
-          "expected_return": 10.82
+          "odds": 48820.5,
+          "expected_return": 13.95
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            2,
+            13,
+            14
+          ],
+          "odds": 2906.9,
+          "expected_return": 12.01
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            2,
+            3,
+            13
+          ],
+          "odds": 2608.8,
+          "expected_return": 11.9
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            8,
+            11,
+            14
+          ],
+          "odds": 5510.0,
+          "expected_return": 10.78
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            3,
+            8,
+            11
+          ],
+          "odds": 4944.8,
+          "expected_return": 10.69
         },
         {
           "type": "3連単",
           "numbers": [
-            3,
-            2,
-            12
+            14,
+            11,
+            13
           ],
-          "odds": 31761.9,
+          "odds": 45664.8,
           "expected_return": 10.32
         },
         {
-          "type": "馬単",
+          "type": "3連単",
           "numbers": [
             3,
-            4
+            11,
+            13
           ],
-          "odds": 1407.6,
-          "expected_return": 9.53
+          "odds": 40981.2,
+          "expected_return": 10.23
         },
         {
-          "type": "馬単",
+          "type": "3連複",
+          "numbers": [
+            7,
+            11,
+            14
+          ],
+          "odds": 7485.0,
+          "expected_return": 9.75
+        },
+        {
+          "type": "3連複",
           "numbers": [
             3,
-            12
+            7,
+            11
           ],
-          "odds": 1007.7,
-          "expected_return": 9.09
+          "odds": 6717.3,
+          "expected_return": 9.67
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            2,
+            8,
+            14
+          ],
+          "odds": 2104.5,
+          "expected_return": 9.12
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            2,
+            3,
+            8
+          ],
+          "odds": 1888.7,
+          "expected_return": 9.04
         },
         {
           "type": "3連単",
           "numbers": [
             14,
             2,
+            13
+          ],
+          "odds": 17441.4,
+          "expected_return": 8.74
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            3,
+            2,
+            13
+          ],
+          "odds": 15652.6,
+          "expected_return": 8.66
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            2,
+            7,
+            14
+          ],
+          "odds": 2858.9,
+          "expected_return": 8.25
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            2,
+            3,
+            7
+          ],
+          "odds": 2565.6,
+          "expected_return": 8.18
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            14,
+            8,
+            11
+          ],
+          "odds": 33059.8,
+          "expected_return": 7.84
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            3,
+            8,
+            11
+          ],
+          "odds": 29669.1,
+          "expected_return": 7.78
+        },
+        {
+          "type": "単勝",
+          "numbers": [
             4
           ],
-          "odds": 48868.6,
-          "expected_return": 8.62
+          "odds": 169.0,
+          "expected_return": 7.64
+        },
+        {
+          "type": "馬単",
+          "numbers": [
+            14,
+            11
+          ],
+          "odds": 943.5,
+          "expected_return": 7.21
+        },
+        {
+          "type": "馬単",
+          "numbers": [
+            3,
+            11
+          ],
+          "odds": 846.7,
+          "expected_return": 7.14
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            14,
+            7,
+            11
+          ],
+          "odds": 44910.0,
+          "expected_return": 7.09
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            3,
+            7,
+            11
+          ],
+          "odds": 40303.9,
+          "expected_return": 7.03
         },
         {
           "type": "3連単",
           "numbers": [
             14,
             2,
+            8
+          ],
+          "odds": 12627.0,
+          "expected_return": 6.63
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            3,
+            2,
+            8
+          ],
+          "odds": 11331.9,
+          "expected_return": 6.58
+        },
+        {
+          "type": "単勝",
+          "numbers": [
             12
           ],
-          "odds": 34984.2,
-          "expected_return": 8.23
+          "odds": 122.1,
+          "expected_return": 6.19
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            8,
+            13,
+            14
+          ],
+          "odds": 3307.1,
+          "expected_return": 6.18
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            3,
+            8,
+            13
+          ],
+          "odds": 2967.9,
+          "expected_return": 6.13
         },
         {
           "type": "馬単",
           "numbers": [
             14,
-            4
+            2
           ],
-          "odds": 1550.4,
-          "expected_return": 7.59
-        },
-        {
-          "type": "馬単",
-          "numbers": [
-            14,
-            12
-          ],
-          "odds": 1109.9,
-          "expected_return": 7.24
+          "odds": 360.4,
+          "expected_return": 6.1
         },
         {
           "type": "馬単",
@@ -698,128 +1261,222 @@
             3,
             2
           ],
-          "odds": 326.2,
-          "expected_return": 6.23
+          "odds": 323.4,
+          "expected_return": 6.05
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            14,
+            2,
+            7
+          ],
+          "odds": 17153.1,
+          "expected_return": 6.0
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            3,
+            2,
+            7
+          ],
+          "odds": 15393.8,
+          "expected_return": 5.95
         },
         {
           "type": "3連複",
           "numbers": [
-            4,
-            6,
-            12
+            7,
+            13,
+            14
           ],
-          "odds": 10592.8,
-          "expected_return": 5.29
+          "odds": 4492.5,
+          "expected_return": 5.6
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            3,
+            7,
+            13
+          ],
+          "odds": 4031.7,
+          "expected_return": 5.54
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            14,
+            8,
+            13
+          ],
+          "odds": 19842.5,
+          "expected_return": 4.5
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            3,
+            8,
+            13
+          ],
+          "odds": 17807.3,
+          "expected_return": 4.46
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            7,
+            8,
+            14
+          ],
+          "odds": 3252.4,
+          "expected_return": 4.25
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            3,
+            7,
+            8
+          ],
+          "odds": 2918.8,
+          "expected_return": 4.21
         },
         {
           "type": "馬単",
           "numbers": [
             14,
+            13
+          ],
+          "odds": 566.3,
+          "expected_return": 4.13
+        },
+        {
+          "type": "馬単",
+          "numbers": [
+            3,
+            13
+          ],
+          "odds": 508.2,
+          "expected_return": 4.1
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            14,
+            7,
+            13
+          ],
+          "odds": 26954.9,
+          "expected_return": 4.07
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            3,
+            7,
+            13
+          ],
+          "odds": 24190.3,
+          "expected_return": 4.03
+        },
+        {
+          "type": "馬単",
+          "numbers": [
+            14,
+            8
+          ],
+          "odds": 410.0,
+          "expected_return": 3.14
+        },
+        {
+          "type": "単勝",
+          "numbers": [
+            11
+          ],
+          "odds": 100.8,
+          "expected_return": 3.12
+        },
+        {
+          "type": "馬単",
+          "numbers": [
+            3,
+            8
+          ],
+          "odds": 367.9,
+          "expected_return": 3.11
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            14,
+            7,
+            8
+          ],
+          "odds": 19514.5,
+          "expected_return": 3.09
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            3,
+            7,
+            8
+          ],
+          "odds": 17513.0,
+          "expected_return": 3.06
+        },
+        {
+          "type": "馬単",
+          "numbers": [
+            14,
+            7
+          ],
+          "odds": 556.9,
+          "expected_return": 2.84
+        },
+        {
+          "type": "馬単",
+          "numbers": [
+            3,
+            7
+          ],
+          "odds": 499.8,
+          "expected_return": 2.82
+        },
+        {
+          "type": "単勝",
+          "numbers": [
             2
           ],
-          "odds": 359.3,
-          "expected_return": 4.97
-        },
-        {
-          "type": "3連単",
-          "numbers": [
-            6,
-            4,
-            12
-          ],
-          "odds": 63556.6,
-          "expected_return": 3.85
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            2,
-            4,
-            6
-          ],
-          "odds": 3429.4,
-          "expected_return": 3.63
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            2,
-            6,
-            12
-          ],
-          "odds": 2455.0,
-          "expected_return": 3.47
-        },
-        {
-          "type": "3連単",
-          "numbers": [
-            6,
-            2,
-            4
-          ],
-          "odds": 20576.3,
+          "odds": 38.5,
           "expected_return": 2.64
         },
         {
-          "type": "3連単",
+          "type": "単勝",
           "numbers": [
-            6,
-            2,
-            12
+            13
           ],
-          "odds": 14730.2,
-          "expected_return": 2.52
-        },
-        {
-          "type": "馬単",
-          "numbers": [
-            6,
-            4
-          ],
-          "odds": 652.8,
-          "expected_return": 2.32
-        },
-        {
-          "type": "馬単",
-          "numbers": [
-            6,
-            12
-          ],
-          "odds": 467.3,
-          "expected_return": 2.21
+          "odds": 60.5,
+          "expected_return": 1.79
         },
         {
           "type": "単勝",
           "numbers": [
-            4
+            8
           ],
-          "odds": 170.0,
-          "expected_return": 2.17
+          "odds": 43.8,
+          "expected_return": 1.36
         },
         {
           "type": "単勝",
           "numbers": [
-            12
+            7
           ],
-          "odds": 121.7,
-          "expected_return": 2.07
-        },
-        {
-          "type": "馬単",
-          "numbers": [
-            6,
-            2
-          ],
-          "odds": 151.3,
-          "expected_return": 1.52
-        },
-        {
-          "type": "単勝",
-          "numbers": [
-            2
-          ],
-          "odds": 39.4,
-          "expected_return": 1.42
+          "odds": 59.5,
+          "expected_return": 1.23
         }
       ]
     }
@@ -842,10 +1499,10 @@
         "number": 1,
         "name": "エレガンスアスク",
         "jockey": "坂井",
-        "odds": 12.8,
+        "odds": 12.3,
         "popularity": 5,
-        "win_probability": 0.32,
-        "expected_return": 4.1,
+        "win_probability": 0.188,
+        "expected_return": 2.31,
         "score_si": 2.1,
         "classification": "絶対軸",
         "weight": "-",
@@ -858,12 +1515,12 @@
         "number": 2,
         "name": "グレースジェンヌ",
         "jockey": "岩田望",
-        "odds": 118.5,
+        "odds": 112.1,
         "popularity": 13,
-        "win_probability": 0.005,
-        "expected_return": 0.59,
+        "win_probability": 0.024,
+        "expected_return": 2.71,
         "score_si": 0.65,
-        "classification": "一般馬",
+        "classification": "高EV伏兵",
         "weight": "-",
         "weight_change": "-",
         "last_3f": 36.6,
@@ -874,12 +1531,12 @@
         "number": 3,
         "name": "アンディムジーク",
         "jockey": "団野",
-        "odds": 145.1,
+        "odds": 145.7,
         "popularity": 15,
-        "win_probability": 0.005,
-        "expected_return": 0.73,
+        "win_probability": 0.023,
+        "expected_return": 3.42,
         "score_si": 0.63,
-        "classification": "一般馬",
+        "classification": "高EV伏兵",
         "weight": "-",
         "weight_change": "-",
         "last_3f": 36.7,
@@ -890,10 +1547,10 @@
         "number": 4,
         "name": "スマートプリエール",
         "jockey": "吉村",
-        "odds": 17.4,
+        "odds": 16.8,
         "popularity": 7,
-        "win_probability": 0.005,
-        "expected_return": 0.09,
+        "win_probability": 0.033,
+        "expected_return": 0.55,
         "score_si": 0.86,
         "classification": "一般馬",
         "weight": "-",
@@ -906,10 +1563,10 @@
         "number": 5,
         "name": "ソルパッサーレ",
         "jockey": "浜中",
-        "odds": 8.3,
+        "odds": 8.2,
         "popularity": 4,
-        "win_probability": 0.028,
-        "expected_return": 0.24,
+        "win_probability": 0.071,
+        "expected_return": 0.58,
         "score_si": 1.42,
         "classification": "一般馬",
         "weight": "-",
@@ -922,10 +1579,10 @@
         "number": 6,
         "name": "グランドオーパス",
         "jockey": "高杉",
-        "odds": 25.3,
+        "odds": 26.0,
         "popularity": 9,
-        "win_probability": 0.005,
-        "expected_return": 0.13,
+        "win_probability": 0.035,
+        "expected_return": 0.92,
         "score_si": 0.92,
         "classification": "一般馬",
         "weight": "-",
@@ -938,10 +1595,10 @@
         "number": 7,
         "name": "サキドリトッケン",
         "jockey": "飛田愛",
-        "odds": 31.3,
+        "odds": 31.1,
         "popularity": 10,
-        "win_probability": 0.005,
-        "expected_return": 0.16,
+        "win_probability": 0.034,
+        "expected_return": 1.04,
         "score_si": 0.88,
         "classification": "一般馬",
         "weight": "-",
@@ -954,12 +1611,12 @@
         "number": 8,
         "name": "エイズルブルーム",
         "jockey": "池添",
-        "odds": 37.4,
+        "odds": 37.1,
         "popularity": 11,
-        "win_probability": 0.015,
-        "expected_return": 0.55,
+        "win_probability": 0.055,
+        "expected_return": 2.03,
         "score_si": 1.23,
-        "classification": "一般馬",
+        "classification": "高EV伏兵",
         "weight": "-",
         "weight_change": "-",
         "last_3f": 34.4,
@@ -970,10 +1627,10 @@
         "number": 9,
         "name": "ホワイトオーキッド",
         "jockey": "松山",
-        "odds": 16.9,
+        "odds": 16.7,
         "popularity": 6,
-        "win_probability": 0.007,
-        "expected_return": 0.13,
+        "win_probability": 0.042,
+        "expected_return": 0.7,
         "score_si": 1.04,
         "classification": "一般馬",
         "weight": "-",
@@ -986,10 +1643,10 @@
         "number": 10,
         "name": "コニーアイランド",
         "jockey": "川田",
-        "odds": 6.3,
+        "odds": 6.4,
         "popularity": 3,
-        "win_probability": 0.021,
-        "expected_return": 0.13,
+        "win_probability": 0.063,
+        "expected_return": 0.4,
         "score_si": 1.33,
         "classification": "一般馬",
         "weight": "-",
@@ -1002,12 +1659,12 @@
         "number": 11,
         "name": "ダンデノン",
         "jockey": "北村友",
-        "odds": 82.5,
+        "odds": 83.3,
         "popularity": 12,
-        "win_probability": 0.005,
-        "expected_return": 0.41,
+        "win_probability": 0.035,
+        "expected_return": 2.89,
         "score_si": 0.91,
-        "classification": "一般馬",
+        "classification": "高EV伏兵",
         "weight": "-",
         "weight_change": "-",
         "last_3f": 35.6,
@@ -1020,8 +1677,8 @@
         "jockey": "武豊",
         "odds": 2.7,
         "popularity": 1,
-        "win_probability": 0.034,
-        "expected_return": 0.09,
+        "win_probability": 0.077,
+        "expected_return": 0.21,
         "score_si": 1.47,
         "classification": "危険な人気馬",
         "weight": "-",
@@ -1036,8 +1693,8 @@
         "jockey": "西村淳",
         "odds": 4.3,
         "popularity": 2,
-        "win_probability": 0.022,
-        "expected_return": 0.09,
+        "win_probability": 0.064,
+        "expected_return": 0.28,
         "score_si": 1.35,
         "classification": "危険な人気馬",
         "weight": "-",
@@ -1050,10 +1707,10 @@
         "number": 14,
         "name": "ナムラコスモス",
         "jockey": "田口",
-        "odds": 18.6,
+        "odds": 18.4,
         "popularity": 8,
-        "win_probability": 0.529,
-        "expected_return": 9.83,
+        "win_probability": 0.23,
+        "expected_return": 4.23,
         "score_si": 2.25,
         "classification": "絶対軸",
         "weight": "-",
@@ -1066,12 +1723,12 @@
         "number": 15,
         "name": "ダンシングドール",
         "jockey": "森田",
-        "odds": 137.9,
+        "odds": 140.7,
         "popularity": 14,
-        "win_probability": 0.005,
-        "expected_return": 0.69,
+        "win_probability": 0.026,
+        "expected_return": 3.66,
         "score_si": 0.7,
-        "classification": "一般馬",
+        "classification": "高EV伏兵",
         "weight": "-",
         "weight_change": "-",
         "last_3f": "36.9",
@@ -1087,25 +1744,8 @@
             1,
             14
           ],
-          "odds": 35.7,
-          "expected_return": 44.33
-        },
-        {
-          "type": "馬連",
-          "numbers": [
-            1,
-            14
-          ],
-          "odds": 95.2,
-          "expected_return": 36.27
-        },
-        {
-          "type": "単勝",
-          "numbers": [
-            14
-          ],
-          "odds": 18.6,
-          "expected_return": 9.83
+          "odds": 33.9,
+          "expected_return": 10.75
         },
         {
           "type": "ワイド",
@@ -1113,8 +1753,17 @@
             8,
             14
           ],
-          "odds": 104.3,
-          "expected_return": 5.95
+          "odds": 102.4,
+          "expected_return": 9.45
+        },
+        {
+          "type": "馬連",
+          "numbers": [
+            1,
+            14
+          ],
+          "odds": 90.5,
+          "expected_return": 8.79
         },
         {
           "type": "馬連",
@@ -1122,34 +1771,51 @@
             8,
             14
           ],
-          "odds": 278.3,
-          "expected_return": 4.87
+          "odds": 273.1,
+          "expected_return": 7.73
+        },
+        {
+          "type": "ワイド",
+          "numbers": [
+            1,
+            8
+          ],
+          "odds": 68.4,
+          "expected_return": 5.16
+        },
+        {
+          "type": "単勝",
+          "numbers": [
+            14
+          ],
+          "odds": 18.4,
+          "expected_return": 4.23
+        },
+        {
+          "type": "馬連",
+          "numbers": [
+            1,
+            8
+          ],
+          "odds": 182.5,
+          "expected_return": 4.22
+        },
+        {
+          "type": "ワイド",
+          "numbers": [
+            5,
+            14
+          ],
+          "odds": 22.6,
+          "expected_return": 2.7
         },
         {
           "type": "単勝",
           "numbers": [
             1
           ],
-          "odds": 12.8,
-          "expected_return": 4.1
-        },
-        {
-          "type": "ワイド",
-          "numbers": [
-            5,
-            14
-          ],
-          "odds": 23.2,
-          "expected_return": 2.6
-        },
-        {
-          "type": "ワイド",
-          "numbers": [
-            1,
-            8
-          ],
-          "odds": 71.8,
-          "expected_return": 2.48
+          "odds": 12.3,
+          "expected_return": 2.31
         },
         {
           "type": "馬連",
@@ -1157,17 +1823,8 @@
             5,
             14
           ],
-          "odds": 61.8,
-          "expected_return": 2.12
-        },
-        {
-          "type": "馬連",
-          "numbers": [
-            1,
-            8
-          ],
-          "odds": 191.5,
-          "expected_return": 2.03
+          "odds": 60.4,
+          "expected_return": 2.21
         },
         {
           "type": "ワイド",
@@ -1175,8 +1832,8 @@
             10,
             14
           ],
-          "odds": 17.6,
-          "expected_return": 1.41
+          "odds": 17.7,
+          "expected_return": 1.86
         },
         {
           "type": "馬連",
@@ -1184,8 +1841,8 @@
             10,
             14
           ],
-          "odds": 46.9,
-          "expected_return": 1.15
+          "odds": 47.1,
+          "expected_return": 1.52
         },
         {
           "type": "ワイド",
@@ -1193,8 +1850,44 @@
             1,
             5
           ],
-          "odds": 15.9,
-          "expected_return": 1.08
+          "odds": 15.1,
+          "expected_return": 1.47
+        },
+        {
+          "type": "ワイド",
+          "numbers": [
+            13,
+            14
+          ],
+          "odds": 11.9,
+          "expected_return": 1.3
+        },
+        {
+          "type": "馬連",
+          "numbers": [
+            1,
+            5
+          ],
+          "odds": 40.3,
+          "expected_return": 1.21
+        },
+        {
+          "type": "馬連",
+          "numbers": [
+            13,
+            14
+          ],
+          "odds": 31.6,
+          "expected_return": 1.07
+        },
+        {
+          "type": "ワイド",
+          "numbers": [
+            1,
+            10
+          ],
+          "odds": 11.8,
+          "expected_return": 1.02
         },
         {
           "type": "ワイド",
@@ -1203,25 +1896,16 @@
             14
           ],
           "odds": 7.5,
-          "expected_return": 0.97
-        },
-        {
-          "type": "ワイド",
-          "numbers": [
-            13,
-            14
-          ],
-          "odds": 12.0,
-          "expected_return": 0.97
+          "expected_return": 0.98
         },
         {
           "type": "馬連",
           "numbers": [
             1,
-            5
+            10
           ],
-          "odds": 42.5,
-          "expected_return": 0.89
+          "odds": 31.5,
+          "expected_return": 0.83
         },
         {
           "type": "馬連",
@@ -1229,44 +1913,8 @@
             12,
             14
           ],
-          "odds": 20.1,
+          "odds": 19.9,
           "expected_return": 0.8
-        },
-        {
-          "type": "馬連",
-          "numbers": [
-            13,
-            14
-          ],
-          "odds": 32.0,
-          "expected_return": 0.8
-        },
-        {
-          "type": "ワイド",
-          "numbers": [
-            1,
-            10
-          ],
-          "odds": 12.1,
-          "expected_return": 0.59
-        },
-        {
-          "type": "馬連",
-          "numbers": [
-            1,
-            10
-          ],
-          "odds": 32.3,
-          "expected_return": 0.48
-        },
-        {
-          "type": "ワイド",
-          "numbers": [
-            1,
-            12
-          ],
-          "odds": 5.2,
-          "expected_return": 0.41
         },
         {
           "type": "ワイド",
@@ -1274,17 +1922,8 @@
             1,
             13
           ],
-          "odds": 8.3,
-          "expected_return": 0.41
-        },
-        {
-          "type": "馬連",
-          "numbers": [
-            1,
-            12
-          ],
-          "odds": 13.8,
-          "expected_return": 0.33
+          "odds": 7.9,
+          "expected_return": 0.71
         },
         {
           "type": "馬連",
@@ -1292,724 +1931,558 @@
             1,
             13
           ],
-          "odds": 22.0,
-          "expected_return": 0.33
+          "odds": 21.2,
+          "expected_return": 0.58
+        },
+        {
+          "type": "ワイド",
+          "numbers": [
+            1,
+            12
+          ],
+          "odds": 5.0,
+          "expected_return": 0.53
+        },
+        {
+          "type": "馬連",
+          "numbers": [
+            1,
+            12
+          ],
+          "odds": 13.3,
+          "expected_return": 0.44
         }
       ],
       "strategy_b": [
         {
-          "type": "馬単",
+          "type": "3連複",
           "numbers": [
-            1,
-            14
+            3,
+            14,
+            15
           ],
-          "odds": 142.8,
-          "expected_return": 40.3
+          "odds": 30176.0,
+          "expected_return": 58.25
         },
         {
-          "type": "馬単",
+          "type": "3連複",
+          "numbers": [
+            11,
+            14,
+            15
+          ],
+          "odds": 17252.3,
+          "expected_return": 49.21
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            2,
+            14,
+            15
+          ],
+          "odds": 23217.1,
+          "expected_return": 46.16
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            3,
+            11,
+            14
+          ],
+          "odds": 17865.4,
+          "expected_return": 45.99
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            2,
+            3,
+            14
+          ],
+          "odds": 24042.1,
+          "expected_return": 43.12
+        },
+        {
+          "type": "3連単",
           "numbers": [
             14,
-            1
+            3,
+            15
           ],
-          "odds": 142.8,
-          "expected_return": 40.3
+          "odds": 181055.9,
+          "expected_return": 42.36
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            2,
+            11,
+            14
+          ],
+          "odds": 13745.4,
+          "expected_return": 36.44
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            14,
+            11,
+            15
+          ],
+          "odds": 103513.8,
+          "expected_return": 35.79
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            8,
+            14,
+            15
+          ],
+          "odds": 7683.8,
+          "expected_return": 34.57
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            14,
+            2,
+            15
+          ],
+          "odds": 139302.5,
+          "expected_return": 33.57
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            14,
+            3,
+            11
+          ],
+          "odds": 107192.3,
+          "expected_return": 33.45
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            3,
+            8,
+            14
+          ],
+          "odds": 7956.9,
+          "expected_return": 32.31
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            1,
+            3,
+            15
+          ],
+          "odds": 20172.0,
+          "expected_return": 31.8
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            14,
+            2,
+            3
+          ],
+          "odds": 144252.8,
+          "expected_return": 31.36
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            8,
+            11,
+            14
+          ],
+          "odds": 4549.1,
+          "expected_return": 27.3
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            1,
+            11,
+            15
+          ],
+          "odds": 11532.8,
+          "expected_return": 26.87
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            14,
+            2,
+            11
+          ],
+          "odds": 82472.6,
+          "expected_return": 26.5
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            2,
+            8,
+            14
+          ],
+          "odds": 6121.9,
+          "expected_return": 25.6
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            1,
+            2,
+            15
+          ],
+          "odds": 15520.1,
+          "expected_return": 25.2
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            14,
+            8,
+            15
+          ],
+          "odds": 46102.8,
+          "expected_return": 25.14
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            1,
+            3,
+            11
+          ],
+          "odds": 11942.6,
+          "expected_return": 25.11
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            1,
+            2,
+            3
+          ],
+          "odds": 16071.6,
+          "expected_return": 23.55
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            14,
+            3,
+            8
+          ],
+          "odds": 47741.1,
+          "expected_return": 23.5
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            1,
+            3,
+            15
+          ],
+          "odds": 121031.9,
+          "expected_return": 23.13
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            1,
+            2,
+            11
+          ],
+          "odds": 9188.5,
+          "expected_return": 19.9
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            14,
+            8,
+            11
+          ],
+          "odds": 27294.7,
+          "expected_return": 19.86
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            1,
+            11,
+            15
+          ],
+          "odds": 69196.7,
+          "expected_return": 19.54
         },
         {
           "type": "3連複",
           "numbers": [
             1,
             8,
-            14
+            15
           ],
-          "odds": 712.3,
-          "expected_return": 24.39
+          "odds": 5136.5,
+          "expected_return": 18.88
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            14,
+            2,
+            8
+          ],
+          "odds": 36731.5,
+          "expected_return": 18.62
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            1,
+            2,
+            15
+          ],
+          "odds": 93120.7,
+          "expected_return": 18.33
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            1,
+            3,
+            11
+          ],
+          "odds": 71655.7,
+          "expected_return": 18.26
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            1,
+            3,
+            8
+          ],
+          "odds": 5319.0,
+          "expected_return": 17.64
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            1,
+            2,
+            3
+          ],
+          "odds": 96429.9,
+          "expected_return": 17.13
+        },
+        {
+          "type": "馬単",
+          "numbers": [
+            14,
+            15
+          ],
+          "odds": 1553.3,
+          "expected_return": 15.48
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            1,
+            8,
+            11
+          ],
+          "odds": 3041.0,
+          "expected_return": 14.91
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            1,
+            2,
+            11
+          ],
+          "odds": 55131.1,
+          "expected_return": 14.47
+        },
+        {
+          "type": "馬単",
+          "numbers": [
+            14,
+            3
+          ],
+          "odds": 1608.5,
+          "expected_return": 14.47
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            1,
+            2,
+            8
+          ],
+          "odds": 4092.4,
+          "expected_return": 13.98
         },
         {
           "type": "3連単",
           "numbers": [
             1,
             8,
-            14
+            15
           ],
-          "odds": 4274.0,
-          "expected_return": 17.74
+          "odds": 30818.7,
+          "expected_return": 13.73
         },
         {
           "type": "3連単",
           "numbers": [
+            1,
+            3,
+            8
+          ],
+          "odds": 31913.9,
+          "expected_return": 12.83
+        },
+        {
+          "type": "馬単",
+          "numbers": [
             14,
+            11
+          ],
+          "odds": 919.6,
+          "expected_return": 12.22
+        },
+        {
+          "type": "馬単",
+          "numbers": [
+            14,
+            2
+          ],
+          "odds": 1237.6,
+          "expected_return": 11.46
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            1,
+            8,
+            11
+          ],
+          "odds": 18245.9,
+          "expected_return": 10.84
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            1,
+            2,
+            8
+          ],
+          "odds": 24554.2,
+          "expected_return": 10.17
+        },
+        {
+          "type": "馬単",
+          "numbers": [
+            14,
+            8
+          ],
+          "odds": 409.6,
+          "expected_return": 8.59
+        },
+        {
+          "type": "馬単",
+          "numbers": [
+            1,
+            15
+          ],
+          "odds": 1038.4,
+          "expected_return": 8.45
+        },
+        {
+          "type": "馬単",
+          "numbers": [
+            1,
+            3
+          ],
+          "odds": 1075.3,
+          "expected_return": 7.9
+        },
+        {
+          "type": "馬単",
+          "numbers": [
+            1,
+            11
+          ],
+          "odds": 614.8,
+          "expected_return": 6.68
+        },
+        {
+          "type": "馬単",
+          "numbers": [
+            1,
+            2
+          ],
+          "odds": 827.3,
+          "expected_return": 6.26
+        },
+        {
+          "type": "馬単",
+          "numbers": [
             1,
             8
           ],
-          "odds": 4274.0,
-          "expected_return": 17.74
+          "odds": 273.8,
+          "expected_return": 4.69
         },
         {
           "type": "単勝",
           "numbers": [
-            14
+            15
           ],
-          "odds": 18.6,
-          "expected_return": 9.83
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            1,
-            7,
-            14
-          ],
-          "odds": 596.2,
-          "expected_return": 7.1
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            1,
-            6,
-            14
-          ],
-          "odds": 481.9,
-          "expected_return": 5.76
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            1,
-            9,
-            14
-          ],
-          "odds": 321.9,
-          "expected_return": 5.76
-        },
-        {
-          "type": "馬単",
-          "numbers": [
-            14,
-            8
-          ],
-          "odds": 417.4,
-          "expected_return": 5.41
-        },
-        {
-          "type": "3連単",
-          "numbers": [
-            1,
-            7,
-            14
-          ],
-          "odds": 3576.9,
-          "expected_return": 5.16
-        },
-        {
-          "type": "3連単",
-          "numbers": [
-            14,
-            1,
-            7
-          ],
-          "odds": 3576.9,
-          "expected_return": 5.16
-        },
-        {
-          "type": "3連単",
-          "numbers": [
-            1,
-            6,
-            14
-          ],
-          "odds": 2891.2,
-          "expected_return": 4.19
-        },
-        {
-          "type": "3連単",
-          "numbers": [
-            1,
-            9,
-            14
-          ],
-          "odds": 1931.3,
-          "expected_return": 4.19
-        },
-        {
-          "type": "3連単",
-          "numbers": [
-            14,
-            1,
-            6
-          ],
-          "odds": 2891.2,
-          "expected_return": 4.19
-        },
-        {
-          "type": "3連単",
-          "numbers": [
-            14,
-            1,
-            9
-          ],
-          "odds": 1931.3,
-          "expected_return": 4.19
+          "odds": 140.7,
+          "expected_return": 3.66
         },
         {
           "type": "単勝",
           "numbers": [
-            1
+            3
           ],
-          "odds": 12.8,
-          "expected_return": 4.1
+          "odds": 145.7,
+          "expected_return": 3.42
         },
         {
-          "type": "3連複",
+          "type": "単勝",
           "numbers": [
-            1,
-            4,
-            14
+            11
           ],
-          "odds": 331.4,
-          "expected_return": 3.99
+          "odds": 83.3,
+          "expected_return": 2.89
         },
         {
-          "type": "3連単",
+          "type": "単勝",
           "numbers": [
-            1,
-            4,
-            14
+            2
           ],
-          "odds": 1988.4,
-          "expected_return": 2.9
-        },
-        {
-          "type": "3連単",
-          "numbers": [
-            14,
-            1,
-            4
-          ],
-          "odds": 1988.4,
-          "expected_return": 2.9
-        },
-        {
-          "type": "馬単",
-          "numbers": [
-            1,
-            8
-          ],
-          "odds": 287.2,
-          "expected_return": 2.25
-        },
-        {
-          "type": "馬単",
-          "numbers": [
-            14,
-            7
-          ],
-          "odds": 349.3,
-          "expected_return": 1.57
-        },
-        {
-          "type": "馬単",
-          "numbers": [
-            14,
-            6
-          ],
-          "odds": 282.3,
-          "expected_return": 1.28
-        },
-        {
-          "type": "馬単",
-          "numbers": [
-            14,
-            9
-          ],
-          "odds": 188.6,
-          "expected_return": 1.28
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            7,
-            8,
-            14
-          ],
-          "odds": 1741.9,
-          "expected_return": 0.96
-        },
-        {
-          "type": "馬単",
-          "numbers": [
-            14,
-            4
-          ],
-          "odds": 194.2,
-          "expected_return": 0.88
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            6,
-            8,
-            14
-          ],
-          "odds": 1408.0,
-          "expected_return": 0.77
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            8,
-            9,
-            14
-          ],
-          "odds": 940.5,
-          "expected_return": 0.77
-        },
-        {
-          "type": "3連単",
-          "numbers": [
-            14,
-            7,
-            8
-          ],
-          "odds": 10451.3,
-          "expected_return": 0.7
-        },
-        {
-          "type": "馬単",
-          "numbers": [
-            1,
-            7
-          ],
-          "odds": 240.4,
-          "expected_return": 0.66
-        },
-        {
-          "type": "3連単",
-          "numbers": [
-            14,
-            6,
-            8
-          ],
-          "odds": 8447.9,
-          "expected_return": 0.56
-        },
-        {
-          "type": "3連単",
-          "numbers": [
-            14,
-            8,
-            9
-          ],
-          "odds": 5643.0,
-          "expected_return": 0.56
+          "odds": 112.1,
+          "expected_return": 2.71
         },
         {
           "type": "単勝",
           "numbers": [
             8
           ],
-          "odds": 37.4,
-          "expected_return": 0.55
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            4,
-            8,
-            14
-          ],
-          "odds": 968.3,
-          "expected_return": 0.54
-        },
-        {
-          "type": "馬単",
-          "numbers": [
-            1,
-            6
-          ],
-          "odds": 194.3,
-          "expected_return": 0.53
-        },
-        {
-          "type": "馬単",
-          "numbers": [
-            1,
-            9
-          ],
-          "odds": 129.8,
-          "expected_return": 0.53
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            1,
-            7,
-            8
-          ],
-          "odds": 1198.7,
-          "expected_return": 0.4
-        },
-        {
-          "type": "3連単",
-          "numbers": [
-            14,
-            4,
-            8
-          ],
-          "odds": 5810.0,
-          "expected_return": 0.39
-        },
-        {
-          "type": "馬単",
-          "numbers": [
-            1,
-            4
-          ],
-          "odds": 133.6,
-          "expected_return": 0.37
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            1,
-            6,
-            8
-          ],
-          "odds": 968.9,
-          "expected_return": 0.32
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            1,
-            8,
-            9
-          ],
-          "odds": 647.2,
-          "expected_return": 0.32
-        },
-        {
-          "type": "3連単",
-          "numbers": [
-            1,
-            7,
-            8
-          ],
-          "odds": 7192.3,
-          "expected_return": 0.29
-        },
-        {
-          "type": "3連単",
-          "numbers": [
-            1,
-            6,
-            8
-          ],
-          "odds": 5813.6,
-          "expected_return": 0.23
-        },
-        {
-          "type": "3連単",
-          "numbers": [
-            1,
-            8,
-            9
-          ],
-          "odds": 3883.4,
-          "expected_return": 0.23
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            1,
-            4,
-            8
-          ],
-          "odds": 666.4,
-          "expected_return": 0.22
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            6,
-            7,
-            14
-          ],
-          "odds": 1178.3,
-          "expected_return": 0.22
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            7,
-            9,
-            14
-          ],
-          "odds": 787.1,
-          "expected_return": 0.22
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            6,
-            9,
-            14
-          ],
-          "odds": 636.2,
-          "expected_return": 0.19
-        },
-        {
-          "type": "3連単",
-          "numbers": [
-            1,
-            4,
-            8
-          ],
-          "odds": 3998.3,
-          "expected_return": 0.16
-        },
-        {
-          "type": "単勝",
-          "numbers": [
-            7
-          ],
-          "odds": 31.3,
-          "expected_return": 0.16
-        },
-        {
-          "type": "3連単",
-          "numbers": [
-            14,
-            6,
-            7
-          ],
-          "odds": 7070.0,
-          "expected_return": 0.16
-        },
-        {
-          "type": "3連単",
-          "numbers": [
-            14,
-            7,
-            9
-          ],
-          "odds": 4722.6,
-          "expected_return": 0.16
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            4,
-            7,
-            14
-          ],
-          "odds": 810.4,
-          "expected_return": 0.15
-        },
-        {
-          "type": "3連単",
-          "numbers": [
-            14,
-            6,
-            9
-          ],
-          "odds": 3817.3,
-          "expected_return": 0.14
-        },
-        {
-          "type": "単勝",
-          "numbers": [
-            6
-          ],
-          "odds": 25.3,
-          "expected_return": 0.13
-        },
-        {
-          "type": "単勝",
-          "numbers": [
-            9
-          ],
-          "odds": 16.9,
-          "expected_return": 0.13
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            4,
-            6,
-            14
-          ],
-          "odds": 655.0,
-          "expected_return": 0.13
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            4,
-            9,
-            14
-          ],
-          "odds": 437.6,
-          "expected_return": 0.13
-        },
-        {
-          "type": "3連単",
-          "numbers": [
-            14,
-            4,
-            7
-          ],
-          "odds": 4862.4,
-          "expected_return": 0.11
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            1,
-            6,
-            7
-          ],
-          "odds": 810.9,
-          "expected_return": 0.1
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            1,
-            7,
-            9
-          ],
-          "odds": 541.7,
-          "expected_return": 0.1
-        },
-        {
-          "type": "3連単",
-          "numbers": [
-            14,
-            4,
-            6
-          ],
-          "odds": 3930.3,
-          "expected_return": 0.1
-        },
-        {
-          "type": "3連単",
-          "numbers": [
-            14,
-            4,
-            9
-          ],
-          "odds": 2625.4,
-          "expected_return": 0.1
-        },
-        {
-          "type": "単勝",
-          "numbers": [
-            4
-          ],
-          "odds": 17.4,
-          "expected_return": 0.09
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            1,
-            6,
-            9
-          ],
-          "odds": 437.8,
-          "expected_return": 0.08
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            1,
-            4,
-            7
-          ],
-          "odds": 557.7,
-          "expected_return": 0.07
-        },
-        {
-          "type": "3連単",
-          "numbers": [
-            1,
-            6,
-            7
-          ],
-          "odds": 4865.4,
-          "expected_return": 0.07
-        },
-        {
-          "type": "3連単",
-          "numbers": [
-            1,
-            7,
-            9
-          ],
-          "odds": 3250.0,
-          "expected_return": 0.07
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            1,
-            4,
-            6
-          ],
-          "odds": 450.8,
-          "expected_return": 0.06
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            1,
-            4,
-            9
-          ],
-          "odds": 301.1,
-          "expected_return": 0.06
-        },
-        {
-          "type": "3連単",
-          "numbers": [
-            1,
-            6,
-            9
-          ],
-          "odds": 2627.0,
-          "expected_return": 0.06
-        },
-        {
-          "type": "3連単",
-          "numbers": [
-            1,
-            4,
-            7
-          ],
-          "odds": 3346.1,
-          "expected_return": 0.05
-        },
-        {
-          "type": "3連単",
-          "numbers": [
-            1,
-            4,
-            6
-          ],
-          "odds": 2704.7,
-          "expected_return": 0.04
-        },
-        {
-          "type": "3連単",
-          "numbers": [
-            1,
-            4,
-            9
-          ],
-          "odds": 1806.7,
-          "expected_return": 0.04
+          "odds": 37.1,
+          "expected_return": 2.03
         }
       ]
     }
@@ -2089,8 +2562,8 @@
         "jockey": "ルメール",
         "odds": 3.9,
         "popularity": 2,
-        "win_probability": 0.006,
-        "expected_return": 0.02,
+        "win_probability": 0.036,
+        "expected_return": 0.14,
         "score_si": 0.61,
         "classification": "危険な人気馬",
         "weight": 484,
@@ -2105,8 +2578,8 @@
         "jockey": "戸崎圭",
         "odds": 14.5,
         "popularity": 5,
-        "win_probability": 0.078,
-        "expected_return": 1.13,
+        "win_probability": 0.101,
+        "expected_return": 1.46,
         "score_si": 1.35,
         "classification": "絶対軸",
         "weight": 510,
@@ -2121,8 +2594,8 @@
         "jockey": "岩田康",
         "odds": 16.7,
         "popularity": 7,
-        "win_probability": 0.005,
-        "expected_return": 0.08,
+        "win_probability": 0.027,
+        "expected_return": 0.46,
         "score_si": 0.41,
         "classification": "一般馬",
         "weight": 474,
@@ -2137,8 +2610,8 @@
         "jockey": "松岡",
         "odds": 37.5,
         "popularity": 10,
-        "win_probability": 0.06,
-        "expected_return": 2.26,
+        "win_probability": 0.091,
+        "expected_return": 3.4,
         "score_si": 1.27,
         "classification": "絶対軸",
         "weight": 520,
@@ -2153,8 +2626,8 @@
         "jockey": "鮫島駿",
         "odds": 2.9,
         "popularity": 1,
-        "win_probability": 0.014,
-        "expected_return": 0.04,
+        "win_probability": 0.05,
+        "expected_return": 0.14,
         "score_si": 0.84,
         "classification": "危険な人気馬",
         "weight": 528,
@@ -2169,8 +2642,8 @@
         "jockey": "柴田善",
         "odds": 329.3,
         "popularity": 15,
-        "win_probability": 0.008,
-        "expected_return": 2.55,
+        "win_probability": 0.04,
+        "expected_return": 13.14,
         "score_si": 0.68,
         "classification": "高EV伏兵",
         "weight": 508,
@@ -2185,10 +2658,10 @@
         "jockey": "菅原明",
         "odds": 147.4,
         "popularity": 14,
-        "win_probability": 0.005,
-        "expected_return": 0.74,
+        "win_probability": 0.01,
+        "expected_return": 1.46,
         "score_si": -0.33,
-        "classification": "一般馬",
+        "classification": "高EV伏兵",
         "weight": 520,
         "weight_change": "0",
         "last_3f": 36.3,
@@ -2201,8 +2674,8 @@
         "jockey": "太宰",
         "odds": 86.2,
         "popularity": 13,
-        "win_probability": 0.017,
-        "expected_return": 1.44,
+        "win_probability": 0.054,
+        "expected_return": 4.67,
         "score_si": 0.9,
         "classification": "高EV伏兵",
         "weight": 468,
@@ -2217,8 +2690,8 @@
         "jockey": "佐々木",
         "odds": 14.6,
         "popularity": 6,
-        "win_probability": 0.014,
-        "expected_return": 0.2,
+        "win_probability": 0.05,
+        "expected_return": 0.73,
         "score_si": 0.84,
         "classification": "一般馬",
         "weight": 514,
@@ -2233,10 +2706,10 @@
         "jockey": "横山和",
         "odds": 29.5,
         "popularity": 9,
-        "win_probability": 0.022,
-        "expected_return": 0.65,
+        "win_probability": 0.061,
+        "expected_return": 1.79,
         "score_si": 0.98,
-        "classification": "一般馬",
+        "classification": "高EV伏兵",
         "weight": 458,
         "weight_change": "+前計不",
         "last_3f": "-",
@@ -2249,8 +2722,8 @@
         "jockey": "横山武",
         "odds": 50.2,
         "popularity": 12,
-        "win_probability": 0.028,
-        "expected_return": 1.4,
+        "win_probability": 0.067,
+        "expected_return": 3.34,
         "score_si": 1.05,
         "classification": "高EV伏兵",
         "weight": 456,
@@ -2265,8 +2738,8 @@
         "jockey": "大野",
         "odds": 423.3,
         "popularity": 16,
-        "win_probability": 0.005,
-        "expected_return": 2.12,
+        "win_probability": 0.031,
+        "expected_return": 13.21,
         "score_si": 0.5,
         "classification": "高EV伏兵",
         "weight": 494,
@@ -2281,10 +2754,10 @@
         "jockey": "北村友",
         "odds": 24.6,
         "popularity": 8,
-        "win_probability": 0.026,
-        "expected_return": 0.64,
+        "win_probability": 0.065,
+        "expected_return": 1.6,
         "score_si": 1.03,
-        "classification": "一般馬",
+        "classification": "高EV伏兵",
         "weight": 520,
         "weight_change": "0",
         "last_3f": 32.9,
@@ -2297,8 +2770,8 @@
         "jockey": "川田",
         "odds": 5.6,
         "popularity": 3,
-        "win_probability": 0.005,
-        "expected_return": 0.03,
+        "win_probability": 0.032,
+        "expected_return": 0.18,
         "score_si": 0.52,
         "classification": "一般馬",
         "weight": 494,
@@ -2313,8 +2786,8 @@
         "jockey": "松山",
         "odds": 8.7,
         "popularity": 4,
-        "win_probability": 0.706,
-        "expected_return": 6.15,
+        "win_probability": 0.243,
+        "expected_return": 2.11,
         "score_si": 1.99,
         "classification": "絶対軸",
         "weight": 502,
@@ -2329,10 +2802,10 @@
         "jockey": "田辺",
         "odds": 45.2,
         "popularity": 11,
-        "win_probability": 0.009,
-        "expected_return": 0.41,
+        "win_probability": 0.043,
+        "expected_return": 1.92,
         "score_si": 0.73,
-        "classification": "一般馬",
+        "classification": "高EV伏兵",
         "weight": 486,
         "weight_change": "-10",
         "last_3f": 34.3,
@@ -2346,135 +2819,10 @@
           "type": "ワイド",
           "numbers": [
             4,
-            15
-          ],
-          "odds": 48.9,
-          "expected_return": 15.29
-        },
-        {
-          "type": "馬連",
-          "numbers": [
-            4,
-            15
-          ],
-          "odds": 130.5,
-          "expected_return": 12.51
-        },
-        {
-          "type": "ワイド",
-          "numbers": [
-            8,
-            15
-          ],
-          "odds": 112.5,
-          "expected_return": 9.74
-        },
-        {
-          "type": "ワイド",
-          "numbers": [
-            11,
-            15
-          ],
-          "odds": 65.5,
-          "expected_return": 9.47
-        },
-        {
-          "type": "馬連",
-          "numbers": [
-            8,
-            15
-          ],
-          "odds": 300.0,
-          "expected_return": 7.97
-        },
-        {
-          "type": "馬連",
-          "numbers": [
-            11,
-            15
-          ],
-          "odds": 174.7,
-          "expected_return": 7.75
-        },
-        {
-          "type": "ワイド",
-          "numbers": [
-            2,
-            15
-          ],
-          "odds": 18.9,
-          "expected_return": 7.64
-        },
-        {
-          "type": "馬連",
-          "numbers": [
-            2,
-            15
-          ],
-          "odds": 50.5,
-          "expected_return": 6.25
-        },
-        {
-          "type": "単勝",
-          "numbers": [
-            15
-          ],
-          "odds": 8.7,
-          "expected_return": 6.15
-        },
-        {
-          "type": "ワイド",
-          "numbers": [
-            10,
-            15
-          ],
-          "odds": 38.5,
-          "expected_return": 4.4
-        },
-        {
-          "type": "ワイド",
-          "numbers": [
-            13,
-            15
-          ],
-          "odds": 32.1,
-          "expected_return": 4.33
-        },
-        {
-          "type": "馬連",
-          "numbers": [
-            10,
-            15
-          ],
-          "odds": 102.7,
-          "expected_return": 3.6
-        },
-        {
-          "type": "ワイド",
-          "numbers": [
-            4,
             8
           ],
           "odds": 484.9,
-          "expected_return": 3.58
-        },
-        {
-          "type": "馬連",
-          "numbers": [
-            13,
-            15
-          ],
-          "odds": 85.6,
-          "expected_return": 3.54
-        },
-        {
-          "type": "ワイド",
-          "numbers": [
-            4,
-            11
-          ],
-          "odds": 282.4,
-          "expected_return": 3.48
+          "expected_return": 17.47
         },
         {
           "type": "馬連",
@@ -2483,7 +2831,25 @@
             8
           ],
           "odds": 1293.0,
-          "expected_return": 2.93
+          "expected_return": 14.29
+        },
+        {
+          "type": "ワイド",
+          "numbers": [
+            4,
+            11
+          ],
+          "odds": 282.4,
+          "expected_return": 12.49
+        },
+        {
+          "type": "ワイド",
+          "numbers": [
+            8,
+            15
+          ],
+          "odds": 112.5,
+          "expected_return": 10.84
         },
         {
           "type": "馬連",
@@ -2492,33 +2858,34 @@
             11
           ],
           "odds": 753.0,
-          "expected_return": 2.85
-        },
-        {
-          "type": "ワイド",
-          "numbers": [
-            2,
-            4
-          ],
-          "odds": 81.6,
-          "expected_return": 2.81
+          "expected_return": 10.22
         },
         {
           "type": "馬連",
           "numbers": [
-            2,
-            4
+            8,
+            15
           ],
-          "odds": 217.5,
-          "expected_return": 2.3
+          "odds": 300.0,
+          "expected_return": 8.87
         },
         {
-          "type": "単勝",
+          "type": "ワイド",
           "numbers": [
-            4
+            4,
+            15
           ],
-          "odds": 37.5,
-          "expected_return": 2.26
+          "odds": 48.9,
+          "expected_return": 7.89
+        },
+        {
+          "type": "ワイド",
+          "numbers": [
+            11,
+            15
+          ],
+          "odds": 65.5,
+          "expected_return": 7.75
         },
         {
           "type": "ワイド",
@@ -2527,16 +2894,7 @@
             8
           ],
           "odds": 187.5,
-          "expected_return": 1.79
-        },
-        {
-          "type": "ワイド",
-          "numbers": [
-            2,
-            11
-          ],
-          "odds": 109.2,
-          "expected_return": 1.74
+          "expected_return": 7.5
         },
         {
           "type": "ワイド",
@@ -2545,16 +2903,25 @@
             10
           ],
           "odds": 165.9,
-          "expected_return": 1.62
+          "expected_return": 6.69
         },
         {
-          "type": "ワイド",
+          "type": "馬連",
           "numbers": [
             4,
-            13
+            15
           ],
-          "odds": 138.4,
-          "expected_return": 1.59
+          "odds": 130.5,
+          "expected_return": 6.46
+        },
+        {
+          "type": "馬連",
+          "numbers": [
+            11,
+            15
+          ],
+          "odds": 174.7,
+          "expected_return": 6.34
         },
         {
           "type": "馬連",
@@ -2563,16 +2930,16 @@
             8
           ],
           "odds": 500.0,
-          "expected_return": 1.46
+          "expected_return": 6.14
         },
         {
-          "type": "馬連",
+          "type": "ワイド",
           "numbers": [
-            2,
-            11
+            4,
+            13
           ],
-          "odds": 291.2,
-          "expected_return": 1.42
+          "odds": 138.4,
+          "expected_return": 5.98
         },
         {
           "type": "馬連",
@@ -2581,7 +2948,25 @@
             10
           ],
           "odds": 442.5,
-          "expected_return": 1.32
+          "expected_return": 5.48
+        },
+        {
+          "type": "ワイド",
+          "numbers": [
+            2,
+            4
+          ],
+          "odds": 81.6,
+          "expected_return": 5.46
+        },
+        {
+          "type": "ワイド",
+          "numbers": [
+            2,
+            11
+          ],
+          "odds": 109.2,
+          "expected_return": 5.36
         },
         {
           "type": "馬連",
@@ -2590,15 +2975,78 @@
             13
           ],
           "odds": 369.0,
-          "expected_return": 1.3
+          "expected_return": 4.9
+        },
+        {
+          "type": "馬連",
+          "numbers": [
+            2,
+            4
+          ],
+          "odds": 217.5,
+          "expected_return": 4.47
+        },
+        {
+          "type": "馬連",
+          "numbers": [
+            2,
+            11
+          ],
+          "odds": 291.2,
+          "expected_return": 4.39
+        },
+        {
+          "type": "ワイド",
+          "numbers": [
+            10,
+            15
+          ],
+          "odds": 38.5,
+          "expected_return": 4.15
+        },
+        {
+          "type": "ワイド",
+          "numbers": [
+            13,
+            15
+          ],
+          "odds": 32.1,
+          "expected_return": 3.71
         },
         {
           "type": "単勝",
           "numbers": [
-            2
+            4
           ],
-          "odds": 14.5,
-          "expected_return": 1.13
+          "odds": 37.5,
+          "expected_return": 3.4
+        },
+        {
+          "type": "馬連",
+          "numbers": [
+            10,
+            15
+          ],
+          "odds": 102.7,
+          "expected_return": 3.4
+        },
+        {
+          "type": "ワイド",
+          "numbers": [
+            2,
+            15
+          ],
+          "odds": 18.9,
+          "expected_return": 3.39
+        },
+        {
+          "type": "馬連",
+          "numbers": [
+            13,
+            15
+          ],
+          "odds": 85.6,
+          "expected_return": 3.04
         },
         {
           "type": "ワイド",
@@ -2607,7 +3055,16 @@
             10
           ],
           "odds": 64.2,
-          "expected_return": 0.81
+          "expected_return": 2.87
+        },
+        {
+          "type": "馬連",
+          "numbers": [
+            2,
+            15
+          ],
+          "odds": 50.5,
+          "expected_return": 2.77
         },
         {
           "type": "ワイド",
@@ -2616,7 +3073,7 @@
             13
           ],
           "odds": 53.5,
-          "expected_return": 0.8
+          "expected_return": 2.57
         },
         {
           "type": "馬連",
@@ -2625,7 +3082,15 @@
             10
           ],
           "odds": 171.1,
-          "expected_return": 0.66
+          "expected_return": 2.35
+        },
+        {
+          "type": "単勝",
+          "numbers": [
+            15
+          ],
+          "odds": 8.7,
+          "expected_return": 2.11
         },
         {
           "type": "馬連",
@@ -2634,129 +3099,18 @@
             13
           ],
           "odds": 142.7,
-          "expected_return": 0.65
+          "expected_return": 2.1
+        },
+        {
+          "type": "単勝",
+          "numbers": [
+            2
+          ],
+          "odds": 14.5,
+          "expected_return": 1.46
         }
       ],
       "strategy_b": [
-        {
-          "type": "3連複",
-          "numbers": [
-            6,
-            12,
-            15
-          ],
-          "odds": 97017.3,
-          "expected_return": 36.58
-        },
-        {
-          "type": "3連単",
-          "numbers": [
-            15,
-            6,
-            12
-          ],
-          "odds": 582103.9,
-          "expected_return": 26.6
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            6,
-            8,
-            15
-          ],
-          "odds": 19756.4,
-          "expected_return": 24.84
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            6,
-            11,
-            15
-          ],
-          "odds": 11505.5,
-          "expected_return": 24.16
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            8,
-            12,
-            15
-          ],
-          "odds": 25396.0,
-          "expected_return": 20.65
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            11,
-            12,
-            15
-          ],
-          "odds": 14789.8,
-          "expected_return": 20.08
-        },
-        {
-          "type": "3連単",
-          "numbers": [
-            15,
-            6,
-            8
-          ],
-          "odds": 118538.5,
-          "expected_return": 18.06
-        },
-        {
-          "type": "3連単",
-          "numbers": [
-            15,
-            6,
-            11
-          ],
-          "odds": 69032.9,
-          "expected_return": 17.57
-        },
-        {
-          "type": "馬単",
-          "numbers": [
-            15,
-            6
-          ],
-          "odds": 1718.9,
-          "expected_return": 15.68
-        },
-        {
-          "type": "3連単",
-          "numbers": [
-            15,
-            8,
-            12
-          ],
-          "odds": 152375.8,
-          "expected_return": 15.02
-        },
-        {
-          "type": "3連単",
-          "numbers": [
-            15,
-            11,
-            12
-          ],
-          "odds": 88738.6,
-          "expected_return": 14.6
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            8,
-            11,
-            15
-          ],
-          "odds": 3011.8,
-          "expected_return": 13.64
-        },
         {
           "type": "3連複",
           "numbers": [
@@ -2765,26 +3119,7 @@
             12
           ],
           "odds": 418178.1,
-          "expected_return": 13.44
-        },
-        {
-          "type": "馬単",
-          "numbers": [
-            15,
-            12
-          ],
-          "odds": 2209.6,
-          "expected_return": 13.04
-        },
-        {
-          "type": "3連単",
-          "numbers": [
-            15,
-            8,
-            11
-          ],
-          "odds": 18070.6,
-          "expected_return": 9.92
+          "expected_return": 649.19
         },
         {
           "type": "3連単",
@@ -2794,65 +3129,27 @@
             12
           ],
           "odds": 2509068.4,
-          "expected_return": 9.78
+          "expected_return": 472.14
         },
         {
           "type": "3連複",
           "numbers": [
-            4,
             6,
-            8
+            12,
+            15
           ],
-          "odds": 85157.0,
-          "expected_return": 9.13
+          "odds": 97017.3,
+          "expected_return": 402.88
         },
         {
-          "type": "3連複",
-          "numbers": [
-            4,
-            6,
-            11
-          ],
-          "odds": 49592.6,
-          "expected_return": 8.88
-        },
-        {
-          "type": "馬単",
+          "type": "3連単",
           "numbers": [
             15,
-            8
-          ],
-          "odds": 450.0,
-          "expected_return": 8.86
-        },
-        {
-          "type": "馬単",
-          "numbers": [
-            15,
-            11
-          ],
-          "odds": 262.0,
-          "expected_return": 8.61
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            4,
-            8,
+            6,
             12
           ],
-          "odds": 109465.4,
-          "expected_return": 7.59
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            4,
-            11,
-            12
-          ],
-          "odds": 63749.0,
-          "expected_return": 7.38
+          "odds": 582103.9,
+          "expected_return": 293.0
         },
         {
           "type": "3連複",
@@ -2862,66 +3159,27 @@
             12
           ],
           "odds": 161695.5,
-          "expected_return": 6.72
-        },
-        {
-          "type": "3連単",
-          "numbers": [
-            4,
-            6,
-            8
-          ],
-          "odds": 510941.9,
-          "expected_return": 6.64
-        },
-        {
-          "type": "3連単",
-          "numbers": [
-            4,
-            6,
-            11
-          ],
-          "odds": 297555.5,
-          "expected_return": 6.46
-        },
-        {
-          "type": "馬単",
-          "numbers": [
-            4,
-            6
-          ],
-          "odds": 7409.2,
-          "expected_return": 5.76
-        },
-        {
-          "type": "3連単",
-          "numbers": [
-            4,
-            8,
-            12
-          ],
-          "odds": 656792.3,
-          "expected_return": 5.52
-        },
-        {
-          "type": "3連単",
-          "numbers": [
-            4,
-            11,
-            12
-          ],
-          "odds": 382493.9,
-          "expected_return": 5.37
+          "expected_return": 278.77
         },
         {
           "type": "3連複",
           "numbers": [
             4,
             8,
-            11
+            12
           ],
-          "odds": 12981.7,
-          "expected_return": 5.02
+          "odds": 109465.4,
+          "expected_return": 230.73
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            4,
+            6,
+            8
+          ],
+          "odds": 85157.0,
+          "expected_return": 229.5
         },
         {
           "type": "3連単",
@@ -2931,36 +3189,127 @@
             12
           ],
           "odds": 970173.1,
-          "expected_return": 4.89
+          "expected_return": 202.74
         },
         {
-          "type": "馬単",
+          "type": "3連単",
           "numbers": [
             4,
+            8,
             12
           ],
-          "odds": 9524.2,
-          "expected_return": 4.79
+          "odds": 656792.3,
+          "expected_return": 167.8
         },
         {
-          "type": "3連複",
+          "type": "3連単",
           "numbers": [
-            2,
+            4,
             6,
             8
           ],
-          "odds": 32927.4,
-          "expected_return": 4.57
+          "odds": 510941.9,
+          "expected_return": 166.91
         },
         {
           "type": "3連複",
           "numbers": [
-            2,
+            4,
+            11,
+            12
+          ],
+          "odds": 63749.0,
+          "expected_return": 165.01
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            4,
             6,
             11
           ],
-          "odds": 19175.8,
-          "expected_return": 4.43
+          "odds": 49592.6,
+          "expected_return": 164.14
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            8,
+            12,
+            15
+          ],
+          "odds": 25396.0,
+          "expected_return": 143.19
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            6,
+            8,
+            15
+          ],
+          "odds": 19756.4,
+          "expected_return": 142.43
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            4,
+            11,
+            12
+          ],
+          "odds": 382493.9,
+          "expected_return": 120.01
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            4,
+            6,
+            11
+          ],
+          "odds": 297555.5,
+          "expected_return": 119.38
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            15,
+            8,
+            12
+          ],
+          "odds": 152375.8,
+          "expected_return": 104.14
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            15,
+            6,
+            8
+          ],
+          "odds": 118538.5,
+          "expected_return": 103.58
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            11,
+            12,
+            15
+          ],
+          "odds": 14789.8,
+          "expected_return": 102.41
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            6,
+            11,
+            15
+          ],
+          "odds": 11505.5,
+          "expected_return": 101.86
         },
         {
           "type": "3連複",
@@ -2970,74 +3319,107 @@
             12
           ],
           "odds": 42326.6,
-          "expected_return": 3.8
+          "expected_return": 99.08
         },
         {
           "type": "3連複",
           "numbers": [
             2,
+            6,
+            8
+          ],
+          "odds": 32927.4,
+          "expected_return": 98.55
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            4,
+            12,
+            16
+          ],
+          "odds": 57399.5,
+          "expected_return": 94.85
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            4,
+            6,
+            16
+          ],
+          "odds": 44653.1,
+          "expected_return": 94.36
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            4,
+            10,
+            12
+          ],
+          "odds": 37462.1,
+          "expected_return": 88.44
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            4,
+            6,
+            10
+          ],
+          "odds": 29143.0,
+          "expected_return": 87.97
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            4,
+            12,
+            13
+          ],
+          "odds": 31239.5,
+          "expected_return": 79.05
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            4,
+            6,
+            13
+          ],
+          "odds": 24302.3,
+          "expected_return": 78.63
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            15,
             11,
             12
           ],
-          "odds": 24649.6,
-          "expected_return": 3.69
+          "odds": 88738.6,
+          "expected_return": 74.48
         },
         {
           "type": "3連単",
           "numbers": [
-            4,
-            8,
-            11
-          ],
-          "odds": 77890.3,
-          "expected_return": 3.65
-        },
-        {
-          "type": "3連単",
-          "numbers": [
-            2,
-            6,
-            8
-          ],
-          "odds": 197564.2,
-          "expected_return": 3.32
-        },
-        {
-          "type": "馬単",
-          "numbers": [
-            4,
-            8
-          ],
-          "odds": 1939.5,
-          "expected_return": 3.25
-        },
-        {
-          "type": "3連単",
-          "numbers": [
-            2,
+            15,
             6,
             11
           ],
-          "odds": 115054.8,
-          "expected_return": 3.22
+          "odds": 69032.9,
+          "expected_return": 74.08
         },
         {
-          "type": "馬単",
+          "type": "3連複",
           "numbers": [
             4,
-            11
+            7,
+            12
           ],
-          "odds": 1129.5,
-          "expected_return": 3.16
-        },
-        {
-          "type": "馬単",
-          "numbers": [
-            2,
-            6
-          ],
-          "odds": 2864.9,
-          "expected_return": 2.88
+          "odds": 187183.3,
+          "expected_return": 72.13
         },
         {
           "type": "3連単",
@@ -3047,7 +3429,177 @@
             12
           ],
           "odds": 253959.7,
-          "expected_return": 2.76
+          "expected_return": 72.06
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            4,
+            6,
+            7
+          ],
+          "odds": 145616.5,
+          "expected_return": 71.75
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            2,
+            6,
+            8
+          ],
+          "odds": 197564.2,
+          "expected_return": 71.67
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            2,
+            11,
+            12
+          ],
+          "odds": 24649.6,
+          "expected_return": 70.86
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            2,
+            6,
+            11
+          ],
+          "odds": 19175.8,
+          "expected_return": 70.49
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            4,
+            12,
+            16
+          ],
+          "odds": 344396.9,
+          "expected_return": 68.98
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            4,
+            6,
+            16
+          ],
+          "odds": 267918.5,
+          "expected_return": 68.62
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            4,
+            10,
+            12
+          ],
+          "odds": 224772.3,
+          "expected_return": 64.32
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            4,
+            6,
+            10
+          ],
+          "odds": 174858.3,
+          "expected_return": 63.98
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            12,
+            15,
+            16
+          ],
+          "odds": 13316.7,
+          "expected_return": 58.87
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            6,
+            15,
+            16
+          ],
+          "odds": 10359.5,
+          "expected_return": 58.55
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            4,
+            8,
+            11
+          ],
+          "odds": 12981.7,
+          "expected_return": 58.33
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            4,
+            12,
+            13
+          ],
+          "odds": 187437.2,
+          "expected_return": 57.49
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            4,
+            6,
+            13
+          ],
+          "odds": 145814.0,
+          "expected_return": 57.18
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            10,
+            12,
+            15
+          ],
+          "odds": 8691.2,
+          "expected_return": 54.88
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            6,
+            10,
+            15
+          ],
+          "odds": 6761.2,
+          "expected_return": 54.59
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            4,
+            7,
+            12
+          ],
+          "odds": 1123099.6,
+          "expected_return": 52.46
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            4,
+            6,
+            7
+          ],
+          "odds": 873698.8,
+          "expected_return": 52.18
         },
         {
           "type": "3連単",
@@ -3057,15 +3609,363 @@
             12
           ],
           "odds": 147897.6,
-          "expected_return": 2.68
+          "expected_return": 51.54
         },
         {
-          "type": "単勝",
+          "type": "3連単",
           "numbers": [
+            2,
+            6,
+            11
+          ],
+          "odds": 115054.8,
+          "expected_return": 51.26
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            12,
+            13,
+            15
+          ],
+          "odds": 7247.6,
+          "expected_return": 49.06
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            6,
+            13,
+            15
+          ],
+          "odds": 5638.1,
+          "expected_return": 48.8
+        },
+        {
+          "type": "馬単",
+          "numbers": [
+            4,
+            12
+          ],
+          "odds": 9524.2,
+          "expected_return": 44.91
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            7,
+            12,
+            15
+          ],
+          "odds": 43426.5,
+          "expected_return": 44.76
+        },
+        {
+          "type": "馬単",
+          "numbers": [
+            4,
             6
           ],
-          "odds": 329.3,
-          "expected_return": 2.55
+          "odds": 7409.2,
+          "expected_return": 44.68
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            6,
+            7,
+            15
+          ],
+          "odds": 33783.0,
+          "expected_return": 44.53
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            15,
+            12,
+            16
+          ],
+          "odds": 79900.1,
+          "expected_return": 42.82
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            15,
+            6,
+            16
+          ],
+          "odds": 62157.1,
+          "expected_return": 42.58
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            4,
+            8,
+            11
+          ],
+          "odds": 77890.3,
+          "expected_return": 42.42
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            2,
+            12,
+            16
+          ],
+          "odds": 22194.5,
+          "expected_return": 40.73
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            2,
+            6,
+            16
+          ],
+          "odds": 17265.9,
+          "expected_return": 40.51
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            15,
+            10,
+            12
+          ],
+          "odds": 52147.2,
+          "expected_return": 39.91
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            15,
+            6,
+            10
+          ],
+          "odds": 40567.1,
+          "expected_return": 39.7
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            2,
+            10,
+            12
+          ],
+          "odds": 14485.3,
+          "expected_return": 37.97
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            2,
+            6,
+            10
+          ],
+          "odds": 11268.6,
+          "expected_return": 37.77
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            8,
+            11,
+            15
+          ],
+          "odds": 3011.8,
+          "expected_return": 36.2
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            15,
+            12,
+            13
+          ],
+          "odds": 43485.4,
+          "expected_return": 35.68
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            15,
+            6,
+            13
+          ],
+          "odds": 33828.9,
+          "expected_return": 35.49
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            2,
+            12,
+            13
+          ],
+          "odds": 12079.3,
+          "expected_return": 33.95
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            2,
+            6,
+            13
+          ],
+          "odds": 9396.9,
+          "expected_return": 33.77
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            4,
+            8,
+            16
+          ],
+          "odds": 11688.7,
+          "expected_return": 33.54
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            15,
+            7,
+            12
+          ],
+          "odds": 260559.1,
+          "expected_return": 32.55
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            15,
+            6,
+            7
+          ],
+          "odds": 202698.1,
+          "expected_return": 32.38
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            4,
+            8,
+            10
+          ],
+          "odds": 7628.7,
+          "expected_return": 31.26
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            2,
+            7,
+            12
+          ],
+          "odds": 72377.5,
+          "expected_return": 30.98
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            2,
+            6,
+            7
+          ],
+          "odds": 56305.0,
+          "expected_return": 30.81
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            2,
+            12,
+            16
+          ],
+          "odds": 133166.8,
+          "expected_return": 29.62
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            2,
+            6,
+            16
+          ],
+          "odds": 103595.1,
+          "expected_return": 29.46
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            4,
+            8,
+            13
+          ],
+          "odds": 6361.6,
+          "expected_return": 27.94
+        },
+        {
+          "type": "馬単",
+          "numbers": [
+            15,
+            12
+          ],
+          "odds": 2209.6,
+          "expected_return": 27.87
+        },
+        {
+          "type": "馬単",
+          "numbers": [
+            15,
+            6
+          ],
+          "odds": 1718.9,
+          "expected_return": 27.73
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            2,
+            10,
+            12
+          ],
+          "odds": 86912.0,
+          "expected_return": 27.62
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            2,
+            6,
+            10
+          ],
+          "odds": 67611.9,
+          "expected_return": 27.47
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            15,
+            8,
+            11
+          ],
+          "odds": 18070.6,
+          "expected_return": 26.33
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            4,
+            7,
+            8
+          ],
+          "odds": 38117.6,
+          "expected_return": 25.5
         },
         {
           "type": "3連複",
@@ -3075,7 +3975,127 @@
             11
           ],
           "odds": 5019.6,
-          "expected_return": 2.51
+          "expected_return": 25.05
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            2,
+            12,
+            13
+          ],
+          "odds": 72475.7,
+          "expected_return": 24.69
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            2,
+            6,
+            13
+          ],
+          "odds": 56381.4,
+          "expected_return": 24.56
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            4,
+            8,
+            16
+          ],
+          "odds": 70132.3,
+          "expected_return": 24.39
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            4,
+            11,
+            16
+          ],
+          "odds": 6807.1,
+          "expected_return": 23.98
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            4,
+            8,
+            10
+          ],
+          "odds": 45772.2,
+          "expected_return": 22.74
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            2,
+            7,
+            12
+          ],
+          "odds": 434265.2,
+          "expected_return": 22.53
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            2,
+            6,
+            7
+          ],
+          "odds": 337830.2,
+          "expected_return": 22.41
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            4,
+            10,
+            11
+          ],
+          "odds": 4442.7,
+          "expected_return": 22.36
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            8,
+            15,
+            16
+          ],
+          "odds": 2711.8,
+          "expected_return": 20.81
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            4,
+            8,
+            13
+          ],
+          "odds": 38169.4,
+          "expected_return": 20.32
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            4,
+            11,
+            13
+          ],
+          "odds": 3704.8,
+          "expected_return": 19.99
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            8,
+            10,
+            15
+          ],
+          "odds": 1769.9,
+          "expected_return": 19.4
         },
         {
           "type": "馬単",
@@ -3084,15 +4104,36 @@
             12
           ],
           "odds": 3682.7,
-          "expected_return": 2.4
+          "expected_return": 19.29
         },
         {
-          "type": "単勝",
+          "type": "馬単",
           "numbers": [
-            12
+            2,
+            6
           ],
-          "odds": 423.3,
-          "expected_return": 2.12
+          "odds": 2864.9,
+          "expected_return": 19.18
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            4,
+            7,
+            8
+          ],
+          "odds": 228705.8,
+          "expected_return": 18.54
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            4,
+            7,
+            11
+          ],
+          "odds": 22198.4,
+          "expected_return": 18.24
         },
         {
           "type": "3連単",
@@ -3102,7 +4143,509 @@
             11
           ],
           "odds": 30117.6,
-          "expected_return": 1.82
+          "expected_return": 18.22
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            4,
+            11,
+            16
+          ],
+          "odds": 40842.7,
+          "expected_return": 17.44
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            8,
+            13,
+            15
+          ],
+          "odds": 1475.9,
+          "expected_return": 17.35
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            4,
+            10,
+            11
+          ],
+          "odds": 26656.2,
+          "expected_return": 16.26
+        },
+        {
+          "type": "馬単",
+          "numbers": [
+            4,
+            8
+          ],
+          "odds": 1939.5,
+          "expected_return": 15.88
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            7,
+            8,
+            15
+          ],
+          "odds": 8843.3,
+          "expected_return": 15.83
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            15,
+            8,
+            16
+          ],
+          "odds": 16270.7,
+          "expected_return": 15.14
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            11,
+            15,
+            16
+          ],
+          "odds": 1579.3,
+          "expected_return": 14.88
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            4,
+            11,
+            13
+          ],
+          "odds": 22228.6,
+          "expected_return": 14.54
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            2,
+            8,
+            16
+          ],
+          "odds": 4519.6,
+          "expected_return": 14.4
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            15,
+            8,
+            10
+          ],
+          "odds": 10619.2,
+          "expected_return": 14.11
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            10,
+            11,
+            15
+          ],
+          "odds": 1030.7,
+          "expected_return": 13.87
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            2,
+            8,
+            10
+          ],
+          "odds": 2949.8,
+          "expected_return": 13.42
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            4,
+            7,
+            11
+          ],
+          "odds": 133190.6,
+          "expected_return": 13.26
+        },
+        {
+          "type": "単勝",
+          "numbers": [
+            12
+          ],
+          "odds": 423.3,
+          "expected_return": 13.21
+        },
+        {
+          "type": "単勝",
+          "numbers": [
+            6
+          ],
+          "odds": 329.3,
+          "expected_return": 13.14
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            4,
+            10,
+            16
+          ],
+          "odds": 4000.2,
+          "expected_return": 12.86
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            15,
+            8,
+            13
+          ],
+          "odds": 8855.3,
+          "expected_return": 12.62
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            11,
+            13,
+            15
+          ],
+          "odds": 859.5,
+          "expected_return": 12.41
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            2,
+            8,
+            13
+          ],
+          "odds": 2459.8,
+          "expected_return": 12.0
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            15,
+            7,
+            8
+          ],
+          "odds": 53059.8,
+          "expected_return": 11.51
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            4,
+            13,
+            16
+          ],
+          "odds": 3335.8,
+          "expected_return": 11.48
+        },
+        {
+          "type": "馬単",
+          "numbers": [
+            4,
+            11
+          ],
+          "odds": 1129.5,
+          "expected_return": 11.36
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            7,
+            11,
+            15
+          ],
+          "odds": 5150.0,
+          "expected_return": 11.32
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            2,
+            7,
+            8
+          ],
+          "odds": 14738.8,
+          "expected_return": 10.95
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            15,
+            11,
+            16
+          ],
+          "odds": 9475.5,
+          "expected_return": 10.82
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            4,
+            10,
+            13
+          ],
+          "odds": 2177.1,
+          "expected_return": 10.71
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            4,
+            7,
+            16
+          ],
+          "odds": 19987.4,
+          "expected_return": 10.48
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            2,
+            8,
+            16
+          ],
+          "odds": 27117.8,
+          "expected_return": 10.47
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            2,
+            11,
+            16
+          ],
+          "odds": 2632.1,
+          "expected_return": 10.3
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            15,
+            10,
+            11
+          ],
+          "odds": 6184.2,
+          "expected_return": 10.09
+        },
+        {
+          "type": "馬単",
+          "numbers": [
+            15,
+            8
+          ],
+          "odds": 450.0,
+          "expected_return": 9.85
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            4,
+            7,
+            10
+          ],
+          "odds": 13044.9,
+          "expected_return": 9.78
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            2,
+            8,
+            10
+          ],
+          "odds": 17698.6,
+          "expected_return": 9.76
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            2,
+            10,
+            11
+          ],
+          "odds": 1717.8,
+          "expected_return": 9.6
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            4,
+            10,
+            16
+          ],
+          "odds": 24001.2,
+          "expected_return": 9.35
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            15,
+            11,
+            13
+          ],
+          "odds": 5157.0,
+          "expected_return": 9.02
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            2,
+            8,
+            13
+          ],
+          "odds": 14758.8,
+          "expected_return": 8.73
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            4,
+            7,
+            13
+          ],
+          "odds": 10878.1,
+          "expected_return": 8.73
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            2,
+            11,
+            13
+          ],
+          "odds": 1432.5,
+          "expected_return": 8.58
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            4,
+            13,
+            16
+          ],
+          "odds": 20014.6,
+          "expected_return": 8.35
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            15,
+            7,
+            11
+          ],
+          "odds": 30900.2,
+          "expected_return": 8.23
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            10,
+            15,
+            16
+          ],
+          "odds": 928.0,
+          "expected_return": 7.98
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            2,
+            7,
+            8
+          ],
+          "odds": 88432.9,
+          "expected_return": 7.96
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            2,
+            7,
+            11
+          ],
+          "odds": 8583.4,
+          "expected_return": 7.83
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            4,
+            10,
+            13
+          ],
+          "odds": 13062.6,
+          "expected_return": 7.79
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            4,
+            7,
+            16
+          ],
+          "odds": 119924.6,
+          "expected_return": 7.62
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            2,
+            11,
+            16
+          ],
+          "odds": 15792.5,
+          "expected_return": 7.49
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            13,
+            15,
+            16
+          ],
+          "odds": 773.9,
+          "expected_return": 7.13
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            4,
+            7,
+            10
+          ],
+          "odds": 78269.4,
+          "expected_return": 7.11
+        },
+        {
+          "type": "馬単",
+          "numbers": [
+            15,
+            11
+          ],
+          "odds": 262.0,
+          "expected_return": 7.05
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            2,
+            10,
+            11
+          ],
+          "odds": 10307.1,
+          "expected_return": 6.98
         },
         {
           "type": "馬単",
@@ -3111,7 +4654,153 @@
             8
           ],
           "odds": 749.9,
-          "expected_return": 1.63
+          "expected_return": 6.82
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            10,
+            13,
+            15
+          ],
+          "odds": 505.1,
+          "expected_return": 6.64
+        },
+        {
+          "type": "馬単",
+          "numbers": [
+            4,
+            16
+          ],
+          "odds": 1017.0,
+          "expected_return": 6.53
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            7,
+            15,
+            16
+          ],
+          "odds": 4637.1,
+          "expected_return": 6.5
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            4,
+            7,
+            13
+          ],
+          "odds": 65268.7,
+          "expected_return": 6.35
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            2,
+            11,
+            13
+          ],
+          "odds": 8595.0,
+          "expected_return": 6.24
+        },
+        {
+          "type": "馬単",
+          "numbers": [
+            4,
+            10
+          ],
+          "odds": 663.8,
+          "expected_return": 6.09
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            7,
+            10,
+            15
+          ],
+          "odds": 3026.4,
+          "expected_return": 6.06
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            15,
+            10,
+            16
+          ],
+          "odds": 5568.3,
+          "expected_return": 5.8
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            2,
+            7,
+            11
+          ],
+          "odds": 51500.4,
+          "expected_return": 5.7
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            2,
+            10,
+            16
+          ],
+          "odds": 1546.7,
+          "expected_return": 5.52
+        },
+        {
+          "type": "馬単",
+          "numbers": [
+            4,
+            13
+          ],
+          "odds": 553.5,
+          "expected_return": 5.44
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            7,
+            13,
+            15
+          ],
+          "odds": 2523.7,
+          "expected_return": 5.42
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            15,
+            13,
+            16
+          ],
+          "odds": 4643.4,
+          "expected_return": 5.18
+        },
+        {
+          "type": "馬単",
+          "numbers": [
+            4,
+            7
+          ],
+          "odds": 3316.5,
+          "expected_return": 4.96
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            2,
+            13,
+            16
+          ],
+          "odds": 1289.8,
+          "expected_return": 4.94
         },
         {
           "type": "馬単",
@@ -3120,7 +4809,27 @@
             11
           ],
           "odds": 436.7,
-          "expected_return": 1.58
+          "expected_return": 4.88
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            15,
+            10,
+            13
+          ],
+          "odds": 3030.5,
+          "expected_return": 4.83
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            15,
+            7,
+            16
+          ],
+          "odds": 27822.5,
+          "expected_return": 4.73
         },
         {
           "type": "単勝",
@@ -3128,7 +4837,124 @@
             8
           ],
           "odds": 86.2,
-          "expected_return": 1.44
+          "expected_return": 4.67
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            2,
+            10,
+            13
+          ],
+          "odds": 841.8,
+          "expected_return": 4.6
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            2,
+            7,
+            16
+          ],
+          "odds": 7728.5,
+          "expected_return": 4.5
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            15,
+            7,
+            10
+          ],
+          "odds": 18158.5,
+          "expected_return": 4.41
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            2,
+            7,
+            10
+          ],
+          "odds": 5044.0,
+          "expected_return": 4.2
+        },
+        {
+          "type": "馬単",
+          "numbers": [
+            15,
+            16
+          ],
+          "odds": 235.9,
+          "expected_return": 4.05
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            2,
+            10,
+            16
+          ],
+          "odds": 9280.5,
+          "expected_return": 4.02
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            15,
+            7,
+            13
+          ],
+          "odds": 15142.3,
+          "expected_return": 3.94
+        },
+        {
+          "type": "馬単",
+          "numbers": [
+            15,
+            10
+          ],
+          "odds": 154.0,
+          "expected_return": 3.78
+        },
+        {
+          "type": "3連複",
+          "numbers": [
+            2,
+            7,
+            13
+          ],
+          "odds": 4206.2,
+          "expected_return": 3.75
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            2,
+            13,
+            16
+          ],
+          "odds": 7739.0,
+          "expected_return": 3.59
+        },
+        {
+          "type": "馬単",
+          "numbers": [
+            15,
+            13
+          ],
+          "odds": 128.4,
+          "expected_return": 3.38
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            2,
+            10,
+            13
+          ],
+          "odds": 5050.9,
+          "expected_return": 3.34
         },
         {
           "type": "単勝",
@@ -3136,7 +4962,114 @@
             11
           ],
           "odds": 50.2,
-          "expected_return": 1.4
+          "expected_return": 3.34
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            2,
+            7,
+            16
+          ],
+          "odds": 46370.9,
+          "expected_return": 3.27
+        },
+        {
+          "type": "馬単",
+          "numbers": [
+            15,
+            7
+          ],
+          "odds": 769.4,
+          "expected_return": 3.08
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            2,
+            7,
+            10
+          ],
+          "odds": 30264.2,
+          "expected_return": 3.06
+        },
+        {
+          "type": "馬単",
+          "numbers": [
+            2,
+            16
+          ],
+          "odds": 393.2,
+          "expected_return": 2.8
+        },
+        {
+          "type": "3連単",
+          "numbers": [
+            2,
+            7,
+            13
+          ],
+          "odds": 25237.2,
+          "expected_return": 2.73
+        },
+        {
+          "type": "馬単",
+          "numbers": [
+            2,
+            10
+          ],
+          "odds": 256.6,
+          "expected_return": 2.61
+        },
+        {
+          "type": "馬単",
+          "numbers": [
+            2,
+            13
+          ],
+          "odds": 214.0,
+          "expected_return": 2.34
+        },
+        {
+          "type": "馬単",
+          "numbers": [
+            2,
+            7
+          ],
+          "odds": 1282.4,
+          "expected_return": 2.13
+        },
+        {
+          "type": "単勝",
+          "numbers": [
+            16
+          ],
+          "odds": 45.2,
+          "expected_return": 1.92
+        },
+        {
+          "type": "単勝",
+          "numbers": [
+            10
+          ],
+          "odds": 29.5,
+          "expected_return": 1.79
+        },
+        {
+          "type": "単勝",
+          "numbers": [
+            13
+          ],
+          "odds": 24.6,
+          "expected_return": 1.6
+        },
+        {
+          "type": "単勝",
+          "numbers": [
+            7
+          ],
+          "odds": 147.4,
+          "expected_return": 1.46
         }
       ]
     }

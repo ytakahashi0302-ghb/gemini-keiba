@@ -92,6 +92,10 @@ def scrape_race_data(race_url):
             tds = row.find_all('td')
             if not tds or len(tds) < 10: continue
             
+            # 枠番 (tds[0])
+            frame_text = tds[0].text.strip()
+            frame = int(frame_text) if frame_text.isdigit() else 0
+            
             # 馬番 (tds[1])
             num_text = tds[1].text.strip()
             if not num_text.isdigit():
@@ -140,6 +144,7 @@ def scrape_race_data(race_url):
                 weight = int(weight_text)
             
             raw_horses.append({
+                "frame": frame,
                 "number": number,
                 "name": name,
                 "jockey": jockey,
@@ -269,12 +274,17 @@ def calculate_expected_values(raw_horses, race_info):
     
     for h in raw_horses:
         implied_probs.append(1.0 / h["odds_base"] if h["odds_base"] > 0 else 0)
-        # 上がり3Fの事前抽出（後でスクレイピングから再マージされるが、ベース予想値として）
-        # ここではまだKeibaLabデータが来ていないため、仮にオッズから逆算した能力ベース値を置く
-        # (※本来はKeibaLabパースを先に行いここに渡すべきだが、元の構造を維持しつつ補正する)
+        # 上がり3Fの抽出
+        if isinstance(h.get("last_3f"), float):
+            f3_values.append(h["last_3f"])
         
     sum_probs = sum(implied_probs) if sum(implied_probs) > 0 else 1.0
     normalized_probs = [p / sum_probs for p in implied_probs]
+    
+    # Fi の平均値と標準偏差を計算
+    f3_mean = sum(f3_values) / len(f3_values) if f3_values else 35.0
+    f3_std = math.sqrt(sum((x - f3_mean)**2 for x in f3_values) / len(f3_values)) if len(f3_values) > 1 else 1.0
+    if f3_std == 0: f3_std = 1.0
     
     # 係数ウェイト
     w1, w2, w3, w4, w5, w6 = 0.25, 0.20, 0.15, 0.15, 0.10, 0.10
@@ -286,14 +296,28 @@ def calculate_expected_values(raw_horses, race_info):
         t_score = base_win_prob * 100 # 0〜100にスケール
         
         # 2. F_i (上り3ハロン)
-        # 後でKeibaLabデータで上書きするが、初期値として
-        f_score = base_win_prob * 80 
+        if isinstance(h.get("last_3f"), float):
+            # 小さいほど優秀なのでマイナス
+            f_zscore = (f3_mean - h["last_3f"]) / f3_std
+            f_score = 50 + (f_zscore * 15) # 偏差値化
+            if f_score > 100: f_score = 100
+            if f_score < 0: f_score = 0
+        else:
+            f_score = base_win_prob * 80 # データなしの場合はオッズベース
         
-        # 3. C_i (コース適性スコア)
-        # 血統や馬体重等から算出するのが理想だが、簡易ルールの閾値
-        c_i = (alpha * cp["S_straight"]) + (beta * cp["H_slope"]) + (gamma * cp["R_corner"])
+        # 3. C_i (コース適性スコアと枠順バイアス)
+        b_draw = 0
+        distance_str = race_info.get("distance", "")
+        # B_draw (枠順バイアス): 例として小回り短距離は内枠有利、外枠不利
+        if ("中山" in track_name or "阪神" in track_name) and "1200" in distance_str:
+            if h.get("frame", 5) <= 4: b_draw = 0.5
+            elif h.get("frame", 5) >= 7: b_draw = -0.3
+            
+        delta = 1.0
+        c_i = (alpha * cp["S_straight"]) + (beta * cp["H_slope"]) + (gamma * cp["R_corner"]) + (delta * b_draw)
+        
         # 大きな馬体重は坂に強い等
-        if type(h["weight"]) == int and h["weight"] > 500:
+        if type(h.get("weight")) == int and h["weight"] > 500:
             c_i += 0.2 * cp["H_slope"]
             
         # 4. R_i (直近3走着順) & 5. J_i (騎手) & 6. W_i (コンディション)
@@ -312,7 +336,13 @@ def calculate_expected_values(raw_horses, race_info):
                 except: pass
 
         # === 総合期待値スコア S_i ===
-        s_i = (w1 * t_score) + (w2 * f_score) + (w3 * c_i * 10) + (w4 * r_score) + (w5 * j_score * 10) + (w6 * w_score * 10)
+        # 【Ver 2.1 コアアップデート】実績ペナルティの動的緩和ロジック
+        w_4_i = w4
+        theta = 1.5 # 環境バイアス完全合致の閾値
+        if c_i >= theta:
+            w_4_i = w4 * 0.2 # 過去の実績が悪くても環境に合えば目を瞑る
+            
+        s_i = (w1 * t_score) + (w2 * f_score) + (w3 * c_i * 10) + (w_4_i * r_score) + (w5 * j_score * 10) + (w6 * w_score * 10)
         
         # スコアを勝率ベース(%)に変換 (簡易的なSoftmax的スケール)
         win_prob = s_i / 100.0 * 0.3 # MAX30%程度のキャップ

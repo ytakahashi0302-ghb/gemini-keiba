@@ -1,0 +1,37 @@
+name: Weekend Race Data Update
+
+on:
+  schedule:
+    # 毎週土曜・日曜の朝8時(JST) = UTC 23:00 (前日)
+    - cron: '0 23 * * 5,6'
+  workflow_dispatch: # 手動実行も可能にする
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4
+
+      - name: Run Scraper
+        run: python scraper.py
+
+      - name: Commit and Push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add frontend/data/data.json
+          # 変更がある場合のみコミット
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update race data [skip ci]")
+          git push

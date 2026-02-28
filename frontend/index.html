@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI競馬 S-Dashboard</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="saas-theme">
+    <div class="app-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-icon">📊</div>
+                <div class="brand-text">EV Insight<span>PRO</span></div>
+            </div>
+            <div class="sidebar-content">
+                <div class="form-group">
+                    <label>対象レースを選択</label>
+                    <ul id="race-list" class="sidebar-race-list">
+                        <li>データ読み込み中...</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="sidebar-footer">
+                <p>Prediction Model V2.0</p>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-view">
+            <header class="topbar">
+                <h1 class="page-title">ダッシュボード</h1>
+            </header>
+
+            <div class="dashboard-container">
+                <!-- レース概要 -->
+                <section class="saas-card mb-xl">
+                    <div id="race-details" class="race-details loading">
+                        <div class="skeleton-text"></div>
+                    </div>
+                </section>
+
+                <div class="grid-2col mb-xl">
+                    <!-- 出走馬データ一覧 -->
+                    <section class="saas-card full-width">
+                        <div class="card-header">
+                            <h2>出走馬 AIスコアリング / コンピ指数</h2>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="saas-table">
+                                <thead>
+                                    <tr>
+                                        <th>馬番</th>
+                                        <th>馬名 (騎手)</th>
+                                        <th>人気</th>
+                                        <th>分類</th>
+                                        <th>上がり3F</th>
+                                        <th>馬体重</th>
+                                        <th>オッズ</th>
+                                        <th>スコア(S_i)</th>
+                                        <th>期待値(EV)</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="horses-tbody">
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="grid-2col">
+                    <!-- 券種別リスト -->
+                    <section class="saas-card">
+                        <div class="card-header">
+                            <h2>券種別 EVトップリスト</h2>
+                        </div>
+                        <div class="top3-list" id="top3-container">
+                        </div>
+                    </section>
+
+                    <!-- ポートフォリオ構築 -->
+                    <section class="saas-card">
+                        <div class="card-header">
+                            <h2>ポートフォリオシミュレーター</h2>
+                        </div>
+                        <div class="simulator-controls">
+                            <div class="form-group mb-0">
+                                <label>運用予算 (円)</label>
+                                <input type="number" id="budget-input" class="saas-input" min="100" step="100"
+                                    value="5000">
+                            </div>
+                            <div class="tabs-container">
+                                <label class="group-label">投資戦略</label>
+                                <div class="tabs">
+                                    <button class="saas-tab active" data-strategy="strategy_a">戦略A (堅実バランス)</button>
+                                    <button class="saas-tab" data-strategy="strategy_b">戦略B (ハイリスク・歪狙い)</button>
+                                </div>
+                            </div>
+                            <button id="calculate-btn" class="saas-btn primary">最適配分を計算</button>
+                            <div class="simulator-note">
+                                <p>※ 運用予算が増えるにつれて、高い期待値を持つ3連複などのハイリスク・ハイリターンな券種がポートフォリオに自動的に組み込まれるようになります。</p>
+                            </div>
+                            <div id="allocation-results" class="allocation-area">
+                            </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="js/app.js"></script>
+</body>
+
+</html>

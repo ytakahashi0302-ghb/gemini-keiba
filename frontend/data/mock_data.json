@@ -1,0 +1,73 @@
+{
+  "race_info": {
+    "name": "第92回 日本ダービー (G1)",
+    "date": "2026-05-31",
+    "track": "東京",
+    "distance": "芝2400m",
+    "weather": "晴",
+    "condition": "良"
+  },
+  "horses": [
+    {
+      "number": 1,
+      "name": "エフフォーリア",
+      "jockey": "横山武",
+      "odds": 3.2,
+      "popularity": 1,
+      "win_probability": 0.35,
+      "expected_return": 1.12
+    },
+    {
+      "number": 2,
+      "name": "シャフリヤール",
+      "jockey": "福永祐",
+      "odds": 4.5,
+      "popularity": 2,
+      "win_probability": 0.28,
+      "expected_return": 1.26
+    },
+    {
+      "number": 3,
+      "name": "タイトルホルダー",
+      "jockey": "田辺裕",
+      "odds": 7.0,
+      "popularity": 3,
+      "win_probability": 0.18,
+      "expected_return": 1.26
+    },
+    {
+      "number": 4,
+      "name": "サトノレイナス",
+      "jockey": "ルメール",
+      "odds": 8.5,
+      "popularity": 4,
+      "win_probability": 0.12,
+      "expected_return": 1.02
+    },
+    {
+      "number": 5,
+      "name": "ディープボンド",
+      "jockey": "和田竜",
+      "odds": 15.0,
+      "popularity": 5,
+      "win_probability": 0.05,
+      "expected_return": 0.75
+    },
+    {
+      "number": 6,
+      "name": "キラーアビリティ",
+      "jockey": "横山典",
+      "odds": 22.0,
+      "popularity": 6,
+      "win_probability": 0.02,
+      "expected_return": 0.44
+    }
+  ],
+  "recommended_bets": [
+    { "type": "単勝", "numbers": [2], "odds": 4.5, "expected_return": 1.26 },
+    { "type": "単勝", "numbers": [3], "odds": 7.0, "expected_return": 1.26 },
+    { "type": "ワイド", "numbers": [1, 2], "odds": 3.8, "expected_return": 1.15 },
+    { "type": "馬連", "numbers": [1, 3], "odds": 12.5, "expected_return": 1.10 },
+    { "type": "3連複", "numbers": [1, 2, 3], "odds": 18.0, "expected_return": 1.05 }
+  ]
+}

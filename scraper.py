@@ -510,8 +510,15 @@ def calculate_expected_values(raw_horses, race_info):
         horse_scores.append(s_i)
         
     # 第2パス: Softmax関数による推定勝率 P_i の算出と EV 計算
-    tau = 1.8 # 温度パラメータ (Ver 3.0)
-    exp_scores = [math.exp(s / tau) for s in horse_scores]
+    # S_i の分散をレース内で正規化（Zスコア化）し、極端な平準化を防ぐ
+    s_mean = sum(horse_scores) / len(horse_scores) if horse_scores else 0.0
+    s_std = math.sqrt(sum((s - s_mean)**2 for s in horse_scores) / len(horse_scores)) if len(horse_scores) > 1 else 1.0
+    if s_std == 0: s_std = 1.0
+    
+    s_zscores = [(s - s_mean) / s_std for s in horse_scores]
+    
+    tau = 0.6 # 温度パラメータ (Ver 3.1 修正: オッズに依存せず能力差が勝率に直結するようメリハリを強める)
+    exp_scores = [math.exp(z / tau) for z in s_zscores]
     sum_exp = sum(exp_scores) if sum(exp_scores) > 0 else 1.0
     
     for i, h in enumerate(raw_horses):

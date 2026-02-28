@@ -375,7 +375,7 @@
         });
 
         const isTrigger = minReturn < totalBet;
-        const summaryHtml = `
+        let summaryHtml = `
             <div class="total-summary">
                 <div class="summary-row">
                     <span>投資元本</span>
@@ -395,6 +395,77 @@
             }
             </div>
         `;
+
+        // 【結果答え合わせロジック】 実際のレース結果が存在する場合は的中判定と回収率を表示
+        if (currentRaceData && currentRaceData.race_info.status === 'finished' && currentRaceData.race_info.results && currentRaceData.race_info.results.payouts) {
+            const payoutsData = currentRaceData.race_info.results.payouts;
+            let actualReturn = 0;
+            let hitItems = [];
+
+            // 買目ごとに的中判定
+            allocations.forEach(alloc => {
+                const type = alloc.type; // "単勝", "ワイド" 等
+                const rawNums = alloc.numbers.join('-'); // "2-3"
+                // 馬連やワイドなどは順番が逆(3-2)でも当たりのため、ソートして持つ
+                const sortedNums = [...alloc.numbers].sort((a, b) => a - b).join('-');
+
+                if (payoutsData[type] && payoutsData[type].numbers) {
+                    // payoutsData[type].numbers は "2-3, 3-5, 2-5" や "3-2" などの文字列
+                    // payoutsData[type].payout は "2,120円, 760円, 660円" などの文字列
+                    const actNumArray = payoutsData[type].numbers.split(',').map(s => s.trim());
+                    const actPayArray = payoutsData[type].payout.split(',').map(s => parseInt(s.replace(/[^0-9]/g, '')));
+
+                    let hitIndex = -1;
+                    actNumArray.forEach((an, i) => {
+                        // 順列か組合わせかで判定を変える。馬連/ワイド/3連複は順不同、馬単/3連単は順番通り
+                        if (['単勝', '複勝', '馬単', '3連単'].includes(type)) {
+                            if (an === rawNums) hitIndex = i;
+                        } else {
+                            if (an.split('-').sort((a, b) => a - b).join('-') === sortedNums) hitIndex = i;
+                        }
+                    });
+
+                    if (hitIndex !== -1 && actPayArray[hitIndex]) {
+                        // オッズ100円あたりの配当
+                        const payoutRatio = actPayArray[hitIndex] / 100.0;
+                        const finalPayout = Math.floor(alloc.amount * payoutRatio);
+                        actualReturn += finalPayout;
+                        hitItems.push({ type, nums: alloc.numbers.join('-'), actualPayout: finalPayout });
+                    }
+                }
+            });
+
+            const roi = ((actualReturn / totalBet) * 100).toFixed(1);
+            const isPlus = actualReturn >= totalBet;
+            const roiColor = isPlus ? 'var(--primary)' : 'var(--danger)';
+
+            let hitsHtml = '';
+            if (hitItems.length > 0) {
+                hitsHtml = hitItems.map(h => `<span style="display:inline-block; background:rgba(30,91,230,0.1); color:var(--primary); padding:2px 6px; border-radius:4px; font-size:0.75rem; margin-right:4px;">${h.type}: ${h.nums} (+${h.actualPayout.toLocaleString()}円)</span>`).join('');
+            } else {
+                hitsHtml = '<span style="color:var(--text-muted); font-size:0.75rem;">的中なし</span>';
+            }
+
+            summaryHtml += `
+                <div class="actual-results-summary" style="margin-top: 16px; padding: 12px; background: rgba(0,0,0,0.02); border: 2px dashed ${roiColor}; border-radius: 8px;">
+                    <h3 style="font-size: 1rem; color: var(--text-color); margin-bottom: 12px; display:flex; align-items:center; gap:6px;">
+                        <span>🎯 AI予想結果 (答え合わせ)</span>
+                    </h3>
+                    <div style="display:flex; justify-content: space-between; margin-bottom: 8px;">
+                        <span style="color:var(--text-muted); font-size: 0.85rem;">払戻総額</span>
+                        <strong style="color: ${roiColor}; font-size: 1.1rem;">${actualReturn.toLocaleString()}円</strong>
+                    </div>
+                    <div style="display:flex; justify-content: space-between; margin-bottom: 12px; border-bottom: 1px solid var(--border-color); padding-bottom: 8px;">
+                        <span style="color:var(--text-muted); font-size: 0.85rem;">回収率 (ROI)</span>
+                        <strong style="color: ${roiColor}; font-size: 1.1rem;">${roi}%</strong>
+                    </div>
+                    <div>
+                        <span style="display:block; color:var(--text-muted); font-size: 0.75rem; margin-bottom: 4px;">的中内容:</span>
+                        <div>${hitsHtml}</div>
+                    </div>
+                </div>
+            `;
+        }
 
         allocationResultsEl.innerHTML = html + summaryHtml;
     }

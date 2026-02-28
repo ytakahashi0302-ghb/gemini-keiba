@@ -526,7 +526,9 @@ def calculate_expected_values(raw_horses, race_info):
         win_prob = exp_scores[i] / sum_exp
         if win_prob < 0.001: win_prob = 0.001 # 最低保証勝率0.5%
         
-        expected_return = win_prob * h["odds_base"]
+        # Ver 3.0: 期待値計算時にオッズのキャップ(最大50倍)を適用
+        capped_odds = min(h["odds_base"], 50.0)
+        expected_return = win_prob * capped_odds
 
         horses.append({
             "number": h["number"],
@@ -555,7 +557,7 @@ def calculate_expected_values(raw_horses, race_info):
             h["classification"] = "危険な人気馬"
         elif h["name"] in top3_names and h["expected_return"] >= 0.9:
             h["classification"] = "絶対軸"
-        elif h["expected_return"] >= 1.2:
+        elif h["expected_return"] >= 1.2 and h["win_probability"] >= 0.02:
             h["classification"] = "高EV伏兵"
 
     # オッズや人気順が正しく設定されていない場合のみ、ソートして付け直す
@@ -710,14 +712,6 @@ def main():
                                     for h in horses_data:
                                         if h['name'] == horse_name:
                                             h["last_3f"] = last_3f
-                                            # 上がり3Fによる勝率ボーナス付与
-                                            try:
-                                                f3_val = float(last_3f)
-                                                if f3_val < 34.0: h['win_probability'] = round(h['win_probability'] * 1.05, 3)
-                                                elif f3_val < 35.0: h['win_probability'] = round(h['win_probability'] * 1.02, 3)
-                                                h['expected_return'] = round(h['win_probability'] * h['odds'], 2)
-                                            except:
-                                                pass
                                     break
                     break 
         except Exception as e:

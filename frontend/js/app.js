@@ -104,7 +104,6 @@
 
         renderRaceInfo(currentRaceData.race_info);
         renderActualResults(currentRaceData.race_info);
-        renderTop3Bets(currentRaceData.top3_bets);
         renderHorses(currentRaceData.horses);
     }
 
@@ -190,44 +189,6 @@
         `;
     }
 
-    function renderTop3Bets(top3Data) {
-        top3ContainerEl.innerHTML = '';
-
-        const categories = [
-            { key: 'win', name: '単勝' },
-            { key: 'place', name: '複勝' },
-            { key: 'umaren', name: '馬連' },
-            { key: 'wide', name: 'ワイド' },
-            { key: 'sanrenpuku', name: '3連複' },
-            { key: 'sanrentan', name: '3連単' }
-        ];
-
-        categories.forEach(cat => {
-            const bets = top3Data[cat.key] || [];
-            if (bets.length === 0) return;
-
-            const categoryDiv = document.createElement('div');
-            categoryDiv.className = 'bet-group';
-
-            let html = `<h3>${cat.name}</h3>`;
-            bets.forEach((bet, i) => {
-                const isTop = i === 0;
-                const evClass = bet.expected_return > 1.0 ? 'ev-high' : (bet.expected_return > 0.8 ? 'ev-mid' : 'ev-low');
-                html += `
-                    <div class="bet-item">
-                        <span class="horse-nums">${bet.numbers.join('-')}</span>
-                        <div>
-                            <span style="color:var(--text-muted); margin-right:8px;">${bet.odds.toFixed(1)}x</span>
-                            <span class="${evClass}">EV:${bet.expected_return.toFixed(2)}</span>
-                        </div>
-                    </div>
-                `;
-            });
-            categoryDiv.innerHTML = html;
-            top3ContainerEl.appendChild(categoryDiv);
-        });
-    }
-
     function renderHorses(horses) {
         horsesTbody.innerHTML = '';
         horses.forEach(horse => {
@@ -274,28 +235,9 @@
         // 予算が1万円増えるごとにパターン数が比例して増えるように設定 (最低3、最大20程度)
         const maxBetTypes = Math.min(20, Math.max(3, Math.floor(budget / 3000)));
 
-        // 元のポートフォリオ（推奨ベース）
+        // ポートフォリオプールから最大パターン数まで取得
         let betsPool = [...currentRaceData.portfolios[currentStrategy]];
-
-        // 要求パターン数に足りない場合、top3_betsから広く補充
-        if (betsPool.length < maxBetTypes) {
-            const allTopBets = [];
-            Object.values(currentRaceData.top3_bets).forEach(categoryBets => {
-                allTopBets.push(...categoryBets);
-            });
-
-            // 期待値順にソート (フィルター条件を大幅に緩和し、単純にtop3_bets内からEVの高い順に補充)
-            const sortedExtraBets = allTopBets
-                // 既にPoolにあるものは除く
-                .filter(b => !betsPool.some(existing => existing.type === b.type && existing.numbers.join('-') === b.numbers.join('-')))
-                // 少しでも期待値があれば、予算が余っている場合は買い目に拾う（最低でも0.01以上）
-                .filter(b => b.expected_return >= 0.01)
-                .sort((a, b) => b.expected_return - a.expected_return);
-
-            betsPool = [...betsPool, ...sortedExtraBets].slice(0, maxBetTypes);
-        } else {
-            betsPool = betsPool.slice(0, maxBetTypes);
-        }
+        betsPool = betsPool.slice(0, maxBetTypes);
 
         const allocations = calculateAllocations(budget, betsPool);
         renderAllocations(allocations, budget, currentStrategy);

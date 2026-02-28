@@ -15,11 +15,12 @@ HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
 
 def get_upcoming_race_urls():
     """ 本日および明日のレース一覧から、重賞レース (G1~G3) のURLを取得する """
-    links = []
+    links = {}
     
     # 0日後(今日)と1日後(明日)の両方をチェック
-    for day_offset in [0, 1]:
+    for day_offset in [-2, -1, 0, 1, 2]:
         target_date = datetime.now() + timedelta(days=day_offset)
+        date_str_formatted = target_date.strftime('%Y-%m-%d')
         date_str = target_date.strftime('%Y%m%d')
         url = f"https://race.netkeiba.com/top/race_list_sub.html?kaisai_date={date_str}"
         
@@ -38,8 +39,8 @@ def get_upcoming_race_urls():
                         full_url = a['href'] if a['href'].startswith('http') else "https://race.netkeiba.com" + a['href'].lstrip('..')
                         if full_url not in links and full_url not in day_links:
                             day_links.append(full_url)
+                            links[full_url] = date_str_formatted
             
-            links.extend(day_links)
             if day_links:
                 print(f"[{date_str}] の重賞レースを {len(day_links)} 件発見しました。")
                 
@@ -49,9 +50,15 @@ def get_upcoming_race_urls():
     if not links:
         print("本日・翌日の重賞レースは見つかりませんでした。")
         
+    # Ocean Stakes (2/28) を手動で追加して日付グルーピングテスト用とする
+    ocean_s_url = "https://race.netkeiba.com/race/shutuba.html?race_id=202606020111&rf=race_list"
+    if ocean_s_url not in links:
+        links[ocean_s_url] = "2026-02-28"
+        print("[2026-02-28] オーシャンS をテスト用に追加しました。")
+        
     return links
 
-def scrape_race_data(race_url):
+def scrape_race_data(race_url, race_date_str):
     """ 個別の出馬表ページをスクレイピングする """
     try:
         r = requests.get(race_url, headers=HEADERS, timeout=10)
@@ -148,7 +155,7 @@ def scrape_race_data(race_url):
         # 不要な再代入を避け、取得した情報を個別にアップデートする
         race_info.update({
             "name": race_name,
-            "date": datetime.now().strftime('%Y-%m-%d'), 
+            "date": race_date_str, 
             "track": "JRA",
             "distance": distance,
             "weather": weather,
@@ -430,33 +437,27 @@ def calculate_expected_values(raw_horses, race_info):
     t_std = math.sqrt(sum((x - t_mean)**2 for x in t_values) / len(t_values)) if len(t_values) > 1 else 1.0
     if t_std == 0: t_std = 1.0
     
-    # 係数ウェイト
-    w1, w2, w3, w4, w5, w6 = 0.25, 0.20, 0.15, 0.15, 0.10, 0.10
+    # 係数ウェイト (Ver 3.0)
+    w1, w2, w3, w4, w5, w6 = 0.20, 0.25, 0.30, 0.15, 0.05, 0.05
 
+    # 第1パス: 総合能力スコア S_i の算出
+    horse_scores = []
     for i, h in enumerate(raw_horses):
-        # 1. T_i (走破タイム/能力スコアの代替)
-        # 本来は走破タイムの実績値を入れるが、無ければ市場予測(オッズ)を正規化して代用
         base_win_prob = normalized_probs[i]
         
         # 1. T_i (走破タイム/能力スコア)
         if "best_time_est" in h:
-            # タイムは短い(小さい)ほど優秀なのでマイナス
             t_zscore = (t_mean - h["best_time_est"]) / t_std
-            t_score = 50 + (t_zscore * 15)
-            if t_score > 100: t_score = 100
-            if t_score < 0: t_score = 0
+            t_zscore = max(-3.0, min(3.0, t_zscore))
         else:
-            t_score = base_win_prob * 100 # 代替
+            t_zscore = -0.5 # 欠損値ペナルティ
         
         # 2. F_i (上り3ハロン)
         if isinstance(h.get("last_3f"), float):
-            # 小さいほど優秀なのでマイナス
             f_zscore = (f3_mean - h["last_3f"]) / f3_std
-            f_score = 50 + (f_zscore * 15) # 偏差値化
-            if f_score > 100: f_score = 100
-            if f_score < 0: f_score = 0
+            f_zscore = max(-3.0, min(3.0, f_zscore))
         else:
-            f_score = base_win_prob * 80 # データなしの場合はオッズベース
+            f_zscore = -0.5 # 欠損値ペナルティ
         
         # 3. C_i (コース適性スコアと枠順バイアス)
         b_draw = 0
@@ -466,7 +467,7 @@ def calculate_expected_values(raw_horses, race_info):
             if h.get("frame", 5) <= 4: b_draw = 0.5
             elif h.get("frame", 5) >= 7: b_draw = -0.3
             
-        # 【Ver 2.2】枠順バイアスの地力（A_i）による相殺
+        # 【Ver 3.0】枠順バイアスの地力（A_i）による相殺
         a_i = h.get("a_i", 0.0)
         if b_draw < 0:
             b_draw = b_draw * (1.0 - a_i)
@@ -481,11 +482,9 @@ def calculate_expected_values(raw_horses, race_info):
         # 4. R_i (直近3走着順) & 5. J_i (騎手) & 6. W_i (コンディション)
         if h.get("recent_placements"):
             r_i = sum(h["recent_placements"]) / len(h["recent_placements"])
-            # r_iが1(全勝)なら100点、10(平均10着)なら10点
-            r_score = (1.0 / r_i) * 100 
-            if r_score > 100: r_score = 100
+            r_score = 1.0 / r_i
         else:
-            r_score = base_win_prob * 50 # 強い馬ほど着順が良い前提の代替
+            r_score = 1.0 / 8.0 # 平均8着相当の代替ペナルティ
             
         j_score = 1.0 if "ルメール" in h["jockey"] or "川田" in h["jockey"] else 0.5
         
@@ -500,38 +499,27 @@ def calculate_expected_values(raw_horses, race_info):
                     if wc <= -10 or wc >= 15: w_score = 0.5
                 except: pass
 
-        # === 総合期待値スコア S_i ===
-        # 【Ver 2.1 コアアップデート】実績ペナルティの動的緩和ロジック
+        # 【Ver 3.0】実績ペナルティの動的緩和ロジック
         w_4_i = w4
-        theta = 1.5 # 環境バイアス完全合致の閾値
+        theta = 1.5 # 環境バイアス合致の閾値
         if c_i >= theta:
-            w_4_i = w4 * 0.2 # 過去の実績が悪くても環境に合えば目を瞑る
+            w_4_i = w4 * 0.2
             
-        s_i = (w1 * t_score) + (w2 * f_score) + (w3 * c_i * 10) + (w_4_i * r_score) + (w5 * j_score * 10) + (w6 * w_score * 10)
+        # S_i の計算 (純粋な能力スコア)
+        s_i = (w1 * t_zscore) + (w2 * f_zscore) + (w3 * c_i) + (w_4_i * r_score * 10) + (w5 * j_score) + (w6 * w_score)
+        horse_scores.append(s_i)
         
-        # スコアを勝率ベース(%)に変換 (簡易的なSoftmax的スケール)
-        win_prob = s_i / 100.0 * 0.3 # MAX30%程度のキャップ
-        
-        # 【Ver 2.2】大穴過大評価の抑制ロジック
-        # 実人気が低い(オッズが高い)馬の推定勝率にペナルティを課し、過大なEV値の算出を防ぐ
-        pop = h.get("popularity", 1)
-        if pop > 5:
-            # 人気順位が下がるほど段階的に勝率を割り引く（最大で1/3まで減衰）
-            discount_factor = max(0.33, 1.0 - ((pop - 5) * 0.05))
-            win_prob *= discount_factor
-
-        if win_prob < 0.01: win_prob = 0.01
+    # 第2パス: Softmax関数による推定勝率 P_i の算出と EV 計算
+    tau = 1.8 # 温度パラメータ (Ver 3.0)
+    exp_scores = [math.exp(s / tau) for s in horse_scores]
+    sum_exp = sum(exp_scores) if sum(exp_scores) > 0 else 1.0
+    
+    for i, h in enumerate(raw_horses):
+        s_i = horse_scores[i]
+        win_prob = exp_scores[i] / sum_exp
+        if win_prob < 0.005: win_prob = 0.005 # 最低保証勝率0.5%
         
         expected_return = win_prob * h["odds_base"]
-
-        # 評価カテゴリの振り分け (Category Classification)
-        classification = "一般馬"
-        if expected_return >= 1.2 and h["odds_base"] >= 15.0:
-            classification = "高EV伏兵"
-        elif expected_return >= 0.95 and win_prob >= 0.15:
-            classification = "絶対軸"
-        elif expected_return < 0.6 and h["odds_base"] <= 5.0:
-            classification = "危険な人気馬"
 
         horses.append({
             "number": h["number"],
@@ -541,14 +529,27 @@ def calculate_expected_values(raw_horses, race_info):
             "popularity": h.get("popularity", i + 1),  
             "win_probability": round(win_prob, 3),
             "expected_return": round(expected_return, 2),
-            "score_si": round(s_i, 2), # Ver 2.0 スコア
-            "classification": classification, # 分類
+            "score_si": round(s_i, 2), # Ver 3.0 スコア
+            "classification": "一般馬", # 第3パスで設定
             "weight": h["weight"],
             "weight_change": h["weight_change"],
             "last_3f": h["last_3f"],
             "speed_index": h["speed_index"],
             "condition_score": h["condition_score"],
         })
+
+    # 第3パス: 評価カテゴリの振り分け (Ver 3.0 Classification)
+    # 一時的に勝率順でソートしてトップ3を特定する
+    sorted_by_prob = sorted(horses, key=lambda x: x["win_probability"], reverse=True)
+    top3_names = [h["name"] for h in sorted_by_prob[:3]]
+    
+    for h in horses:
+        if h["expected_return"] < 0.8 and h["odds"] <= 5.0:
+            h["classification"] = "危険な人気馬"
+        elif h["name"] in top3_names and h["expected_return"] >= 0.9:
+            h["classification"] = "絶対軸"
+        elif h["expected_return"] >= 1.2:
+            h["classification"] = "高EV伏兵"
 
     # オッズや人気順が正しく設定されていない場合のみ、ソートして付け直す
     if any(h["popularity"] == 0 for h in horses):
@@ -559,118 +560,100 @@ def calculate_expected_values(raw_horses, race_info):
     horses.sort(key=lambda x: x["number"])
     return horses
 
-def generate_top3_by_bet_type(horses):
-    """ 全主要券種ごとの期待値トップ3を算出 """
-    sorted_by_ev = sorted(horses, key=lambda x: x["expected_return"], reverse=True)
-    if len(sorted_by_ev) < 3: return {}
-    
-    win_top3 = []
-    for h in sorted_by_ev[:3]:
-        win_top3.append({
-            "type": "単勝", "numbers": [h["number"]], "odds": h["odds"], "expected_return": h["expected_return"]
-        })
-        
-    place_top3 = []
-    for h in sorted_by_ev[:3]:
-        place_odds = round(max(1.1, h["odds"] / 3.0), 1)
-        place_top3.append({
-            "type": "複勝", "numbers": [h["number"]], "odds": place_odds, "expected_return": round(h["expected_return"] * 1.2, 2)
-        })
-
-    # 馬連 / 馬単 / ワイド
-    umarens, umatans, wides = [], [], []
-    for i in range(len(sorted_by_ev)):
-        for j in range(i + 1, min(i+10, len(sorted_by_ev))): # 計算量削減
-            h1, h2 = sorted_by_ev[i], sorted_by_ev[j]
-            # 馬連・ワイドのオッズは単勝の積ベースの擬似計算（本来は実オッズ取得が必要）
-            combo_odds = round(h1["odds"] * h2["odds"] * 0.3, 1)
-            combo_ev = round(h1["expected_return"] * h2["expected_return"] * 0.9, 2)
-            
-            umarens.append({"type":"馬連", "numbers":[min(h1["number"], h2["number"]), max(h1["number"], h2["number"])], "odds": combo_odds, "expected_return": combo_ev})
-            wides.append({"type":"ワイド", "numbers":[min(h1["number"], h2["number"]), max(h1["number"], h2["number"])], "odds": round(combo_odds/3, 1), "expected_return": round(combo_ev*1.1, 2)})
-            
-            # 馬単
-            umatan_odds = round(combo_odds * 2.0, 1)
-            umatans.append({"type":"馬単", "numbers":[h1["number"], h2["number"]], "odds": umatan_odds, "expected_return": round(combo_ev * 0.95, 2)})
-
-    umarens.sort(key=lambda x: x["expected_return"], reverse=True)
-    umatans.sort(key=lambda x: x["expected_return"], reverse=True)
-    wides.sort(key=lambda x: x["expected_return"], reverse=True)
-
-    # 3連複 / 3連単
-    sanrenpukus, sanrentans = [], []
-    for i in range(len(sorted_by_ev)):
-        for j in range(i + 1, min(i+6, len(sorted_by_ev))):
-            for k in range(j + 1, min(j+6, len(sorted_by_ev))):
-                h1, h2, h3 = sorted_by_ev[i], sorted_by_ev[j], sorted_by_ev[k]
-                base_odds = float(h1["odds"] * h2["odds"] * h3["odds"] * 0.1)
-                ev = round(h1["expected_return"] * h2["expected_return"] * h3["expected_return"] * 0.8, 2)
-                
-                nums = sorted([h1["number"], h2["number"], h3["number"]])
-                sanrenpukus.append({"type":"3連複", "numbers":nums, "odds": round(base_odds, 1), "expected_return": ev})
-                sanrentans.append({"type":"3連単", "numbers":[h1["number"], h2["number"], h3["number"]], "odds": round(base_odds * 6, 1), "expected_return": round(ev * 0.85, 2)})
-
-    sanrenpukus.sort(key=lambda x: x["expected_return"], reverse=True)
-    sanrentans.sort(key=lambda x: x["expected_return"], reverse=True)
-
-    return {
-        "win": win_top3,
-        "place": place_top3,
-        "umaren": umarens[:3],
-        "umatan": umatans[:3],
-        "wide": wides[:3],
-        "sanrenpuku": sanrenpukus[:3],
-        "sanrentan": sanrentans[:3]
-    }
-    
-def generate_portfolios(top3_by_type, horses_data):
+def generate_portfolios(horses_data):
     """
-    EV Ver2.0 ポートフォリオ(買い目)生成
-    戦略A: 手堅く回収する（バランス型） - 単勝・馬連・ワイドの期待値上位の堅実な馬を中心
-    戦略B: オッズの歪みを狙う（ハイリスク型） - 「高EV伏兵」や3連系を絡めた高配当狙い
+    EV Ver 3.0 ポートフォリオ生成ロジック
+    「絶対軸」をベースとし、戦略A（堅実バランス）、戦略B（ハイリスク・歪み狙い）の買い目を自動生成する。
     """
     strategy_a = []
     strategy_b = []
     
-    # 馬のカテゴリから高EV伏兵を探す
+    # 馬を分類別にグループ化
+    axis_horses = [h for h in horses_data if h["classification"] == "絶対軸"]
     dark_horses = [h for h in horses_data if h["classification"] == "高EV伏兵"]
-    solid_favorites = [h for h in horses_data if h["classification"] == "絶対軸"]
     
-    # --- 戦略A (バランス型) 構築 ---
-    # 期待値1.0以上の堅実な券種を優先
-    if "win" in top3_by_type: strategy_a.extend([b for b in top3_by_type["win"][:2] if b["expected_return"] > 0.9])
-    if "wide" in top3_by_type: strategy_a.extend([b for b in top3_by_type["wide"][:2] if b["expected_return"] > 0.95])
-    if "umaren" in top3_by_type: strategy_a.extend([b for b in top3_by_type["umaren"][:1] if b["expected_return"] > 1.0])
-    
-    # --- 戦略B (ハイリスク型) 構築 ---
-    # 高EV伏兵の単勝や3連系など爆発力重視
-    if dark_horses:
-        for dh in dark_horses[:2]:
-            strategy_b.append({"type": "単勝(穴)", "numbers": [dh["number"]], "odds": dh["odds"], "expected_return": dh["expected_return"]})
-    
-    if "sanrenpuku" in top3_by_type: strategy_b.extend(top3_by_type["sanrenpuku"][:2])
-    if "sanrentan" in top3_by_type: strategy_b.extend(top3_by_type["sanrentan"][:1])
-    if "umatan" in top3_by_type: strategy_b.extend(top3_by_type["umatan"][:1])
-    
-    # どちらも空の場合はトップの馬連などでお茶を濁す
-    if not strategy_a and "wide" in top3_by_type: strategy_a.extend(top3_by_type["wide"][:1])
-    if not strategy_b and "umaren" in top3_by_type: strategy_b.extend(top3_by_type["umaren"][:1])
+    # 絶対軸が不在の場合のフォールバック：勝率トップの馬を仮の軸とする
+    sorted_by_prob = sorted(horses_data, key=lambda x: x["win_probability"], reverse=True)
+    if not axis_horses and len(sorted_by_prob) > 0:
+        axis_horses = [sorted_by_prob[0]]
+        
+    if not axis_horses:
+        return {"strategy_a": [], "strategy_b": []}
+        
+    # === 戦略A (堅実・バランス型) ===
+    # 絶対軸 からの 単勝、ワイド、馬連。相手は上位人気の堅実馬や高EV伏兵
+    targets_a = sorted_by_prob[:7] # 勝率上位7頭を相手に流す
+    for ax in axis_horses:
+        if {"type": "単勝", "numbers": [ax["number"]], "odds": ax["odds"], "expected_return": ax["expected_return"]} not in strategy_a:
+            strategy_a.append({"type": "単勝", "numbers": [ax["number"]], "odds": ax["odds"], "expected_return": ax["expected_return"]})
+            
+        for tgt in targets_a:
+            if ax["number"] == tgt["number"]: continue
+            
+            # 擬似オッズとEV計算（実オッズがないための簡略化）
+            combo_odds_wide = round(ax["odds"] * tgt["odds"] * 0.15, 1)
+            combo_ev_wide = round(ax["expected_return"] * tgt["expected_return"] * 1.1, 2)
+            nums_sorted = sorted([ax["number"], tgt["number"]])
+            
+            strategy_a.append({"type":"ワイド", "numbers": nums_sorted, "odds": max(1.1, combo_odds_wide), "expected_return": combo_ev_wide})
+            
+            combo_odds_umaren = round(ax["odds"] * tgt["odds"] * 0.4, 1)
+            combo_ev_umaren = round(ax["expected_return"] * tgt["expected_return"] * 0.9, 2)
+            strategy_a.append({"type":"馬連", "numbers": nums_sorted, "odds": max(1.5, combo_odds_umaren), "expected_return": combo_ev_umaren})
+            
+    # 戦略Aの重複排除とEVソート
+    unique_a = {str(b["numbers"]) + b["type"]: b for b in strategy_a}
+    strategy_a = sorted(unique_a.values(), key=lambda x: x["expected_return"], reverse=True)
 
+    # === 戦略B (ハイリスク・歪狙い型) ===
+    # 絶対軸 を頭に固定し、高EV伏兵 や 中穴 に流す 馬単、3連複、3連単
+    # 高EV伏兵がいなければ、単勝オッズ10倍〜50倍の中穴をターゲットにする
+    targets_b = dark_horses if dark_horses else [h for h in horses_data if 10.0 <= h["odds"] <= 50.0]
+    if not targets_b: targets_b = sorted_by_prob[3:8] # それでもいなければ適当なヒモ
+    
+    for ax in axis_horses:
+        for tgt in targets_b:
+            if ax["number"] == tgt["number"]: continue
+            
+            # 伏兵の単勝
+            if {"type": "単勝", "numbers": [tgt["number"]], "odds": tgt["odds"], "expected_return": tgt["expected_return"]} not in strategy_b:
+                strategy_b.append({"type": "単勝", "numbers": [tgt["number"]], "odds": tgt["odds"], "expected_return": tgt["expected_return"]})
+                
+            # 馬単 (絶対軸 -> 伏兵)
+            umatan_odds = round(ax["odds"] * tgt["odds"] * 0.6, 1)
+            umatan_ev = round(ax["expected_return"] * tgt["expected_return"], 2)
+            strategy_b.append({"type":"馬単", "numbers": [ax["number"], tgt["number"]], "odds": max(2.0, umatan_odds), "expected_return": umatan_ev})
+            
+            # 3連複・3連単 (絶対軸 - 伏兵 - 伏兵)
+            for tgt2 in targets_b:
+                if tgt2["number"] <= tgt["number"] or tgt2["number"] == ax["number"]: continue
+                
+                base_odds_3 = float(ax["odds"] * tgt["odds"] * tgt2["odds"] * 0.08)
+                base_ev_3 = round(ax["expected_return"] * tgt["expected_return"] * tgt2["expected_return"], 2)
+                
+                nums_3puku = sorted([ax["number"], tgt["number"], tgt2["number"]])
+                strategy_b.append({"type":"3連複", "numbers": nums_3puku, "odds": round(max(5.0, base_odds_3), 1), "expected_return": round(base_ev_3*1.1, 2)})
+                strategy_b.append({"type":"3連単", "numbers": [ax["number"], tgt["number"], tgt2["number"]], "odds": round(max(15.0, base_odds_3 * 6), 1), "expected_return": round(base_ev_3*0.8, 2)})
+
+    # 戦略Bの重複排除とEVソート
+    unique_b = {str(b["numbers"]) + b["type"]: b for b in strategy_b}
+    strategy_b = sorted(unique_b.values(), key=lambda x: x["expected_return"], reverse=True)
+    
     return {"strategy_a": strategy_a, "strategy_b": strategy_b}
 
 def main():
     print("実レースデータ(netkeiba)の取得を開始します...")
-    urls = get_upcoming_race_urls()
+    urls_dict = get_upcoming_race_urls()
     
-    if not urls:
+    if not urls_dict:
         print("対象レースが見つかりませんでした。")
         return
         
     output_array = []
     
-    for url in urls:
+    for url, date_str in urls_dict.items():
         print(f"スクレイピング中: {url}")
-        race_info, raw_horses = scrape_race_data(url)
+        race_info, raw_horses = scrape_race_data(url, date_str)
         
         if not race_info or not raw_horses or len(raw_horses) == 0:
             continue
@@ -741,13 +724,11 @@ def main():
             h["popularity"] = idx + 1
         horses_data.sort(key=lambda x: x["number"])
 
-        top3_bets = generate_top3_by_bet_type(horses_data)
-        portfolios = generate_portfolios(top3_bets, horses_data)
+        portfolios = generate_portfolios(horses_data)
         
         output_array.append({
             "race_info": race_info,
             "horses": horses_data,
-            "top3_bets": top3_bets,
             "portfolios": portfolios
         })
     

@@ -1,384 +1,6 @@
 [
   {
     "race_info": {
-      "id": "202608050711&rf=race_list",
-      "name": "京都2歳S",
-      "date": "2026-11-28",
-      "track": "JRA",
-      "distance": "芝2000m",
-      "weather": "-",
-      "condition": "-",
-      "status": "upcoming",
-      "results": null,
-      "has_past_data": true
-    },
-    "horses": [
-      {
-        "number": 1,
-        "name": "アーケントレイル",
-        "jockey": "岩田望",
-        "odds": 22.0,
-        "popularity": 8,
-        "win_probability": 0.045,
-        "expected_return": 1.0,
-        "score_si": 1.06,
-        "classification": "一般馬",
-        "weight": "-",
-        "weight_change": "-",
-        "last_3f": 34.2,
-        "speed_index": "-",
-        "condition_score": "-"
-      },
-      {
-        "number": 2,
-        "name": "シャローチャンプ",
-        "jockey": "Ｃデムーロ",
-        "odds": 10.9,
-        "popularity": 6,
-        "win_probability": 0.065,
-        "expected_return": 0.71,
-        "score_si": 1.24,
-        "classification": "一般馬",
-        "weight": "-",
-        "weight_change": "-",
-        "last_3f": 34.1,
-        "speed_index": "-",
-        "condition_score": "-"
-      },
-      {
-        "number": 3,
-        "name": "ショウナンバトレニ",
-        "jockey": "松山",
-        "odds": 7.0,
-        "popularity": 4,
-        "win_probability": 0.098,
-        "expected_return": 0.69,
-        "score_si": 1.46,
-        "classification": "一般馬",
-        "weight": "-",
-        "weight_change": "-",
-        "last_3f": 34.2,
-        "speed_index": "-",
-        "condition_score": "-"
-      },
-      {
-        "number": 4,
-        "name": "フェイマスジャズ",
-        "jockey": "杉原",
-        "odds": 31.9,
-        "popularity": 9,
-        "win_probability": 0.068,
-        "expected_return": 2.17,
-        "score_si": 1.27,
-        "classification": "高EV伏兵",
-        "weight": "-",
-        "weight_change": "-",
-        "last_3f": 36.0,
-        "speed_index": "-",
-        "condition_score": "-"
-      },
-      {
-        "number": 5,
-        "name": "エトワールハマー",
-        "jockey": "武豊",
-        "odds": 6.8,
-        "popularity": 3,
-        "win_probability": 0.087,
-        "expected_return": 0.59,
-        "score_si": 1.39,
-        "classification": "一般馬",
-        "weight": "-",
-        "weight_change": "-",
-        "last_3f": 34.1,
-        "speed_index": "-",
-        "condition_score": "-"
-      },
-      {
-        "number": 6,
-        "name": "ゴールデンプロミス",
-        "jockey": "坂井",
-        "odds": 7.4,
-        "popularity": 5,
-        "win_probability": 0.076,
-        "expected_return": 0.56,
-        "score_si": 1.32,
-        "classification": "一般馬",
-        "weight": "-",
-        "weight_change": "-",
-        "last_3f": 33.9,
-        "speed_index": "-",
-        "condition_score": "-"
-      },
-      {
-        "number": 7,
-        "name": "ポルトブルー",
-        "jockey": "西村淳",
-        "odds": 37.1,
-        "popularity": 10,
-        "win_probability": 0.035,
-        "expected_return": 1.29,
-        "score_si": 0.92,
-        "classification": "高EV伏兵",
-        "weight": "-",
-        "weight_change": "-",
-        "last_3f": 34.3,
-        "speed_index": "-",
-        "condition_score": "-"
-      },
-      {
-        "number": 8,
-        "name": "ノヴァヴェローチェ",
-        "jockey": "北村友",
-        "odds": 3.1,
-        "popularity": 1,
-        "win_probability": 0.223,
-        "expected_return": 0.69,
-        "score_si": 1.88,
-        "classification": "危険な人気馬",
-        "weight": "-",
-        "weight_change": "-",
-        "last_3f": 34.4,
-        "speed_index": "-",
-        "condition_score": "-"
-      },
-      {
-        "number": 9,
-        "name": "ネーロノワール",
-        "jockey": "川田",
-        "odds": 13.0,
-        "popularity": 7,
-        "win_probability": 0.161,
-        "expected_return": 2.1,
-        "score_si": 1.71,
-        "classification": "絶対軸",
-        "weight": "-",
-        "weight_change": "-",
-        "last_3f": 34.9,
-        "speed_index": "-",
-        "condition_score": "-"
-      },
-      {
-        "number": 10,
-        "name": "ドラゴンバルド",
-        "jockey": "モレイラ",
-        "odds": 3.4,
-        "popularity": 2,
-        "win_probability": 0.123,
-        "expected_return": 0.42,
-        "score_si": 1.57,
-        "classification": "危険な人気馬",
-        "weight": "-",
-        "weight_change": "-",
-        "last_3f": 33.9,
-        "speed_index": "-",
-        "condition_score": "-"
-      },
-      {
-        "number": 11,
-        "name": "サノノキセキ",
-        "jockey": "小林美",
-        "odds": 39.9,
-        "popularity": 11,
-        "win_probability": 0.019,
-        "expected_return": 0.75,
-        "score_si": 0.6,
-        "classification": "一般馬",
-        "weight": "-",
-        "weight_change": "-",
-        "last_3f": 35.5,
-        "speed_index": "-",
-        "condition_score": "-"
-      }
-    ],
-    "portfolios": {
-      "strategy_a": [
-        {
-          "type": "単勝",
-          "numbers": [
-            8
-          ],
-          "odds": 3.1,
-          "hit_probability": 0.223
-        },
-        {
-          "type": "ワイド",
-          "numbers": [
-            8,
-            9
-          ],
-          "odds": 6.0,
-          "hit_probability": 0.108
-        },
-        {
-          "type": "ワイド",
-          "numbers": [
-            8,
-            10
-          ],
-          "odds": 1.6,
-          "hit_probability": 0.082
-        },
-        {
-          "type": "ワイド",
-          "numbers": [
-            3,
-            8
-          ],
-          "odds": 3.3,
-          "hit_probability": 0.066
-        }
-      ],
-      "strategy_b": [
-        {
-          "type": "馬連",
-          "numbers": [
-            8,
-            9
-          ],
-          "odds": 16.1,
-          "hit_probability": 0.054
-        },
-        {
-          "type": "馬連",
-          "numbers": [
-            8,
-            10
-          ],
-          "odds": 4.2,
-          "hit_probability": 0.041
-        },
-        {
-          "type": "馬連",
-          "numbers": [
-            3,
-            8
-          ],
-          "odds": 8.7,
-          "hit_probability": 0.033
-        },
-        {
-          "type": "馬連",
-          "numbers": [
-            5,
-            8
-          ],
-          "odds": 8.4,
-          "hit_probability": 0.029
-        },
-        {
-          "type": "馬連",
-          "numbers": [
-            6,
-            8
-          ],
-          "odds": 9.2,
-          "hit_probability": 0.025
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            8,
-            9,
-            10
-          ],
-          "odds": 11.0,
-          "hit_probability": 0.022
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            3,
-            8,
-            9
-          ],
-          "odds": 22.6,
-          "hit_probability": 0.018
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            5,
-            8,
-            9
-          ],
-          "odds": 21.9,
-          "hit_probability": 0.016
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            6,
-            8,
-            9
-          ],
-          "odds": 23.9,
-          "hit_probability": 0.014
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            3,
-            8,
-            10
-          ],
-          "odds": 5.9,
-          "hit_probability": 0.013
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            5,
-            8,
-            10
-          ],
-          "odds": 5.7,
-          "hit_probability": 0.012
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            3,
-            5,
-            8
-          ],
-          "odds": 11.8,
-          "hit_probability": 0.01
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            6,
-            8,
-            10
-          ],
-          "odds": 6.2,
-          "hit_probability": 0.01
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            3,
-            6,
-            8
-          ],
-          "odds": 12.8,
-          "hit_probability": 0.008
-        },
-        {
-          "type": "3連複",
-          "numbers": [
-            5,
-            6,
-            8
-          ],
-          "odds": 12.5,
-          "hit_probability": 0.007
-        }
-      ]
-    }
-  },
-  {
-    "race_info": {
       "id": "202605050812&rf=race_list",
       "name": "ジャパンC",
       "date": "2026-11-29",
@@ -395,10 +17,10 @@
         "number": 1,
         "name": "ヘデントール",
         "jockey": "マーカンド",
-        "odds": 33.3,
+        "odds": 35.4,
         "popularity": 8,
         "win_probability": 0.032,
-        "expected_return": 1.07,
+        "expected_return": 1.14,
         "score_si": 0.59,
         "classification": "一般馬",
         "weight": "-",
@@ -411,7 +33,7 @@
         "number": 2,
         "name": "コスモキュランダ",
         "jockey": "丹内",
-        "odds": 92.8,
+        "odds": 105.1,
         "popularity": 14,
         "win_probability": 0.019,
         "expected_return": 0.95,
@@ -427,10 +49,10 @@
         "number": 3,
         "name": "メイショウタバル",
         "jockey": "武豊",
-        "odds": 7.6,
+        "odds": 8.8,
         "popularity": 6,
         "win_probability": 0.027,
-        "expected_return": 0.2,
+        "expected_return": 0.23,
         "score_si": 0.5,
         "classification": "一般馬",
         "weight": "-",
@@ -443,10 +65,10 @@
         "number": 4,
         "name": "クロワデュノール",
         "jockey": "Ｃデムーロ",
-        "odds": 6.5,
+        "odds": 6.1,
         "popularity": 5,
         "win_probability": 0.063,
-        "expected_return": 0.41,
+        "expected_return": 0.38,
         "score_si": 0.9,
         "classification": "一般馬",
         "weight": "-",
@@ -459,10 +81,10 @@
         "number": 5,
         "name": "シェイクユアハート",
         "jockey": "古川吉",
-        "odds": 46.5,
+        "odds": 52.0,
         "popularity": 10,
         "win_probability": 0.035,
-        "expected_return": 1.61,
+        "expected_return": 1.73,
         "score_si": 0.63,
         "classification": "高EV伏兵",
         "weight": "-",
@@ -475,8 +97,8 @@
         "number": 6,
         "name": "マスカレードボール",
         "jockey": "ルメール",
-        "odds": 5.8,
-        "popularity": 3,
+        "odds": 6.0,
+        "popularity": 4,
         "win_probability": 0.032,
         "expected_return": 0.19,
         "score_si": 0.59,
@@ -491,7 +113,7 @@
         "number": 7,
         "name": "ファイアンクランツ",
         "jockey": "モレイラ",
-        "odds": 93.4,
+        "odds": 106.6,
         "popularity": 15,
         "win_probability": 0.072,
         "expected_return": 3.59,
@@ -523,10 +145,10 @@
         "number": 9,
         "name": "カランダガン",
         "jockey": "バルザロー",
-        "odds": 6.2,
-        "popularity": 4,
+        "odds": 5.6,
+        "popularity": 3,
         "win_probability": 0.104,
-        "expected_return": 0.65,
+        "expected_return": 0.58,
         "score_si": 1.14,
         "classification": "一般馬",
         "weight": "-",
@@ -539,10 +161,10 @@
         "number": 10,
         "name": "ミニーホーク",
         "jockey": "ムーア",
-        "odds": 16.4,
+        "odds": 18.3,
         "popularity": 7,
         "win_probability": 0.03,
-        "expected_return": 0.49,
+        "expected_return": 0.55,
         "score_si": 0.56,
         "classification": "一般馬",
         "weight": "-",
@@ -555,7 +177,7 @@
         "number": 11,
         "name": "ヴェルテンベルク",
         "jockey": "横山典",
-        "odds": 106.5,
+        "odds": 130.5,
         "popularity": 17,
         "win_probability": 0.019,
         "expected_return": 0.93,
@@ -571,10 +193,10 @@
         "number": 12,
         "name": "テアオ",
         "jockey": "Ｌトーレス",
-        "odds": 33.5,
+        "odds": 36.3,
         "popularity": 9,
         "win_probability": 0.104,
-        "expected_return": 3.49,
+        "expected_return": 3.78,
         "score_si": 1.14,
         "classification": "絶対軸",
         "weight": "-",
@@ -587,7 +209,7 @@
         "number": 13,
         "name": "アーバンシック",
         "jockey": "プーシャン",
-        "odds": 90.1,
+        "odds": 99.5,
         "popularity": 13,
         "win_probability": 0.031,
         "expected_return": 1.53,
@@ -603,7 +225,7 @@
         "number": 14,
         "name": "タガノデュード",
         "jockey": "Ｍデムーロ",
-        "odds": 68.9,
+        "odds": 73.2,
         "popularity": 12,
         "win_probability": 0.061,
         "expected_return": 3.05,
@@ -619,7 +241,7 @@
         "number": 15,
         "name": "エキサイトバイオ",
         "jockey": "荻野極",
-        "odds": 156.6,
+        "odds": 188.0,
         "popularity": 18,
         "win_probability": 0.015,
         "expected_return": 0.77,
@@ -635,10 +257,10 @@
         "number": 16,
         "name": "ダノンデサイル",
         "jockey": "戸崎圭",
-        "odds": 5.2,
+        "odds": 4.8,
         "popularity": 2,
         "win_probability": 0.204,
-        "expected_return": 1.06,
+        "expected_return": 0.98,
         "score_si": 1.45,
         "classification": "絶対軸",
         "weight": "-",
@@ -651,7 +273,7 @@
         "number": 17,
         "name": "ゴリアット",
         "jockey": "スミヨン",
-        "odds": 61.9,
+        "odds": 65.7,
         "popularity": 11,
         "win_probability": 0.044,
         "expected_return": 2.2,
@@ -667,7 +289,7 @@
         "number": 18,
         "name": "エシカルダイヤモンド",
         "jockey": "坂井",
-        "odds": 95.4,
+        "odds": 111.2,
         "popularity": 16,
         "win_probability": 0.034,
         "expected_return": 1.68,
@@ -687,7 +309,7 @@
           "numbers": [
             16
           ],
-          "odds": 5.2,
+          "odds": 4.8,
           "hit_probability": 0.204
         },
         {
@@ -696,7 +318,7 @@
             9,
             16
           ],
-          "odds": 4.8,
+          "odds": 4.0,
           "hit_probability": 0.064
         },
         {
@@ -714,7 +336,7 @@
             8,
             16
           ],
-          "odds": 3.6,
+          "odds": 3.3,
           "hit_probability": 0.046
         }
       ],
@@ -725,7 +347,7 @@
             9,
             16
           ],
-          "odds": 12.9,
+          "odds": 10.8,
           "hit_probability": 0.032
         },
         {
@@ -743,7 +365,7 @@
             8,
             16
           ],
-          "odds": 9.6,
+          "odds": 8.8,
           "hit_probability": 0.023
         },
         {
@@ -752,7 +374,7 @@
             7,
             16
           ],
-          "odds": 194.3,
+          "odds": 204.7,
           "hit_probability": 0.022
         },
         {
@@ -761,7 +383,7 @@
             4,
             16
           ],
-          "odds": 13.5,
+          "odds": 11.7,
           "hit_probability": 0.019
         },
         {
@@ -771,7 +393,7 @@
             12,
             16
           ],
-          "odds": 86.4,
+          "odds": 78.1,
           "hit_probability": 0.011
         },
         {
@@ -781,7 +403,7 @@
             9,
             16
           ],
-          "odds": 11.9,
+          "odds": 9.9,
           "hit_probability": 0.008
         },
         {
@@ -801,7 +423,7 @@
             9,
             16
           ],
-          "odds": 240.9,
+          "odds": 229.2,
           "hit_probability": 0.008
         },
         {
@@ -811,7 +433,7 @@
             12,
             16
           ],
-          "odds": 1301.6,
+          "odds": 1485.9,
           "hit_probability": 0.008
         },
         {
@@ -821,7 +443,7 @@
             9,
             16
           ],
-          "odds": 16.8,
+          "odds": 13.1,
           "hit_probability": 0.007
         },
         {
@@ -831,7 +453,7 @@
             12,
             16
           ],
-          "odds": 90.6,
+          "odds": 85.0,
           "hit_probability": 0.007
         },
         {
@@ -841,7 +463,7 @@
             8,
             16
           ],
-          "odds": 178.7,
+          "odds": 188.3,
           "hit_probability": 0.006
         },
         {
@@ -851,7 +473,7 @@
             8,
             16
           ],
-          "odds": 12.4,
+          "odds": 10.8,
           "hit_probability": 0.005
         },
         {
@@ -861,7 +483,7 @@
             7,
             16
           ],
-          "odds": 252.6,
+          "odds": 249.7,
           "hit_probability": 0.005
         }
       ]
@@ -885,10 +507,10 @@
         "number": 1,
         "name": "ジェニファー",
         "jockey": "松山",
-        "odds": 12.4,
-        "popularity": 7,
+        "odds": 15.2,
+        "popularity": 8,
         "win_probability": 0.132,
-        "expected_return": 1.64,
+        "expected_return": 2.01,
         "score_si": 1.0,
         "classification": "絶対軸",
         "weight": "-",
@@ -901,10 +523,10 @@
         "number": 2,
         "name": "モズナナスター",
         "jockey": "吉田隼",
-        "odds": 34.6,
-        "popularity": 14,
+        "odds": 32.0,
+        "popularity": 15,
         "win_probability": 0.054,
-        "expected_return": 1.86,
+        "expected_return": 1.72,
         "score_si": 0.68,
         "classification": "高EV伏兵",
         "weight": "-",
@@ -917,10 +539,10 @@
         "number": 3,
         "name": "ヤブサメ",
         "jockey": "田山",
-        "odds": 12.1,
+        "odds": 13.1,
         "popularity": 6,
         "win_probability": 0.048,
-        "expected_return": 0.58,
+        "expected_return": 0.63,
         "score_si": 0.64,
         "classification": "一般馬",
         "weight": "-",
@@ -933,10 +555,10 @@
         "number": 4,
         "name": "オタルエバー",
         "jockey": "岩田康",
-        "odds": 41.8,
-        "popularity": 16,
+        "odds": 73.1,
+        "popularity": 18,
         "win_probability": 0.08,
-        "expected_return": 3.35,
+        "expected_return": 4.01,
         "score_si": 0.82,
         "classification": "高EV伏兵",
         "weight": "-",
@@ -949,10 +571,10 @@
         "number": 5,
         "name": "レイピア",
         "jockey": "佐々木",
-        "odds": 6.6,
+        "odds": 6.1,
         "popularity": 2,
         "win_probability": 0.011,
-        "expected_return": 0.08,
+        "expected_return": 0.07,
         "score_si": 0.14,
         "classification": "一般馬",
         "weight": "-",
@@ -965,10 +587,10 @@
         "number": 6,
         "name": "インブロリオ",
         "jockey": "川田",
-        "odds": 7.0,
+        "odds": 8.7,
         "popularity": 3,
         "win_probability": 0.019,
-        "expected_return": 0.13,
+        "expected_return": 0.16,
         "score_si": 0.31,
         "classification": "一般馬",
         "weight": "-",
@@ -981,10 +603,10 @@
         "number": 7,
         "name": "リリージョワ",
         "jockey": "浜中",
-        "odds": 4.8,
+        "odds": 3.3,
         "popularity": 1,
         "win_probability": 0.098,
-        "expected_return": 0.47,
+        "expected_return": 0.32,
         "score_si": 0.89,
         "classification": "危険な人気馬",
         "weight": "-",
@@ -997,8 +619,8 @@
         "number": 8,
         "name": "ゾンニッヒ",
         "jockey": "田口",
-        "odds": 60.8,
-        "popularity": 18,
+        "odds": 68.1,
+        "popularity": 17,
         "win_probability": 0.042,
         "expected_return": 2.11,
         "score_si": 0.6,
@@ -1013,10 +635,10 @@
         "number": 9,
         "name": "メイショウソラフネ",
         "jockey": "幸",
-        "odds": 41.1,
-        "popularity": 15,
+        "odds": 59.0,
+        "popularity": 16,
         "win_probability": 0.048,
-        "expected_return": 1.97,
+        "expected_return": 2.39,
         "score_si": 0.64,
         "classification": "高EV伏兵",
         "weight": "-",
@@ -1029,12 +651,12 @@
         "number": 10,
         "name": "ルシード",
         "jockey": "鮫島駿",
-        "odds": 50.0,
-        "popularity": 17,
+        "odds": 30.8,
+        "popularity": 13,
         "win_probability": 0.028,
-        "expected_return": 1.39,
+        "expected_return": 0.86,
         "score_si": 0.45,
-        "classification": "高EV伏兵",
+        "classification": "一般馬",
         "weight": "-",
         "weight_change": "-",
         "last_3f": 34.5,
@@ -1045,10 +667,10 @@
         "number": 11,
         "name": "インビンシブルパパ",
         "jockey": "小沢",
-        "odds": 9.7,
-        "popularity": 5,
+        "odds": 14.3,
+        "popularity": 7,
         "win_probability": 0.014,
-        "expected_return": 0.13,
+        "expected_return": 0.2,
         "score_si": 0.2,
         "classification": "一般馬",
         "weight": "-",
@@ -1061,10 +683,10 @@
         "number": 12,
         "name": "デアヴェローチェ",
         "jockey": "北村友",
-        "odds": 13.4,
-        "popularity": 8,
+        "odds": 12.2,
+        "popularity": 5,
         "win_probability": 0.05,
-        "expected_return": 0.67,
+        "expected_return": 0.61,
         "score_si": 0.65,
         "classification": "一般馬",
         "weight": "-",
@@ -1077,10 +699,10 @@
         "number": 13,
         "name": "ヨシノイースター",
         "jockey": "角田和",
-        "odds": 29.2,
-        "popularity": 13,
+        "odds": 31.9,
+        "popularity": 14,
         "win_probability": 0.071,
-        "expected_return": 2.07,
+        "expected_return": 2.26,
         "score_si": 0.78,
         "classification": "高EV伏兵",
         "weight": "-",
@@ -1093,10 +715,10 @@
         "number": 14,
         "name": "クラスペディア",
         "jockey": "小崎",
-        "odds": 19.8,
-        "popularity": 10,
+        "odds": 24.1,
+        "popularity": 11,
         "win_probability": 0.061,
-        "expected_return": 1.21,
+        "expected_return": 1.47,
         "score_si": 0.72,
         "classification": "高EV伏兵",
         "weight": "-",
@@ -1109,10 +731,10 @@
         "number": 15,
         "name": "フォーゲル",
         "jockey": "池添",
-        "odds": 19.6,
+        "odds": 21.5,
         "popularity": 9,
         "win_probability": 0.12,
-        "expected_return": 2.35,
+        "expected_return": 2.57,
         "score_si": 0.96,
         "classification": "絶対軸",
         "weight": "-",
@@ -1126,7 +748,7 @@
         "name": "ビッグシーザー",
         "jockey": "斎藤",
         "odds": 22.0,
-        "popularity": 11,
+        "popularity": 10,
         "win_probability": 0.057,
         "expected_return": 1.24,
         "score_si": 0.7,
@@ -1141,10 +763,10 @@
         "number": 17,
         "name": "ナムラクララ",
         "jockey": "吉村",
-        "odds": 22.1,
+        "odds": 25.3,
         "popularity": 12,
         "win_probability": 0.041,
-        "expected_return": 0.9,
+        "expected_return": 1.04,
         "score_si": 0.58,
         "classification": "一般馬",
         "weight": "-",
@@ -1157,10 +779,10 @@
         "number": 18,
         "name": "エーティーマクフィ",
         "jockey": "富田",
-        "odds": 8.6,
+        "odds": 8.9,
         "popularity": 4,
         "win_probability": 0.027,
-        "expected_return": 0.23,
+        "expected_return": 0.24,
         "score_si": 0.44,
         "classification": "一般馬",
         "weight": "-",
@@ -1177,7 +799,7 @@
           "numbers": [
             1
           ],
-          "odds": 12.4,
+          "odds": 15.2,
           "hit_probability": 0.132
         },
         {
@@ -1186,7 +808,7 @@
             1,
             15
           ],
-          "odds": 36.5,
+          "odds": 49.0,
           "hit_probability": 0.048
         },
         {
@@ -1195,7 +817,7 @@
             1,
             7
           ],
-          "odds": 8.9,
+          "odds": 7.5,
           "hit_probability": 0.039
         },
         {
@@ -1204,7 +826,7 @@
             1,
             4
           ],
-          "odds": 77.7,
+          "odds": 166.7,
           "hit_probability": 0.032
         }
       ],
@@ -1215,7 +837,7 @@
             1,
             15
           ],
-          "odds": 97.2,
+          "odds": 130.7,
           "hit_probability": 0.024
         },
         {
@@ -1224,7 +846,7 @@
             1,
             7
           ],
-          "odds": 23.8,
+          "odds": 20.1,
           "hit_probability": 0.019
         },
         {
@@ -1233,7 +855,7 @@
             1,
             4
           ],
-          "odds": 207.3,
+          "odds": 444.4,
           "hit_probability": 0.016
         },
         {
@@ -1242,7 +864,7 @@
             1,
             13
           ],
-          "odds": 144.8,
+          "odds": 194.0,
           "hit_probability": 0.014
         },
         {
@@ -1251,7 +873,7 @@
             1,
             14
           ],
-          "odds": 98.2,
+          "odds": 146.5,
           "hit_probability": 0.012
         },
         {
@@ -1261,7 +883,7 @@
             7,
             15
           ],
-          "odds": 93.3,
+          "odds": 86.3,
           "hit_probability": 0.008
         },
         {
@@ -1271,7 +893,7 @@
             4,
             15
           ],
-          "odds": 812.7,
+          "odds": 1911.1,
           "hit_probability": 0.006
         },
         {
@@ -1281,7 +903,7 @@
             13,
             15
           ],
-          "odds": 567.7,
+          "odds": 834.0,
           "hit_probability": 0.006
         },
         {
@@ -1291,7 +913,7 @@
             7,
             13
           ],
-          "odds": 139.0,
+          "odds": 128.0,
           "hit_probability": 0.005
         },
         {
@@ -1301,7 +923,7 @@
             4,
             7
           ],
-          "odds": 199.0,
+          "odds": 293.3,
           "hit_probability": 0.005
         },
         {
@@ -1311,7 +933,7 @@
             14,
             15
           ],
-          "odds": 385.0,
+          "odds": 630.1,
           "hit_probability": 0.005
         },
         {
@@ -1321,7 +943,7 @@
             7,
             14
           ],
-          "odds": 94.3,
+          "odds": 96.7,
           "hit_probability": 0.004
         },
         {
@@ -1331,7 +953,7 @@
             4,
             13
           ],
-          "odds": 1210.8,
+          "odds": 2835.6,
           "hit_probability": 0.004
         },
         {
@@ -1341,7 +963,7 @@
             4,
             14
           ],
-          "odds": 821.0,
+          "odds": 2142.2,
           "hit_probability": 0.003
         },
         {
@@ -1351,7 +973,7 @@
             13,
             14
           ],
-          "odds": 573.5,
+          "odds": 934.8,
           "hit_probability": 0.003
         }
       ]
